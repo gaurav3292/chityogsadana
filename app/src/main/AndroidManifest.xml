@@ -21,7 +21,7 @@
         </receiver>
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.SplashActivity_"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
