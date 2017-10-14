@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">ChitYogSadana</string>
+
+    //What is Chit yog
+    <string name="chit_yog">chityog</string>
+
+    //what is chit
+    <string name="chit">chit</string>
+
+    //our aim
+    <string name="aim">aim</string>
+
+    //how it works
+    <string name="need">need</string>
+
+    //who needs it
+    <string name="works">works</string>
+
 </resources>

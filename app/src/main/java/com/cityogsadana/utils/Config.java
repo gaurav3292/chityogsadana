@@ -17,12 +17,14 @@ public class Config {
     public static final double MOVIE_POSTER = (double) 5 / 7;
 
 
-    //bottom menu
-    public static final String LOGO_TAB = "LOGO_TAB";
-    public static final String CLASS_TAB = "CLASS_TAB";
-    public static final String ABOUT_TAB = "ABOUT_TAB";
-    public static final String HOME_TAB = "HOME_TAB";
-    public static final String HELP_TAB = "HELP_TAB";
+    // menu
+    public static  final  String CHIT_YOG = "What is CHIT YOG?";
+    public static  final  String CHIT = " What is CHIT";
+    public static  final  String AIM = " Our Aim";
+    public static  final  String WORKS = "How it works?";
+    public static  final  String NEED = "Who needs it?";
+    public static  final  String TEST = "TEST";
+
 
     //Constant Keys
     public static final String PROCESS = "PROCESS";

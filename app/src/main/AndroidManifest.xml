@@ -3,18 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cityogsadana">
 
-
-
     <application
-        android:allowBackup="true"
         android:name=".application.AppController"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:largeHeap="true"
-        tools:replace="android:supportsRtl"
-        android:theme="@style/AppTheme">
-
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl">
         <receiver
             android:name=".utils.ConnectivityReceiver"
             android:enabled="true">
@@ -23,18 +20,26 @@
             </intent-filter>
         </receiver>
 
-
-        <activity android:name=".activity.SplashActivity"
+        <activity
+            android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"
-            >
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".activity.DescriptionActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

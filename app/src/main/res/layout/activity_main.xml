@@ -19,14 +19,15 @@
 
 
             <TextView
+                android:id="@+id/chit_yog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                android:text=""
+                android:text="What is CHIT YOG?"
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
             <View
                 android:layout_width="100dp"
@@ -38,14 +39,15 @@
 
 
             <TextView
+                android:id="@+id/chit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                android:text=""
+                android:text="What is CHIT?"
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
             <View
                 android:layout_width="100dp"
@@ -56,14 +58,15 @@
                 android:background="@color/app_red"></View>
 
             <TextView
+                android:id="@+id/aim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                android:text=""
+                android:text="Our Aim"
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
             <View
                 android:layout_width="100dp"
@@ -74,14 +77,15 @@
                 android:background="@color/app_red"></View>
 
             <TextView
+                android:id="@+id/needs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                android:text=""
+                android:text="Who needs it?"
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
             <View
                 android:layout_width="100dp"
@@ -92,14 +96,15 @@
                 android:background="@color/app_red"></View>
 
             <TextView
+                android:id="@+id/works"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                android:text=""
+                android:text="How it works?"
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
             <View
                 android:layout_width="100dp"
@@ -110,15 +115,16 @@
                 android:background="@color/app_red"></View>
 
             <TextView
+                android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:padding="15dp"
-                android:text=""
+                android:text="Take the test..."
                 style="@style/SelectableItemBackground"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_xmedium" />
+                android:textSize="@dimen/app_text_size_large" />
 
 
         </LinearLayout>
