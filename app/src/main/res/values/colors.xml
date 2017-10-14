@@ -8,7 +8,9 @@
     <color name="icon_color">#71a9a3</color>
     <color name="text_color">#596574</color>
     <color name="app_gray">#d9dccf</color>
+    <color name="button_selector">#c6d9dccf</color>
     <color name="app_white">#ffffff</color>
     <color name="selector_color1">#c2cb623e</color>
+    <color name="text_hint_color">#9a9c9f</color>
 
 </resources>

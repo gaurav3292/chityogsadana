@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
+import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -32,9 +35,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @ViewById(R.id.aim)
     TextView aimTxt;
 
+    private UserBean userBean;
+
     @AfterViews
     public void setData()
     {
+
+        Global.setFont(viewGroup,Global.regular);
+        Global.setCustomFont(Global.bold,chitTxt,chitYogTxt,needsTxt,worksTxt,aimTxt,testTxt,findViewById(R.id.title));
 
         chitYogTxt.setOnClickListener(this);
         chitTxt.setOnClickListener(this);
@@ -44,6 +52,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         needsTxt.setOnClickListener(this);
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        userBean = UserPref.getUser(this);
     }
 
     @Override
@@ -61,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("type", Config.CHIT_YOG);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 break;
 
             case R.id.chit:
@@ -68,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent1.putExtra("type", Config.CHIT);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 break;
 
             case R.id.aim:
@@ -75,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent2.putExtra("type", Config.AIM);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
+                overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 break;
 
             case R.id.works:
@@ -82,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent3.putExtra("type", Config.WORKS);
                 intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent3);
+                overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 break;
 
             case R.id.needs:
@@ -89,9 +107,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent4.putExtra("type", Config.NEED);
                 intent4.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent4);
+                overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 break;
 
             case R.id.test:
+                if (userBean.getUser_id()!= null)
+                {
+
+                }else {
+
+                    Intent intent5 = new Intent(this,LoginActivity_.class);
+                    intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent5);
+                    overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
+
+                }
                 break;
 
         }

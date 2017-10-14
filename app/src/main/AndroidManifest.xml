@@ -30,16 +30,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity_"
+        <activity
+            android:name=".activity.MainActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity android:name=".activity.DescriptionActivity_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.DescriptionActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.LoginActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".activity.SignUpActivity_"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:label=""
+            android:windowSoftInputMode="stateAlwaysHidden"
+            ></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:layout_below="@+id/view"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -130,6 +131,48 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:id="@+id/top_layout"
+        android:background="@color/app_gray"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:text="CHIT YOG SADANA"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/text_color"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:layout_width="30dp"
+            android:background="@color/app_white"
+            android:scaleType="fitCenter"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/profile_tab"
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:id="@+id/view"
+        android:layout_below="@+id/top_layout"
+        android:background="@color/app_white"
+        ></View>
 
 
 </RelativeLayout>
