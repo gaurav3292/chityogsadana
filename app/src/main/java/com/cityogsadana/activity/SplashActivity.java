@@ -15,7 +15,7 @@ import org.androidannotations.annotations.ViewById;
 @EActivity(R.layout.activity_splash)
 public class SplashActivity extends Activity {
 
-    public static long timer = 1500;
+    public static long timer = 3000;
 
     @ViewById(R.id.activity_splash)
     ViewGroup viewGroup;

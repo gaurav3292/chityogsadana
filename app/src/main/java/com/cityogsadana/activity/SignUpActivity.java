@@ -1,5 +1,6 @@
 package com.cityogsadana.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.cityogsadana.R;
 import com.cityogsadana.application.AppController;
+import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
 import com.cityogsadana.utils.CustomCrouton;
 import com.cityogsadana.utils.Global;
@@ -66,9 +68,19 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
         {
 
             case R.id.text_terms:
+                Intent intent2 = new Intent(this, PolicyActivity_.class);
+                intent2.putExtra("type", Config.T_C);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2);
+                overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom);
                 break;
 
             case R.id.text_policy:
+                Intent intent = new Intent(this, PolicyActivity_.class);
+                intent.putExtra("type", Config.P_P);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom);
                 break;
 
 
@@ -82,6 +94,9 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
             case R.id.button_signup:
                 break;
+
+
+
 
         }
     }

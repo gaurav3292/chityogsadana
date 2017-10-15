@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ChitYogSadana</string>
     <string name="no_connection">There is a problem with your internet connection.</string>
+    <string name="forgot_pass1">Enter your email address and we\'ll send you a confirmation email!</string>
 
     //What is Chit yog
     <string name="chit_yog">\u2022 Chit Yog Sadhana is a process to understand why and how we suffer from various imbalances at every level; physical, mental and emotional.\n\n

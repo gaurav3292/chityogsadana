@@ -12,6 +12,7 @@ import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.Global;
+import com.github.siyamed.shapeimageview.CircularImageView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView testTxt;
     @ViewById(R.id.aim)
     TextView aimTxt;
+    @ViewById(R.id.profile_tab)
+    CircularImageView profileTab;
 
     private UserBean userBean;
 
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         aimTxt.setOnClickListener(this);
         worksTxt.setOnClickListener(this);
         needsTxt.setOnClickListener(this);
+        profileTab.setOnClickListener(this);
 
 
     }
@@ -70,6 +74,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId())
         {
+
+            case R.id.profile_tab:
+                Intent profile = new Intent(this,ProfileActivity_.class);
+                profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(profile);
+                break;
+
             case R.id.chit_yog:
                 Intent intent = new Intent(this,DescriptionActivity_.class);
                 intent.putExtra("type", Config.CHIT_YOG);

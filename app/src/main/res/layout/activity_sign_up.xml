@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:digits="abcdefghijklmnopqrstuvwxyz_.@1234567890"
-                            android:hint="Email ID*"
+                            android:hint="Email Address*"
                             android:inputType="textEmailAddress"
                             android:maxLength="100"
                             android:padding="10dp"

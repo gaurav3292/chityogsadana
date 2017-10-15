@@ -155,15 +155,17 @@
             android:layout_height="wrap_content" />
 
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:layout_width="30dp"
-            android:background="@color/app_white"
+            android:layout_width="40dp"
+            android:background="@drawable/circle_shape"
             android:scaleType="fitCenter"
             android:gravity="center"
-            android:visibility="gone"
+            android:src="@drawable/ic_user_yog"
+            android:visibility="visible"
+            android:padding="7dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:id="@+id/profile_tab"
-            android:layout_height="30dp" />
+            android:layout_height="40dp" />
 
     </RelativeLayout>
     <View

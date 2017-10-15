@@ -70,6 +70,9 @@ public class LoginActivity extends AppCompatActivity implements ConnectivityRece
                 break;
 
             case R.id.forgot_pass_layout:
+                Intent intent1 = new Intent(this,ForgotPasswordActivity_.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1);
                 break;
         }
     }

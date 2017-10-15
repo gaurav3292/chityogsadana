@@ -27,6 +27,7 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_arrow_back"
                 android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
                 style="@style/SelectableItemBackground"
                 android:tint="@color/icon_color"
                 android:layout_height="wrap_content" />
