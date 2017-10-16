@@ -38,7 +38,6 @@ public class ForgotPasswordActivity extends AppCompatActivity  implements Connec
     public void setData()
     {
         Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.bold,findViewById(R.id.text_forget_pass),sendButton);
 
         closeButton.setOnClickListener(this);
         sendButton.setOnClickListener(this);

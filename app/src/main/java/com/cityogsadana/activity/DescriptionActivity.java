@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
@@ -25,7 +26,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     @ViewById(R.id.content_txt)
     TextView contentTxt;
     @ViewById(R.id.back_button)
-    ImageButton backButton;
+    ImageView backButton;
 
     private String heading ;
 
@@ -33,8 +34,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     public void setData()
     {
         Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.bold,findViewById(R.id.heading_txt));
-
+        Global.setCustomFont(Global.italic,findViewById(R.id.content_txt));
 
         headingTxt.setText(heading);
         backButton.setOnClickListener(this);

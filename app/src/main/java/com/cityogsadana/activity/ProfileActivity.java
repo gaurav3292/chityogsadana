@@ -42,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void setData()
     {
         Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.bold,termsLayout,ppLayout,findViewById(R.id.title),userName);
+        Global.setCustomFont(Global.italic,termsLayout,ppLayout);
 
         backButton.setOnClickListener(this);
         editChangePass.setOnClickListener(this);

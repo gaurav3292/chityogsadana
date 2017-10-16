@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements ConnectivityRece
     {
         Global.setFont(viewGroup,Global.regular);
         Global.setupUI(viewGroup,this);
-        Global.setCustomFont(Global.bold,findViewById(R.id.text_signup),findViewById(R.id.button_login),findViewById(R.id.login_Txt));
+        Global.setCustomFont(Global.italic,findViewById(R.id.text_signup));
 
         signUpLayout.setOnClickListener(this);
         forgotPassLayout.setOnClickListener(this);

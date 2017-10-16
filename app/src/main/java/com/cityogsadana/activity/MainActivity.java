@@ -3,8 +3,10 @@ package com.cityogsadana.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
@@ -24,19 +26,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @ViewById(R.id.activity_main)
     ViewGroup viewGroup;
     @ViewById(R.id.chit_yog)
-    TextView chitYogTxt;
+    CardView chitYogTxt;
     @ViewById(R.id.chit)
-    TextView chitTxt;
+    CardView chitTxt;
     @ViewById(R.id.needs)
-    TextView needsTxt;
+    CardView needsTxt;
     @ViewById(R.id.works)
-    TextView worksTxt;
+    CardView worksTxt;
     @ViewById(R.id.test)
-    TextView testTxt;
+    CardView testTxt;
     @ViewById(R.id.aim)
-    TextView aimTxt;
-    @ViewById(R.id.profile_tab)
-    CircularImageView profileTab;
+    CardView aimTxt;
+    @ViewById(R.id.noti_img)
+    ImageView profileTab;
+    @ViewById(R.id.home_img)
+    ImageView homeImg;
 
     private UserBean userBean;
 
@@ -45,12 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
 
         Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.bold,chitTxt,chitYogTxt,needsTxt,worksTxt,aimTxt,testTxt,findViewById(R.id.title));
 
         chitYogTxt.setOnClickListener(this);
         chitTxt.setOnClickListener(this);
         testTxt.setOnClickListener(this);
         aimTxt.setOnClickListener(this);
+        homeImg.setOnClickListener(this);
         worksTxt.setOnClickListener(this);
         needsTxt.setOnClickListener(this);
         profileTab.setOnClickListener(this);
@@ -75,7 +79,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId())
         {
 
-            case R.id.profile_tab:
+            case R.id.home_img:
+                Intent level = new Intent(this,LevelActivity_.class);
+                level.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(level);
+                break;
+
+            case R.id.noti_img:
                 Intent profile = new Intent(this,ProfileActivity_.class);
                 profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profile);

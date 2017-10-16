@@ -13,26 +13,62 @@
         android:id="@+id/top_layout"
         android:layout_height="wrap_content">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:layout_gravity="center"
+            android:paddingTop="7dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingBottom="7dp"
+            android:gravity="center"
+            android:background="@color/app_gray"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/back_button"
-                android:background="@color/activity_bg"
+            <ImageView
+                android:id="@+id/noti_img"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_arrow_back"
-                android:layout_marginLeft="15dp"
-                android:layout_centerVertical="true"
-                style="@style/SelectableItemBackground"
-                android:tint="@color/icon_color"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_bell"/>
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_home"/>
+            </RelativeLayout>
 
 
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:id="@+id/view"
+            android:layout_below="@+id/top_layout"
+            android:background="@color/app_white"
+            ></View>
+
+
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/top_layout"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
 
 
             <TextView
@@ -47,39 +83,16 @@
 
                 />
 
-        </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_red"
+                android:layout_height="1.25dp">
 
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/app_red"
-            android:layout_height="1.25dp">
-
-        </View>
-
-
-    </LinearLayout>
-
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_below="@+id/top_layout"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content">
-
-
-
+            </View>
 
             <TextView
                 android:id="@+id/content_txt"
@@ -94,6 +107,16 @@
         </LinearLayout>
 
     </ScrollView>
+
+
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        layout="@layout/bottom_layout">
+
+    </include>
+
 
 
 

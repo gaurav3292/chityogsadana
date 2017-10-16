@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
     {
         Global.setFont(viewGroup,Global.regular);
         Global.setupUI(viewGroup,this);
-        Global.setCustomFont(Global.bold,termsTxt,privacyTxt,findViewById(R.id.signUp_txt),buttonSignUp,findViewById(R.id.text_signin));
+        Global.setCustomFont(Global.italic,termsTxt,privacyTxt,findViewById(R.id.text_signin));
 
         termsTxt.setOnClickListener(this);
         privacyTxt.setOnClickListener(this);

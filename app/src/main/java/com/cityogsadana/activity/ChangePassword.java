@@ -38,7 +38,6 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
     public  void setData(){
 
         Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.bold,title,saveButton);
 
         backButton.setOnClickListener(this);
         title.setText("Change Password");

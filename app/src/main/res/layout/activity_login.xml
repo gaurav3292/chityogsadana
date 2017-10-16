@@ -74,18 +74,12 @@
 
                 <View
                     android:layout_width="25dp"
-                    android:layout_height="2.5dp"
+                    android:layout_height="1dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@color/app_red"
                     android:gravity="center" />
 
-                <View
-                    android:layout_width="25dp"
-                    android:layout_height="2.5dp"
-                    android:layout_gravity="center"
-                    android:background="@color/app_red"
-                    android:gravity="center" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
