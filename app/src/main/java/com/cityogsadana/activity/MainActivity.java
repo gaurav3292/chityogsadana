@@ -132,9 +132,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.test:
-                if (userBean.getUser_id()!= null)
+                if (userBean.getUser_id()== null)
                 {
 
+                    Intent intent5 = new Intent(this,SelfTestActivity_.class);
+                    intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent5);
+                    overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 }else {
 
                     Intent intent5 = new Intent(this,LoginActivity_.class);
