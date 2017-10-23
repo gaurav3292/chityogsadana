@@ -10,6 +10,8 @@ public class SelfTestBean {
 
     private String heading ;
     private ArrayList<QuestionBean> questionBeanList;
+    private int t=0;
+    private int f=0;
 
     public String getHeading() {
         return heading;
@@ -25,5 +27,21 @@ public class SelfTestBean {
 
     public void setQuestionBeanList(ArrayList<QuestionBean> questionBeanList) {
         this.questionBeanList = questionBeanList;
+    }
+
+    public int getT() {
+        return t;
+    }
+
+    public void setT(int t) {
+        this.t = t;
+    }
+
+    public int getF() {
+        return f;
+    }
+
+    public void setF(int f) {
+        this.f = f;
     }
 }

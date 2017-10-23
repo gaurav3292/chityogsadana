@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.bean.QuestionBean;
 import com.cityogsadana.utils.Global;
 
 import java.util.List;
@@ -22,10 +23,10 @@ public class SelfTestAdapter extends RecyclerView.Adapter<SelfTestAdapter.ViewHo
 
     private Context context;
     private Activity activity;
-    private List<String> data;
+    private List<QuestionBean> data;
 
 
-    public SelfTestAdapter(Context context, Activity activity, List<String> data) {
+    public SelfTestAdapter(Context context, Activity activity, List<QuestionBean> data) {
         this.context = context;
         this.activity = activity;
         this.data = data;
@@ -41,8 +42,8 @@ public class SelfTestAdapter extends RecyclerView.Adapter<SelfTestAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolderList holder, int position) {
-        String str = data.get(position);
-        holder.bind(str);
+        QuestionBean questionBean = data.get(position);
+        holder.bind(questionBean);
 
     }
 
@@ -62,12 +63,12 @@ public class SelfTestAdapter extends RecyclerView.Adapter<SelfTestAdapter.ViewHo
             viewGroup = (ViewGroup) itemView.findViewById(R.id.item_self_test);
             ques = (TextView) itemView.findViewById(R.id.ques);
 
-            Global.setFont(viewGroup,Global.regular);
+            Global.setFont(viewGroup, Global.regular);
         }
 
-        public void bind(String str) {
+        public void bind(QuestionBean str) {
 
-            ques.setText(str);
+            ques.setText(str.getQuestion());
 
         }
     }

@@ -17,13 +17,13 @@
 
 
         <TextView
-            android:id="@+id/heading_txt"
+            android:id="@+id/section_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Self Assessment"
+            android:text=""
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_xlarge"
 
@@ -39,18 +39,7 @@
             android:layout_height="1.25dp">
 
         </View>
-        <TextView
-            android:id="@+id/section_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Section name"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/app_text_size_large"
 
-            />
 
         <LinearLayout
             android:layout_width="match_parent"

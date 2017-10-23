@@ -37,23 +37,40 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     TextView nextBtn;
     @ViewById(R.id.back_button)
     ImageButton backButton;
+    @ViewById(R.id.section_name)
+    TextView sectionName;
+    @ViewById(R.id.title)
+    TextView title;
 
     private UserBean userBean;
     private SelfTestAdapter selfTestAdapter;
     private DataEntry dataEntry = new DataEntry();
 
+    private  int masterPosition = 0;
+
     @AfterViews
     public void setData() {
 
         Global.setFont(viewGroup, Global.regular);
+        title.setText("Self Assessment");
 
-        selfTestAdapter = new SelfTestAdapter(this, this, getData());
+        ArrayList<SelfTestBean> data =  getData();
+        sectionName.setText(getData().get(masterPosition).getHeading());
+
+
+       getAdapterData();
+
+        nextBtn.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+    }
+
+    private void getAdapterData() {
+
+        selfTestAdapter = new SelfTestAdapter(this, this, getData().get(masterPosition).getQuestionBeanList());
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(selfTestAdapter);
         recyclerView.setNestedScrollingEnabled(false);
 
-        nextBtn.setOnClickListener(this);
-        backButton.setOnClickListener(this);
     }
 
     @Override
@@ -61,16 +78,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
     }
 
-//    public List<String> getData(){
-//        List<String> stringList = new ArrayList<>();
-//        stringList.add("I experience worry and anxiety");
-//        stringList.add("My mind is always busy");
-//        stringList.add("I get stressed easily");
-//        stringList.add("I can feel depressed easily");
-//        stringList.add("I suffer from panic attacks");
-//
-//        return stringList;
-//    }
 
     public  ArrayList<SelfTestBean> getData()
 
@@ -81,6 +88,10 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         ArrayList<ArrayList<QuestionBean>> questions = new ArrayList<>();
         questions.add(dataEntry.getEmoList());
         questions.add(dataEntry.getDependencyList());
+        questions.add(dataEntry.getSleepList());
+        questions.add(dataEntry.getPreviousHistoryList());
+        questions.add(dataEntry.getEthicsList());
+        questions.add(dataEntry.getDietList());
 
 
         for (int i = 0; i < heading.length; i++) {
@@ -91,12 +102,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
 
         }
-//        ItemList itemList = new ItemList();
-//        itemList.setData(data);
-//        // conversion gson to json
-//        Gson gson = new Gson();
-//        String jsonData = gson.toJson(itemList, ItemList.class);
-//        return jsonData;
         return data;
 
     }
@@ -118,9 +123,16 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
 
             case R.id.button_next:
-                Intent next = new Intent(this, ResultActivity_.class);
-                next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(next);
+                if(masterPosition<getData().size()){
+                    masterPosition = masterPosition+1;
+                    getAdapterData();
+                    sectionName.setText(getData().get(masterPosition).getHeading());
+                }else{
+                    Intent next = new Intent(this, ResultActivity_.class);
+                    next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(next);
+                }
+
                 break;
 
             case R.id.back_button:

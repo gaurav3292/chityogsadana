@@ -45,8 +45,91 @@ public class DataEntry {
 
     public ArrayList<QuestionBean> getDependencyList() {
         ArrayList<QuestionBean> depenList = new ArrayList<>();
+        depenList.add(new QuestionBean("I am currently taking anti-depressant medication"));
+        depenList.add(new QuestionBean("I drink alcohol"));
+        depenList.add(new QuestionBean("I smoke marijuana"));
+        depenList.add(new QuestionBean("I have taken recreational drugs in the past"));
+        depenList.add(new QuestionBean("I am taking prescribed medication for some physical ailment"));
 
         return depenList;
+    }
+
+
+    public ArrayList<QuestionBean> getSleepList() {
+        ArrayList<QuestionBean> sleepList = new ArrayList<>();
+        sleepList.add(new QuestionBean("My sleep is deep and peaceful"));
+        sleepList.add(new QuestionBean("I have lots of dreams"));
+        sleepList.add(new QuestionBean("My dreams are violent in nature"));
+        sleepList.add(new QuestionBean("My sleep is light and interrupted"));
+        sleepList.add(new QuestionBean("I wake up after 6.30 am in the morning"));
+        sleepList.add(new QuestionBean("I feel sleepy and tired by 3.30pm in the afternoon"));
+
+        return sleepList;
+    }
+
+    public ArrayList<QuestionBean> getPreviousHistoryList() {
+        ArrayList<QuestionBean> historyList = new ArrayList<>();
+        historyList.add(new QuestionBean("I have a history of depression"));
+        historyList.add(new QuestionBean("I am under a lot of stress"));
+        historyList.add(new QuestionBean("I had a terrible childhood"));
+        historyList.add(new QuestionBean("I have unstable family relationships"));
+        historyList.add(new QuestionBean("I don’t have much support in my life"));
+        historyList.add(new QuestionBean("I don’t have high self esteem"));
+        historyList.add(new QuestionBean("I have a lot of broken relationships"));
+        historyList.add(new QuestionBean("I don’t have a good relationship with my parents"));
+        historyList.add(new QuestionBean("I have abused relationships"));
+        historyList.add(new QuestionBean("I enjoy learning new subjects"));
+        historyList.add(new QuestionBean("I love hot weather"));
+        historyList.add(new QuestionBean("I love hot showers"));
+        historyList.add(new QuestionBean("I have been in abusive relationships in the past"));
+        historyList.add(new QuestionBean("I have run away from my responsibilities"));
+
+        return historyList;
+    }
+
+    public ArrayList<QuestionBean> getEthicsList() {
+        ArrayList<QuestionBean> ethicsList = new ArrayList<>();
+        ethicsList.add(new QuestionBean("I help people without expectations"));
+        ethicsList.add(new QuestionBean("I tell lies quite often"));
+        ethicsList.add(new QuestionBean("I believe in preaching & practicing my beliefs"));
+        ethicsList.add(new QuestionBean("I run away from difficult situations"));
+        ethicsList.add(new QuestionBean("I am dedicated to my family"));
+        ethicsList.add(new QuestionBean("I am not happy at work"));
+        ethicsList.add(new QuestionBean("I don’t believe in ethics"));
+        ethicsList.add(new QuestionBean("I am materialistic"));
+        ethicsList.add(new QuestionBean("I want to be rich"));
+        ethicsList.add(new QuestionBean("I don’t mind using shortcuts to be successful"));
+        ethicsList.add(new QuestionBean("I blame myself for any failures in my life"));
+        ethicsList.add(new QuestionBean("I try to blame others for my failures"));
+        ethicsList.add(new QuestionBean("I respect my elders"));
+        ethicsList.add(new QuestionBean("I have good control over my desires"));
+        ethicsList.add(new QuestionBean("I have good control over my emotions"));
+        ethicsList.add(new QuestionBean("I have good control over my speech"));
+        ethicsList.add(new QuestionBean("I have good control over my actions"));
+
+
+        return ethicsList;
+    }
+
+
+    public ArrayList<QuestionBean> getDietList() {
+        ArrayList<QuestionBean> dietList = new ArrayList<>();
+        dietList.add(new QuestionBean("I eat meat x12 times a week"));
+        dietList.add(new QuestionBean("I eat meat x6 times a week"));
+        dietList.add(new QuestionBean("I eat tinned foods often"));
+        dietList.add(new QuestionBean("I use processed foods often"));
+        dietList.add(new QuestionBean("I eat organic tinned foods"));
+        dietList.add(new QuestionBean("I drink alcohol x5 times week"));
+        dietList.add(new QuestionBean("I drink alcohol x3 times a week"));
+        dietList.add(new QuestionBean("I drink Fiji Water 6-7 times a week"));
+        dietList.add(new QuestionBean("I drink coffee 2-3 times a week"));
+        dietList.add(new QuestionBean("I eat a lot of frozen foods"));
+        dietList.add(new QuestionBean("I suffer from constipation"));
+        dietList.add(new QuestionBean("I am overweight"));
+        dietList.add(new QuestionBean("I have a good appetite"));
+
+
+        return dietList;
     }
 
 
