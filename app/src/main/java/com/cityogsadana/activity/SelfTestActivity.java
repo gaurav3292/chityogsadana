@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,14 +29,12 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
     @ViewById(R.id.activity_self_test)
     ViewGroup viewGroup;
-    @ViewById(R.id.noti_img)
-    ImageView profileTab;
-    @ViewById(R.id.home_img)
-    ImageView homeImg;
     @ViewById(R.id.list)
     RecyclerView recyclerView;
     @ViewById(R.id.button_next)
     TextView nextBtn;
+    @ViewById(R.id.back_button)
+    ImageButton backButton;
 
     private UserBean userBean;
     private SelfTestAdapter selfTestAdapter;
@@ -45,14 +44,13 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
         Global.setFont(viewGroup,Global.regular);
 
-        homeImg.setOnClickListener(this);
-
         selfTestAdapter = new SelfTestAdapter(this,this,getData());
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(selfTestAdapter);
         recyclerView.setNestedScrollingEnabled(false);
 
         nextBtn.setOnClickListener(this);
+        backButton.setOnClickListener(this);
     }
 
     @Override
@@ -83,16 +81,15 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
         switch (v.getId())
         {
-            case R.id.home_img:
-                Intent level = new Intent(this,LevelActivity_.class);
-                level.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(level);
-                break;
 
             case R.id.button_next:
                 Intent next = new Intent(this,ResultActivity_.class);
                 next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(next);
+                break;
+
+            case R.id.back_button:
+                onBackPressed();
                 break;
         }
 

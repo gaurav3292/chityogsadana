@@ -8,16 +8,10 @@
     android:background="@color/activity_bg"
     tools:context="com.cityogsadana.activity.SelfTestActivity">
 
-    <include
-        layout="@layout/home_top_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></include>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/home_top_layout"
+        android:layout_below="@+id/top_layout"
         android:orientation="vertical">
 
 
@@ -28,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Questionnaier"
+            android:layout_marginTop="20dp"
+            android:text="Self Assessment"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_xlarge"
 
@@ -37,20 +32,32 @@
         <View
             android:layout_width="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="20dp"
             android:background="@color/app_red"
             android:layout_height="1.25dp">
 
         </View>
+        <TextView
+            android:id="@+id/section_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Section name"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_large"
+
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
@@ -63,12 +70,14 @@
                 android:textColor="@color/text_color"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
                 android:textSize="@dimen/app_text_size_medium"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:orientation="horizontal">
 
 
@@ -121,6 +130,9 @@
             android:textSize="16sp" />
 
     </LinearLayout>
-
+    <include
+        layout="@layout/top_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"></include>
 
 </RelativeLayout>

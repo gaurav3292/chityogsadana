@@ -35,6 +35,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     TextView termsLayout;
     @ViewById(R.id.user_name)
     TextView userName;
+    @ViewById(R.id.title)
+    TextView title;
     @ViewById(R.id.edit_profile_layout)
     LinearLayout editProfileLayout;
 
@@ -43,6 +45,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     {
         Global.setFont(viewGroup,Global.regular);
         Global.setCustomFont(Global.italic,termsLayout,ppLayout);
+
+        title.setText("Profile");
 
         backButton.setOnClickListener(this);
         editChangePass.setOnClickListener(this);
