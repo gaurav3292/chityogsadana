@@ -3,15 +3,18 @@ package com.cityogsadana.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.gsm.GsmCellLocation;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.adapter.CountrySpinnerAdapter;
 import com.cityogsadana.application.AppController;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
@@ -40,6 +43,10 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
     LinearLayout alreadyLayout;
     @ViewById(R.id.close)
     ImageButton closeButton;
+    @ViewById(R.id.country)
+    Spinner countrySpinner;
+
+    private CountrySpinnerAdapter countrySpinnerAdapter;
 
     @AfterViews
     public void setData()
@@ -53,6 +60,9 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
         buttonSignUp.setOnClickListener(this);
         alreadyLayout.setOnClickListener(this);
         closeButton.setOnClickListener(this);
+
+        countrySpinnerAdapter = new CountrySpinnerAdapter(this, Global.getCountries());
+        countrySpinner.setAdapter(countrySpinnerAdapter);
 
     }
 

@@ -174,8 +174,9 @@
                             android:id="@+id/country"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:padding="10dp" />
+                            android:backgroundTint="@color/icon_color"
+                            android:foregroundTint="@color/text_color"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
