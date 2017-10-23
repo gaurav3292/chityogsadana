@@ -61,8 +61,9 @@ public class Config {
     public static final String WAIVER = "WAIVER";
 
     //Api
-    public static final String URL = "";
-    public static final String LOGIN_IN ="";
+    public static final String URL = "http://54.213.234.78/chityogws";
+    public static final String LOGIN_IN ="/login";
+    public static final String SIGN_UP ="/";
 
 }
 

@@ -11,10 +11,10 @@ public class CustomJsonParams {
 
     JSONObject params;
 
-    public JSONObject getLogIn(String email, String password, String device_token) {
+    public JSONObject getLogIn(String email, String password) {
         params = new JSONObject();
         try {
-            params.put("device_type", "android");
+//            params.put("device_type", "android");
             params.put("email", email);
             params.put("password", password);
 

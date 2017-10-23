@@ -24,11 +24,11 @@ public class ErrorHelper {
         NetworkResponse response = error.networkResponse;
         if(response != null && response.data != null){
             switch(response.statusCode){
-                case 500:
+                case 400:
                     json = new String(response.data);
                     try{
                         JSONObject obj = new JSONObject(json);
-                        json = obj.getString("message");
+                        json = obj.getString("msg");
                     }
                     catch (Exception e) {
                         json = "Unknown Error";

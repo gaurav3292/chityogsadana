@@ -1,13 +1,11 @@
 package com.cityogsadana.activity;
 
 import android.content.Intent;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -37,7 +35,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 @EActivity(R.layout.activity_login)
-public class LoginActivity extends AppCompatActivity implements DataHandlerCallback, ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements DataHandlerCallback, ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener {
 
     @ViewById(R.id.activity_login)
     ViewGroup viewGroup;
@@ -57,13 +55,11 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
 
-
     @AfterViews
-    public void setData()
-    {
-        Global.setFont(viewGroup,Global.regular);
-        Global.setupUI(viewGroup,this);
-        Global.setCustomFont(Global.italic,findViewById(R.id.text_signup));
+    public void setData() {
+        Global.setFont(viewGroup, Global.regular);
+        Global.setupUI(viewGroup, this);
+        Global.setCustomFont(Global.italic, findViewById(R.id.text_signup));
 
         signUpLayout.setOnClickListener(this);
         forgotPassLayout.setOnClickListener(this);
@@ -85,17 +81,16 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
     @Override
     public void onClick(View v) {
-        switch(v.getId())
-        {
+        switch (v.getId()) {
             case R.id.signUp_layout:
-                Intent intent = new Intent(this,SignUpActivity_.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Intent intent = new Intent(this, SignUpActivity_.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 break;
 
             case R.id.forgot_pass_layout:
-                Intent intent1 = new Intent(this,ForgotPasswordActivity_.class);
-                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Intent intent1 = new Intent(this, ForgotPasswordActivity_.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent1);
                 break;
 
@@ -106,7 +101,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
                 boolean check = validate(email, password);
                 if (!check) {
                     CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.getLogIn(email, password, "abcd");
+                    JSONObject params = customJsonParams.getLogIn(email, password);
                     new ApiHandler(LoginActivity.this).apiResponse(LoginActivity.this, Config.LOGIN_IN, params);
                 }
                 break;
@@ -116,7 +111,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.no_change,R.anim.exit_to_right_fast);
+        overridePendingTransition(R.anim.no_change, R.anim.exit_to_right_fast);
     }
 
     @Override
@@ -143,13 +138,11 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
-
-            Gson gson = new Gson();
-            UserBean user = gson.fromJson(jsonObject.toString(), UserBean.class);
-            UserPref.saveUser(this, user);
-
             try {
-                cDialog.successShowHome(this, "Congratulations!",jsonObject.getString("msg"), "Ok", false);
+                Gson gson = new Gson();
+                UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
+                UserPref.saveUser(this, user);
+                cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

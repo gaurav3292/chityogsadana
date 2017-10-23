@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+
 import com.cityogsadana.activity.MainActivity;
 import com.cityogsadana.utils.Global;
 
@@ -103,11 +104,9 @@ public class ConnectionMessageDialog extends DialogFragment{
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity_.class);
+                    Intent intent = new Intent(activity, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
-                    activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-
                     activity.finish();
                 }
             });
@@ -116,10 +115,9 @@ public class ConnectionMessageDialog extends DialogFragment{
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity_.class);
+                    Intent intent = new Intent(activity, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
-                    activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     activity.finish();
                 }
             });

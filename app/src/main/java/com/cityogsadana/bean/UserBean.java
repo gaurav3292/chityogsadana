@@ -1,5 +1,7 @@
 package com.cityogsadana.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,7 @@ public class UserBean implements Serializable {
 
     private String name;
     private String country;
+    @SerializedName("userId")
     private String user_id;
     private String gender;
     private String email;
