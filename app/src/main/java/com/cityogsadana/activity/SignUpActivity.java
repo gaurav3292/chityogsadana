@@ -25,6 +25,9 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @EActivity(R.layout.activity_sign_up)
 public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener{
 
@@ -45,8 +48,11 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
     ImageButton closeButton;
     @ViewById(R.id.country)
     Spinner countrySpinner;
+    @ViewById(R.id.spinner_gender)
+    Spinner genderSpinner;
 
     private CountrySpinnerAdapter countrySpinnerAdapter;
+    private CountrySpinnerAdapter genderAdapter;
 
     @AfterViews
     public void setData()
@@ -63,6 +69,9 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
         countrySpinnerAdapter = new CountrySpinnerAdapter(this, Global.getCountries());
         countrySpinner.setAdapter(countrySpinnerAdapter);
+
+        genderAdapter = new CountrySpinnerAdapter(this, getGenders());
+        genderSpinner.setAdapter(genderAdapter);
 
     }
 
@@ -109,6 +118,15 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
 
         }
+    }
+
+    public List<String> getGenders() {
+        List<String> genderList = new ArrayList<>();
+        genderList.add("Male");
+        genderList.add("Female");
+        genderList.add("Other");
+        return genderList;
+
     }
 
 

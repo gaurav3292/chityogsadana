@@ -4,6 +4,7 @@ package com.cityogsadana.utils;
 public class Config {
 
 
+
     public static int DEVICE_WIDTH = 0;
     public static int DEVICE_HEIGHT = 0;
 
@@ -60,7 +61,9 @@ public class Config {
     public static final String WAIVER = "WAIVER";
 
     //Api
-    public static final String URL = "";
+    public static final String URL = "http://54.213.234.78/chityogws";
+    public static final String LOGIN_IN ="/login";
+    public static final String SIGN_UP ="/";
 
 }
 
