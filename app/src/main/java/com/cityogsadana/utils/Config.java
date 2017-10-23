@@ -4,6 +4,7 @@ package com.cityogsadana.utils;
 public class Config {
 
 
+
     public static int DEVICE_WIDTH = 0;
     public static int DEVICE_HEIGHT = 0;
 
@@ -61,6 +62,7 @@ public class Config {
 
     //Api
     public static final String URL = "";
+    public static final String LOGIN_IN ="";
 
 }
 
