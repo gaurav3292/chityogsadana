@@ -80,7 +80,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         String[] heading = {"Current Emotional State", "Substance Dependency", "Sleep", "Previous History", "Ethics", "Diet"};
         ArrayList<ArrayList<QuestionBean>> questions = new ArrayList<>();
         questions.add(dataEntry.getEmoList());
-//        questions.add(dataEntry.getDependencyList());
+        questions.add(dataEntry.getDependencyList());
 
 
         for (int i = 0; i < heading.length; i++) {

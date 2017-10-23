@@ -43,11 +43,11 @@ public class DataEntry {
 
     }
 
-//    public ArrayList<QuestionBean> getDependencyList() {
-//
-//
-//        return
-//    }
+    public ArrayList<QuestionBean> getDependencyList() {
+        ArrayList<QuestionBean> depenList = new ArrayList<>();
+
+        return depenList;
+    }
 
 
 }
