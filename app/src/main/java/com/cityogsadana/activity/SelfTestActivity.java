@@ -140,4 +140,10 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.no_change,R.anim.exit_to_right_fast);
+    }
 }

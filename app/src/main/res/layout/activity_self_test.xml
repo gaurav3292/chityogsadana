@@ -1,134 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_self_test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     android:background="@color/activity_bg"
     tools:context="com.cityogsadana.activity.SelfTestActivity">
 
-    <LinearLayout
+
+    <com.cityogsadana.utils.StickyScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/top_layout"
-        android:orientation="vertical">
-
-
-
-        <TextView
-            android:id="@+id/section_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/app_text_size_xlarge"
-
-            />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/app_red"
-            android:layout_height="1.25dp">
-
-        </View>
-
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/include2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/section_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Questions"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text=""
                 android:textColor="@color/text_color"
-                android:layout_weight="1"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/app_text_size_medium"/>
+                android:textSize="@dimen/app_text_size_xlarge"
+
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_red">
+
+            </View>
+
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:tag="sticky"
+                android:background="@color/activity_bg"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
-
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Questions"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="T"
-                    android:padding="12dp"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium"/>
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="F"
-                    android:padding="12dp"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="T"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/app_text_size_medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="F"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/app_text_size_medium" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/button_next"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_square"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="Next"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
+    </com.cityogsadana.utils.StickyScrollView>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="5dp">
-
-        </android.support.v7.widget.RecyclerView>
-
-        <TextView
-            android:id="@+id/button_next"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp"
-            android:layout_gravity="center"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:background="@drawable/button_square"
-            android:gravity="center"
-            android:text="Next"
-            android:textAllCaps="false"
-            android:textColor="@color/text_color"
-            android:textSize="16sp" />
-
-    </LinearLayout>
     <include
+        android:id="@+id/include2"
         layout="@layout/top_layout"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"></include>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
 
     <include
-        android:layout_height="wrap_content"
+        layout="@layout/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        layout="@layout/bottom_layout">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
     </include>
 
