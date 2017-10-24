@@ -27,5 +27,33 @@ public class CustomJsonParams {
         return params;
     }
 
+    public JSONObject getChangePass(String userId, String password ,String newPass) {
+        params = new JSONObject();
+        try {
+            params.put("UserId", userId);
+            params.put("password", password);
+            params.put("new_password", newPass);
 
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
+
+
+    public JSONObject getForgotPass(String email) {
+        try {
+            params.put("email", email);
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
 }

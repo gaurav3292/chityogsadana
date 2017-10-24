@@ -58,12 +58,14 @@ public class Config {
     ///type of policies
     public static final String T_C = "T_C";
     public static final String P_P = "P_P";
-    public static final String WAIVER = "WAIVER";
+
 
     //Api
     public static final String URL = "http://54.213.234.78/chityogws";
     public static final String LOGIN_IN ="/login";
     public static final String SIGN_UP ="/";
+    public static final String CHANGE_PASS ="/";
+    public static final String FORGOT_PASS ="/";
 
 }
 
