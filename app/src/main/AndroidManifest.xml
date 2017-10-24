@@ -87,10 +87,12 @@
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.ResultActivity_"
+        <activity
+            android:name=".activity.ResultActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.introduction.LevelOneActivity"></activity>
     </application>
 
 </manifest>

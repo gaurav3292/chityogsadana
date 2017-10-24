@@ -69,4 +69,37 @@ enhance your health and connect you to your Chit.\n\n
         \u2022 There are 6 stages in this programme. Stages 1-3 are free. There is a small fee after this point as you move deeper into the programme\n\n
         \u2022 Every stage of this programme has its own importance and power to remove the covering from one’s Chit so until you are fully satisfied with the result at each stage and are able to incorporate them into your life, don’t move to next stage because the result will elude you. Then you will say Chit Yog Sadhana does not work when in fact it is you who need to reflect on your actions.\n\n</string>
 
+
+
+    //Level one intro
+    <string name="one_intro">The first stage of Chit Yog Sadhana is various routines to cleanse the system and build the foundation for the next stage. Each action of this stage will strengthen every individual to take up the next part of the journey, where one will burn the layers covering their Chit and make their way through the darkness of mental and emotional problems to see the light at the end of the tunnel.
+\n\nYou will follow these daily regimes for 30 days.</string>
+    <string name="step1_1">1. Get up early</string>
+    <string name="step1_1_detail">It is advisable for you wake up between 5.00 – 5.30 am as this time is considered as pure consciousness time (Brahma Muhurta). In Vedic philosophy, it is said that from 3.30am till sunrise one has more ability to connect with their Chit as the coverings are less potent during this period and one’s Chit has the natural ability to move upwards towards its source.
+\nAt this time, the qualities of the environment are pure, calm, clear and vibrant so one’s mind is calm, clear and stable and has the ability to connect with the body easily.
+\nOn physical level waking up during this period provides more clarity, stability in thoughts.</string>
+<string name="step1_2">2. Brush your teeth and scrape your tongue</string>
+<string name="step1_2_detail">Those who are dis-connected from their Chit or have lots of covering on their Chit will find their tongues will always have a coating in the morning when they wake up.
+\nThe colour of the coating will be based on the type of emotions one suffers from. Those suffering from anxiety, worries, fear will have light white, brown coating on their tongue. Those suffering from anger, frustration, jealously, hatred, stress will have a coating of white-yellow colour. Those suffering from depression, possessiveness, greed, sadness will have white thick costing on their tongue.
+\nIf one does not remove this coating within 3 minutes of waking up the coating will be re-absorbed and create more coating on their Chit. Hence it is advisable to brush teeth and scrape tongue within 3 minutes of getting up.</string>
+<string name="step_1_3">3. Make a morning de-tox drink</string>
+<string name="step_1_3_detail">Make a drink first thing in the morning. To a glass of warm water add,\n
+\u2022 ½ teaspoon of grated ginger\n
+\u2022 ½ teaspoon of honey\n
+\u2022 ½ teaspoon of lemon juice\n
+\nThis helps to flush the toxins from the gut before they get re-absorbed. Those who suffer from various emotions will always has a build-up of toxins in their gut and this helps to flush them out. If not, these toxins ultimately create another covering on their Chit and a stronger dis-connection from their Chit.</string>
+<string name="step_1_4">4. Nasya (nasal drops)</string>
+<string name="step_1_4_detail">Everyone should put three drops of warm, cold pressed black sesame oil in each nostril and massage around the eyes and nose three times.
+\nThose who are dis-connected from their Chit always tend to experience a lack of enthusiasm or lack of cheerfulness. Sometime don’t feel like talking to anyone or get irritated and impatient easily. They tend to get angry or frustrated very easily.
+\nThese drops help to counter these emotions and help to remove the covering from their Chit.</string>
+<string name="step_1_5">5. Avoid hot showers</string>
+<string name="step_1_5_detail">Those who are dis-connected from their Chit always like hot showers. The more dis-connected, the hotter the shower but this can be counter-productive. This heat affects the pituitary and pineal glands which impacts on the secretion of serotonin, making a person feel dull, heavy and lacking in enthusiasm.
+\nTo know if your shower is too hot, check if the steam rises above your head. If it does, it is too hot. Also, when you finish the shower, if you have red/pink skin, the shower was too hot.</string>
+<string name="step_1_6">6. Self-massage with warm oil</string>
+<string name="step_1_6_detail"> </string>
+<string name="step_1_7">7. Deep breathing</string>
+<string name="step_1_7_detail"></string>
+<string name="step_1_8">8. Morning and evening walk</string>
+<string name="step_1_8_detail"></string>
+
 </resources>

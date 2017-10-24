@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.cityogsadana.utils.DataEntry;
 import com.cityogsadana.R;
 import com.cityogsadana.adapter.SelfTestAdapter;
 import com.cityogsadana.bean.QuestionBean;
 import com.cityogsadana.bean.SelfTestBean;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.utils.DataEntry;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
@@ -45,7 +45,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     private SelfTestAdapter selfTestAdapter;
     private DataEntry dataEntry = new DataEntry();
 
-    private  int masterPosition = 0;
+    private int masterPosition = 0;
 
     @AfterViews
     public void setData() {
@@ -53,11 +53,11 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         Global.setFont(viewGroup, Global.regular);
         title.setText("Self Assessment");
 
-        ArrayList<SelfTestBean> data =  getData();
+        ArrayList<SelfTestBean> data = getData();
         sectionName.setText(getData().get(masterPosition).getHeading());
 
 
-       getAdapterData();
+        getAdapterData();
 
         nextBtn.setOnClickListener(this);
         backButton.setOnClickListener(this);
@@ -78,7 +78,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    public  ArrayList<SelfTestBean> getData()
+    public ArrayList<SelfTestBean> getData()
 
     {
         ArrayList<SelfTestBean> data = new ArrayList<>();
@@ -106,9 +106,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -122,11 +119,11 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
 
             case R.id.button_next:
-                if(masterPosition<getData().size()){
-                    masterPosition = masterPosition+1;
+                if (masterPosition < getData().size()) {
+                    masterPosition = masterPosition + 1;
                     getAdapterData();
                     sectionName.setText(getData().get(masterPosition).getHeading());
-                }else{
+                } else {
                     Intent next = new Intent(this, ResultActivity_.class);
                     next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(next);
@@ -144,6 +141,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.no_change,R.anim.exit_to_right_fast);
+        overridePendingTransition(R.anim.no_change, R.anim.exit_to_right_fast);
     }
 }
