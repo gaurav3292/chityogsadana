@@ -1,4 +1,4 @@
-package com.cityogsadana;
+package com.cityogsadana.utils;
 
 import com.cityogsadana.bean.QuestionBean;
 

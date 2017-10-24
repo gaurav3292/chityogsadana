@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.cityogsadana.DataEntry;
+import com.cityogsadana.utils.DataEntry;
 import com.cityogsadana.R;
 import com.cityogsadana.adapter.SelfTestAdapter;
 import com.cityogsadana.bean.QuestionBean;
@@ -18,7 +18,6 @@ import com.cityogsadana.bean.SelfTestBean;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Global;
-import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
