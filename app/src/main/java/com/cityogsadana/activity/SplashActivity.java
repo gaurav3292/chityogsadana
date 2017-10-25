@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 
 import com.cityogsadana.R;
+import com.cityogsadana.activity.introduction.LevelOneActivity;
+import com.cityogsadana.activity.introduction.LevelOneActivity_;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.EActivity;
@@ -30,7 +32,7 @@ Global.setCustomFont(Global.italic,findViewById(R.id.welcome_txt));
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity_.class);
+                Intent intent = new Intent(SplashActivity.this, LevelOneActivity_.class);
                 startActivity(intent);
                 finish();
             }

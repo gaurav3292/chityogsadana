@@ -138,4 +138,21 @@
         <item name="android:textColorLink">@color/colorAccent</item>
     </style>
 
+    <style name="DateTimePicker" >
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:typeface">monospace</item>
+
+    </style>
+
+
+    <style name="timePicker" parent="@android:style/Theme.Holo.Light">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:typeface">monospace</item>
+
+    </style>
+
 </resources>
