@@ -132,5 +132,24 @@ public class DataEntry {
         return dietList;
     }
 
+    public ArrayList<QuestionBean> getLevelFourList() {
+        ArrayList<QuestionBean> levelFourList = new ArrayList<>();
+        levelFourList.add(new QuestionBean("Get angry?"));
+        levelFourList.add(new QuestionBean("Feel jealous?"));
+        levelFourList.add(new QuestionBean("Feel hatred towards another person?"));
+        levelFourList.add(new QuestionBean("Feel frustrated?"));
+        levelFourList.add(new QuestionBean("Cheat on someone?"));
+        levelFourList.add(new QuestionBean("Steal anything?"));
+        levelFourList.add(new QuestionBean("Get nervous?"));
+        levelFourList.add(new QuestionBean("Tell a lie?"));
+        levelFourList.add(new QuestionBean("Do anything which you were not supposed to do?"));
+        levelFourList.add(new QuestionBean("Say something hurtful to your parents?"));
+        levelFourList.add(new QuestionBean("Get upset with your children?"));
+        levelFourList.add(new QuestionBean("Treat your employees badly?"));
+        levelFourList.add(new QuestionBean("Deal badly with a work colleague?"));
+
+        return levelFourList;
+    }
+
 
 }
