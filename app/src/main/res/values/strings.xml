@@ -107,8 +107,84 @@ enhance your health and connect you to your Chit.\n\n
 <string name="step_1_8_detail">One must go for a 30 minute walk every day around 6.00am. and again at 6.00 pm This helps to bring more vitality, vigour and alertness. It loosens the body, improves circulation, bring more groundedness and stablises the immune system.
 \nUntil or unless one is physically and mentally strong and stable one cannot make effort to connect with his/her Chit.</string>
 
-    
+
     <!--//Level two intro -->
     <!--<string name=""-->
+
+    //Level three intro
+    <string name="three_intro">
+        The phrase, “We are what we eat” is not just about what you eat but also includes how you eat as this also impacts on Chit, particularly things like:\n\n
+\u2022 Technology\n
+\u2022 Surroundings\n
+\u2022 Our ways to eat\n
+\u2022 Our thoughts at time of eating
+\n\nThese factors are responsible for either creating more covering on our Chit and taking us further away from our Chit or helping us remove these coverings to connect us with our Chit and give us inner peace and wellness that lasts.
+To achieve this:\n\n
+\u2022 Don’t eat your meal while watching TV\n
+\u2022 Don’t eat while talking\n
+\u2022 Don’t eat when emotionally upset\n
+\u2022 Don’t eat on the run\n
+\u2022 Don’t eat and drink together\n
+\u2022 Don’t eat while on phone\n
+\u2022 Don’t eat while playing on computers\n
+\u2022 Don’t cook when emotionally upset, either sad, anxious or stressed, angry or frustrated\n
+\u2022 Don’t have bad thoughts while eating\n
+\u2022 Don’t just eat to fill your tummy\n
+\u2022 Never eat food when standing. Must sit while eating.\n
+    </string>
+
+
+    //Level four intro
+    <string name="four_intro">
+        This stage is key to your wellness. One wonders I did everything in my life to overcome my problems:\n\n
+\u2022 I follow the advice of my medical professionals\n
+\u2022 I follow the advice of my religious guru\n
+\u2022 Gone to religious place every day\n
+\u2022 Made lots of changes to my diet\n
+\u2022 Meditate for 1 hour every day\n
+\u2022 Have become a vegan\n
+\u2022 Chant mantras every day\n
+\u2022 Wear sandalwood paste on my forehead\n
+\u2022 Followed daily routines to improve my lifestyle\n
+\nBut still my mental and emotional issues affect me.\n\n
+Chit Yog Sadhana advises us superficial changes never help to take the covering off from our Chit alone with above unless out thoughts, our deeds, our interactions with others improve and get better. Our control of our desires, our control of our senses all impact on our mind and lead mind to make mistakes, make wrong choices, perceive things around us differently.
+\n\nChit Yog Sadhana as this level helps one to identify are we slave of our mind or are we master of our mind? Be master of your mind and take the covering off your Chit.
+\n\nChit Yog Sadhana helps is to achieve this in two steps:\n
+    </string>
+
+    //Level four sub intro
+    <string name="four_step_1">We all understand that our thoughts become our emotions and our emotions lead to our actions, which can either create a covering on our Chit or help to remove it, depending on the nature of the deed. Therefore, it is important to process these thoughts and emotions on a daily basis because if we don’t, they can create more coverings to our Chit.
+\n\nWhen one goes to sleep and enters a sub-conscious state, these emotions become active. According to the qualities of these emotions, they leave an imprint on our body and nervous system. For example, if one has un-processed emotions of anxiety and worry, they can impact the body in this form. The result of this situation is that despite a person having 8 -10 hours’ sleep, rather than being in a state of relaxation, our body and nervous system remain in an active mode, so we wake up feeling exhausted and fatigued rather than rested and calm. We are all aware that sleep is when the body repairs itself from the wear and tear of daily living. If our body is in an active state during this time, the repair work does not take place, and slowly the body’s immune system can become affected.
+\n\nTo prevent this process, it is very important that we process our thoughts on a daily basis. No matter how busy you are, before going to bed sit for 10 minutes to review the day. Close your eyes and ask yourself:
+\u2022 Did I get angry today?\n
+\u2022 Did I get jealous with someone?\n
+\u2022 Did I have feelings of hatred today?\n
+\u2022 Did I get frustrated today?\n
+\u2022 Did I cheat on someone today?\n
+\u2022 Did I steal anything today?\n
+\u2022 Did I get nervous today?\n
+\u2022 Have I spoke a lie today?\n
+\u2022 Have I done anything which I am not supposed to do?\n
+\u2022 Have I said something to my parents that could be hurtful?\n
+\u2022 As I upset with my children today?\n
+\u2022 Did I treat my employees badly today?\n
+\u2022 Have I dealt with my work colleagues wrongly?\n\n
+If the answer to any of the above if ‘Yes”
+\u2022 Identify what was it\n
+\u2022 Why it happened\n
+\u2022 How I can avoid it\n
+\u2022 How can I improve it for tomorrow?\n\n
+Continue this practice for 15 days.</string>
+
+    //Level four sub intro 2
+    <string name="four_step_2">\u2022 Each evening, before bed, stand in front of a mirror\n
+\u2022 Look into to your eyes\n
+\u2022 Place you hand on you heart and ask yourself, “Have I done anything wrong today?\n
+\u2022 Keep repeating this question for 5 minutes, looking into your eyes the whole time\n
+\u2022 During this time, if you have to look away from your reflection (even for 1 second), stop the practice and sit quietly for 10 minutes.\n
+\u2022 Ask yourself what thoughts came up that made you look away. Were you remembering thoughts and actions that occurred during the day that made you uncomfortable? If so, make a commitment to yourself, to your Chit, not to repeat these thoughts and actions tomorrow. If you realise you have reacted the wrong way in a situation, identify it and make a commitment to amend your behaviour for next time. Also, make a commitment to apologise to anyone you may have hurt next time you see them.\n
+\u2022 Repeat this process every night until you are able to look into the mirror for the full five minutes without looking away.\n
+\nThose who can do this on a daily basis can rest assured that though they might suffer from some physical problem in their life, they will never ever suffer from any mental ailments.\n
+\nWhen ready, you can move onto the next stage</string>
 
 </resources>
