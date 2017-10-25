@@ -112,7 +112,41 @@ enhance your health and connect you to your Chit.\n\n
     <!--<string name=""-->
 
     <string name="intro_two">There is a saying, “We are what we eat”. Our thoughts and actions are influenced by the food we eat so we need to minimise the intake of foods which can cause more covering to our Chit. When we are dis-connected from our Chit we begin to make wrong choices we have to take wrong decisions which leads to do such activity which can build another layer on our Chit.
-\n\nFor the next 30 days, avoid eating the following foods:</string>
+\n\nFor the next 30 days, avoid eating the following foods:
+\n\nFrozen food:
+        \n\t\tFrozen food is considered more dull, heavy and difficult to digest. This food has natural tendency to make one’s mind duller heavy and cloudy which makes it difficult for one to work to re-connect to their Chit and connect with it hence it is advisable to avoid all frozen food
+        \n\nTinned food:
+        \n\t\tThis food also lacks prana life force which is very essential to make connections with Chit. Hence those who have dis-connected from Chit always naturally go towards liking tinned foods but those seeking to connect with Chit should avoid eating tinned food
+        \n\nProcessed food:
+        \n\t\tStimulating – Creates more disharmony with Chit
+        \n\nMicrowaved food:
+        \n\t\tLacks Prana – Creates confusion with Chit
+        \n\nWhite bread:
+        \n\t\tHeavy, dull, sticky -  Creates heaviness and dullness, lack of energ.
+        \n\nCoffee:
+        \n\t\tStimulating – Creates more dis-harmony. Burns Prana
+        \n\nPeanut Butter:
+        \n\t\tHeavy, oily - Creates more disharmony with Chit
+        \n\nChilli:
+        \n\t\tHot: Creates more disharmony with Chit. Burns Prana
+        \n\nWhite sugar:
+        \n\t\tBring more aggravation
+        \n\nTomato sauce:
+        \n\t\tAcidic, heavy; Disharmony with Chit. Burns Prana
+        \n\nAlcohol:
+        \n\t\tStimulating. Disconnect with Chit lead to making wrong choices
+        \n\nMarijuana:
+        \n\t\tMind altering. Disconnect with Chit
+        \n\nRecreational drugs:
+        \n\t\tBuild more covering on Chit by making wrong choices
+        \n\nPre-cooked foods:
+        \n\t\tCloudy, heavy and dull
+        \n\nRed meat:
+        \n\t\tHeavy, dull, cloudy and dead food (lacks Prana). Adds more layers
+        \n\nChilli sauce:
+        \n\t\tStimulating
+
+    </string>
 
 
 </resources>

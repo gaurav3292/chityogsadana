@@ -25,6 +25,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/intro_two"
                 android:textColor="@color/text_color"
+                android:layout_marginBottom="10dp"
                 android:textSize="@dimen/app_text_size_medium" />
 
         </LinearLayout>
