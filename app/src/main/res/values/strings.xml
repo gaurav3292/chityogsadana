@@ -78,33 +78,33 @@ enhance your health and connect you to your Chit.\n\n
 \nAt this time, the qualities of the environment are pure, calm, clear and vibrant so one’s mind is calm, clear and stable and has the ability to connect with the body easily.
 \nOn physical level waking up during this period provides more clarity, stability in thoughts.</string>
     <string name="step1_2">2. Brush your teeth and scrape your tongue</string>
-<string name="step1_2_detail">Those who are dis-connected from their Chit or have lots of covering on their Chit will find their tongues will always have a coating in the morning when they wake up.
+    <string name="step1_2_detail">Those who are dis-connected from their Chit or have lots of covering on their Chit will find their tongues will always have a coating in the morning when they wake up.
 \nThe colour of the coating will be based on the type of emotions one suffers from. Those suffering from anxiety, worries, fear will have light white, brown coating on their tongue. Those suffering from anger, frustration, jealously, hatred, stress will have a coating of white-yellow colour. Those suffering from depression, possessiveness, greed, sadness will have white thick costing on their tongue.
 \nIf one does not remove this coating within 3 minutes of waking up the coating will be re-absorbed and create more coating on their Chit. Hence it is advisable to brush teeth and scrape tongue within 3 minutes of getting up.</string>
     <string name="step_1_3">3. Make a morning de-tox drink</string>
-<string name="step_1_3_detail">Make a drink first thing in the morning. To a glass of warm water add,\n
+    <string name="step_1_3_detail">Make a drink first thing in the morning. To a glass of warm water add,\n
 \u2022 ½ teaspoon of grated ginger\n
 \u2022 ½ teaspoon of honey\n
 \u2022 ½ teaspoon of lemon juice\n
 \nThis helps to flush the toxins from the gut before they get re-absorbed. Those who suffer from various emotions will always has a build-up of toxins in their gut and this helps to flush them out. If not, these toxins ultimately create another covering on their Chit and a stronger dis-connection from their Chit.</string>
     <string name="step_1_4">4. Nasya (nasal drops)</string>
-<string name="step_1_4_detail">Everyone should put three drops of warm, cold pressed black sesame oil in each nostril and massage around the eyes and nose three times.
+    <string name="step_1_4_detail">Everyone should put three drops of warm, cold pressed black sesame oil in each nostril and massage around the eyes and nose three times.
 \nThose who are dis-connected from their Chit always tend to experience a lack of enthusiasm or lack of cheerfulness. Sometime don’t feel like talking to anyone or get irritated and impatient easily. They tend to get angry or frustrated very easily.
 \nThese drops help to counter these emotions and help to remove the covering from their Chit.</string>
     <string name="step_1_5">5. Avoid hot showers</string>
-<string name="step_1_5_detail">Those who are dis-connected from their Chit always like hot showers. The more dis-connected, the hotter the shower but this can be counter-productive. This heat affects the pituitary and pineal glands which impacts on the secretion of serotonin, making a person feel dull, heavy and lacking in enthusiasm.
+    <string name="step_1_5_detail">Those who are dis-connected from their Chit always like hot showers. The more dis-connected, the hotter the shower but this can be counter-productive. This heat affects the pituitary and pineal glands which impacts on the secretion of serotonin, making a person feel dull, heavy and lacking in enthusiasm.
 \nTo know if your shower is too hot, check if the steam rises above your head. If it does, it is too hot. Also, when you finish the shower, if you have red/pink skin, the shower was too hot.</string>
     <string name="step_1_6">6. Self-massage with warm oil</string>
-<string name="step_1_6_detail">Those suffering from emotions such as anxiety, worries, fear, confusion will always have stiff and tight bodies, their hand and feet will always be cold and their skin dry.
+    <string name="step_1_6_detail">Those suffering from emotions such as anxiety, worries, fear, confusion will always have stiff and tight bodies, their hand and feet will always be cold and their skin dry.
 \nThose suffering from anger, frustration, jealously hatred their bodies will always be hot with skin rashes and boils.
 \nThose suffering from greed, passiveness, depression, suicidal thoughts will always have sluggish lymphatic system their bodies will have a natural tendency to hold water. This also stagnates your energy flow.
 \nAll these are a sign of how you are dis-connected from your Chit.
 \nEvery morning, before your shower, one should massage their body with warmed, cold-pressed black sesame oil in upward circular motion. It helps to improve lymphatic and circulation systems and flush toxins from lymphatic system and improve the immune system. This massage also makes bodily energy flow more rhythmically. </string>
     <string name="step_1_7">7. Deep breathing</string>
-<string name="step_1_7_detail">Shallow breathing is an indicator you are dis-connected from your Chit.
+    <string name="step_1_7_detail">Shallow breathing is an indicator you are dis-connected from your Chit.
 \nEveryone must take 10-15 long, deep, slow breaths through the nose three times a day. This helps to provide fresh prana to one’s body which brings more vitality, vigour and ability connect to one’s Chit.</string>
     <string name="step_1_8">8. Morning and evening walk</string>
-<string name="step_1_8_detail">One must go for a 30 minute walk every day around 6.00am. and again at 6.00 pm This helps to bring more vitality, vigour and alertness. It loosens the body, improves circulation, bring more groundedness and stablises the immune system.
+    <string name="step_1_8_detail">One must go for a 30 minute walk every day around 6.00am. and again at 6.00 pm This helps to bring more vitality, vigour and alertness. It loosens the body, improves circulation, bring more groundedness and stablises the immune system.
 \nUntil or unless one is physically and mentally strong and stable one cannot make effort to connect with his/her Chit.</string>
 
 
@@ -186,5 +186,9 @@ Continue this practice for 15 days.</string>
 \u2022 Repeat this process every night until you are able to look into the mirror for the full five minutes without looking away.\n
 \nThose who can do this on a daily basis can rest assured that though they might suffer from some physical problem in their life, they will never ever suffer from any mental ailments.\n
 \nWhen ready, you can move onto the next stage</string>
+
+    <string name="intro_two">There is a saying, “We are what we eat”. Our thoughts and actions are influenced by the food we eat so we need to minimise the intake of foods which can cause more covering to our Chit. When we are dis-connected from our Chit we begin to make wrong choices we have to take wrong decisions which leads to do such activity which can build another layer on our Chit.
+\n\nFor the next 30 days, avoid eating the following foods:</string>
+
 
 </resources>
