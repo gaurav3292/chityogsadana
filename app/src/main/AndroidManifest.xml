@@ -104,20 +104,26 @@
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.introduction.LevelFourActivity_"
+        <activity
+            android:name=".activity.introduction.LevelFourActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity android:name=".activity.introduction.SubLevelFourActivity_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.introduction.SubLevelFourActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity android:name=".activity.introduction.LevelTwoActivity_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.introduction.LevelTwoActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.introduction.LevelFiveActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
