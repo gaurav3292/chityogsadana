@@ -133,4 +133,60 @@ public class DataEntry {
     }
 
 
+    public ArrayList<QuestionBean> getLevelOneList() {
+        ArrayList<QuestionBean> levelOneList = new ArrayList<>();
+        levelOneList.add(new QuestionBean("Get up early?"));
+        levelOneList.add(new QuestionBean("Brush your teeth and scrape your tongue?"));
+        levelOneList.add(new QuestionBean("Make your morning de-tox drink?"));
+        levelOneList.add(new QuestionBean("Apply Nasal drops?"));
+        levelOneList.add(new QuestionBean("Avoid a hot shower?"));
+        levelOneList.add(new QuestionBean("Self-massage with warm oil?"));
+        levelOneList.add(new QuestionBean("Do your deep breathing?"));
+
+        return levelOneList;
+
+
+    }
+
+
+    public ArrayList<QuestionBean> getlevelTwoList() {
+        ArrayList<QuestionBean> levelTwoList = new ArrayList<>();
+        levelTwoList.add(new QuestionBean("Frozen food"));
+        levelTwoList.add(new QuestionBean("Tinned food"));
+        levelTwoList.add(new QuestionBean("Processed food"));
+        levelTwoList.add(new QuestionBean("Microwaved food"));
+        levelTwoList.add(new QuestionBean("White bread"));
+        levelTwoList.add(new QuestionBean("Coffee"));
+        levelTwoList.add(new QuestionBean("Peanut Butter"));
+        levelTwoList.add(new QuestionBean("Chilli"));
+        levelTwoList.add(new QuestionBean("White sugar"));
+        levelTwoList.add(new QuestionBean("Tomato sauce"));
+        levelTwoList.add(new QuestionBean("Alcohol"));
+        levelTwoList.add(new QuestionBean("Marijuana"));
+        levelTwoList.add(new QuestionBean("Recreational drugs"));
+        levelTwoList.add(new QuestionBean("Pre-cooked foods"));
+        levelTwoList.add(new QuestionBean("Red meat"));
+
+        return levelTwoList;
+    }
+
+
+    public ArrayList<QuestionBean> getlevelThreeList() {
+        ArrayList<QuestionBean> levelThreeList = new ArrayList<>();
+        levelThreeList.add(new QuestionBean("Eat your meal while watching TV"));
+        levelThreeList.add(new QuestionBean("Eat while talking"));
+        levelThreeList.add(new QuestionBean("Eat when emotionally upset"));
+        levelThreeList.add(new QuestionBean("Eat on the run"));
+        levelThreeList.add(new QuestionBean("Eat and drink together"));
+        levelThreeList.add(new QuestionBean("Eat while on phone"));
+        levelThreeList.add(new QuestionBean("Eat while playing on your computer"));
+        levelThreeList.add(new QuestionBean("Cook when emotionally upset"));
+        levelThreeList.add(new QuestionBean("Have bad thoughts while eating"));
+        levelThreeList.add(new QuestionBean("Eat to just fill your tummy"));
+        levelThreeList.add(new QuestionBean("Eat standing up"));
+        return levelThreeList;
+
+    }
+
+
 }
