@@ -63,9 +63,9 @@ public class Config {
     //Api
     public static final String URL = "http://54.213.234.78/chityogws";
     public static final String LOGIN_IN ="/login";
-    public static final String SIGN_UP ="/";
-    public static final String CHANGE_PASS ="/";
-    public static final String FORGOT_PASS ="/";
+    public static final String SIGN_UP ="/signup";
+    public static final String CHANGE_PASS ="/changePassword";
+    public static final String FORGOT_PASS ="/forgotPassword";
 
 }
 
