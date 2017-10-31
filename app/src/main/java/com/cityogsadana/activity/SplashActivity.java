@@ -33,7 +33,7 @@ Global.setCustomFont(Global.italic,findViewById(R.id.welcome_txt));
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LevelFourActivity_.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity_.class);
                 startActivity(intent);
                 finish();
             }

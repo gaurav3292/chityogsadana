@@ -11,20 +11,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
-
-import com.cityogsadana.activity.ChangePassword;
 import com.cityogsadana.activity.MainActivity;
+import com.cityogsadana.activity.SelfTestActivity_;
 import com.cityogsadana.utils.Global;
 
 /**
  * Created by pc15 on 10/23/2017.
  */
 
-public class ConnectionMessageDialog extends DialogFragment{
+public class ConnectionMessageDialog extends DialogFragment {
 
     private ViewGroup viewGroup;
     private LinearLayout okButton;
-    private LinearLayout cancelButton;
+    private LinearLayout cancelButton, cancelLayout;
     private TextView headingTxt, messageTxt, buttonTxt;
     private Dialog dialog;
 
@@ -77,7 +76,6 @@ public class ConnectionMessageDialog extends DialogFragment{
     }
 
 
-
     public void successShowHome(final Activity activity, String title, String message, String button, Boolean b) {
 
         try {
@@ -100,13 +98,12 @@ public class ConnectionMessageDialog extends DialogFragment{
             buttonTxt.setText(button);
 
 
-
             okButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
                     Intent intent = new Intent(activity, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.finish();
                 }
@@ -117,7 +114,7 @@ public class ConnectionMessageDialog extends DialogFragment{
                 public void onClick(View view) {
                     dialog.dismiss();
                     Intent intent = new Intent(activity, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.finish();
                 }
@@ -175,4 +172,62 @@ public class ConnectionMessageDialog extends DialogFragment{
         }
 
     }
+
+    public void showSelfTest(final Activity activity, String title, String message, String button, Boolean b) {
+
+        try {
+            dialog = new Dialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_alert);
+            dialog.getWindow().getAttributes().width = ViewGroup.LayoutParams.FILL_PARENT;
+            viewGroup = (ViewGroup) dialog.findViewById(R.id.dialog_alert);
+            Global.setFont(viewGroup, Global.regular);
+
+            okButton = (LinearLayout) dialog.findViewById(R.id.ok_button);
+            cancelButton = (LinearLayout) dialog.findViewById(R.id.cancel_button);
+            headingTxt = (TextView) dialog.findViewById(R.id.heading);
+            messageTxt = (TextView) dialog.findViewById(R.id.message);
+            buttonTxt = (TextView) dialog.findViewById(R.id.button_text);
+            cancelLayout = (LinearLayout) dialog.findViewById(R.id.cancel);
+            dialog.setCancelable(false);
+
+            headingTxt.setText(title);
+            messageTxt.setText(message);
+            buttonTxt.setText(button);
+
+
+            okButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                    Intent intent = new Intent(activity, SelfTestActivity_.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    activity.overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
+
+                }
+            });
+
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+
+            cancelLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+
+                }
+            });
+            // Showing Alert Message
+            dialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

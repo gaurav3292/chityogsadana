@@ -100,6 +100,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
                 boolean check = validate(email, password);
                 if (!check) {
+
                     CustomJsonParams customJsonParams = new CustomJsonParams();
                     JSONObject params = customJsonParams.getLogIn(email, password);
                     new ApiHandler(LoginActivity.this).apiResponse(LoginActivity.this, Config.LOGIN_IN, params);

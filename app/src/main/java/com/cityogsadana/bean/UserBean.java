@@ -21,6 +21,17 @@ public class UserBean implements Serializable {
     private String address;
     private String is_email_verified;
     private String profile_pic;
+    private String self_result;
+
+
+
+    public String getSelf_result() {
+        return self_result;
+    }
+
+    public void setSelf_result(String self_result) {
+        this.self_result = self_result;
+    }
 
     public String getProfile_pic() {
         return profile_pic;
