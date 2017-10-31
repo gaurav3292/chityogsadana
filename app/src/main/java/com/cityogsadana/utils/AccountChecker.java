@@ -10,7 +10,7 @@ public class AccountChecker {
 
     private static String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\"
             + "@([\\w]+\\.)+[\\w]+[\\w]$";
-    private static String NUMBER_REGEX= "[0-9]+";
+    private static String NUMBER_REGEX = "[0-9]+";
     public static boolean show = false;
     public static boolean convertDone = false;
 
@@ -156,12 +156,12 @@ public class AccountChecker {
             int mon = Integer.parseInt(month);
             int expyear = Integer.parseInt(year);
 
-            if(currentYear==expyear){
+            if (currentYear == expyear) {
                 if (mon >= currentMonth) {
                     valid = true;
                 }
-            }else{
-                valid=true;
+            } else {
+                valid = true;
             }
 
 
@@ -170,22 +170,21 @@ public class AccountChecker {
 
     }
 
-    public  static  boolean checkDate(String eNdTime,String sTartTime)
-    {
+    public static boolean checkDate(String eNdTime, String sTartTime) {
         boolean valid = false;
         try {
 
             String string1 = eNdTime;
-            Date endDate =  new SimpleDateFormat("HH:mm:ss").parse(string1);
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse(string1);
 
             String string2 = sTartTime;
             Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);
 
             if (endDate.after(beforeDate)) {
-                System.out.println("log_tag" + "Time is greater" );
-                valid =true;
-            }else{
-                System.out.println("log_tag" + "Time is smaller" );
+                System.out.println("log_tag" + "Time is greater");
+                valid = true;
+            } else {
+                System.out.println("log_tag" + "Time is smaller");
                 valid = false;
             }
         } catch (ParseException e) {
@@ -194,4 +193,11 @@ public class AccountChecker {
         return valid;
     }
 
+    public static boolean checkConfirmPassword(String password, String confirmPassword) {
+        boolean valid = false;
+        if (password.equalsIgnoreCase(confirmPassword)) {
+            valid = true;
+        }
+        return valid;
+    }
 }

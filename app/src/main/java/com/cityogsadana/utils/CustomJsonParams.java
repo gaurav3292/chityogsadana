@@ -27,12 +27,12 @@ public class CustomJsonParams {
         return params;
     }
 
-    public JSONObject getChangePass(String userId, String password ,String newPass) {
+    public JSONObject getChangePass(String userId, String password, String newPass) {
         params = new JSONObject();
         try {
             params.put("UserId", userId);
-            params.put("password", password);
-            params.put("new_password", newPass);
+            params.put("oldPassword", password);
+            params.put("newPassword", newPass);
 
             Log.d("params...", params.toString());
 
@@ -47,6 +47,35 @@ public class CustomJsonParams {
     public JSONObject getForgotPass(String email) {
         try {
             params.put("email", email);
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
+
+    public JSONObject getSignupParams(String fullName, String email, String mobile, String address, String password, String country, String gender) {
+        try {
+
+
+            params.put("name", fullName);
+            params.put("email", email);
+            params.put("phone", mobile);
+            params.put("address", address);
+            params.put("password", password);
+            if (gender.equalsIgnoreCase("Male")) {
+                params.put("gender", "M");
+            } else if (gender.equalsIgnoreCase("Female")) {
+                params.put("gender", "F");
+            } else {
+                params.put("gender", "O");
+            }
+
+            params.put("country", country);
+            params.put("deviceType", email);
 
             Log.d("params...", params.toString());
 
