@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.cityogsadana.R;
 import com.cityogsadana.activity.MainActivity;
+import com.cityogsadana.activity.MainActivity_;
 import com.cityogsadana.activity.SelfTestActivity_;
 import com.cityogsadana.utils.Global;
 
@@ -102,7 +103,7 @@ public class ConnectionMessageDialog extends DialogFragment {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity.class);
+                    Intent intent = new Intent(activity, MainActivity_.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.finish();
@@ -113,7 +114,7 @@ public class ConnectionMessageDialog extends DialogFragment {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity.class);
+                    Intent intent = new Intent(activity, MainActivity_.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.finish();
@@ -203,7 +204,7 @@ public class ConnectionMessageDialog extends DialogFragment {
                     dialog.dismiss();
                     Intent intent = new Intent(activity, SelfTestActivity_.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+                    activity.startActivity(intent);
                     activity.overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
 
                 }

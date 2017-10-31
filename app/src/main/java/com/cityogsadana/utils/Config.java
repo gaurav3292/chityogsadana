@@ -36,6 +36,9 @@ public class Config {
     public static final String YES = "YES";
     public static final String NO = "NO";
 
+    public static final String TRUE = "T";
+    public static final String FALSE = "F";
+
 
 
     //RESPONSE

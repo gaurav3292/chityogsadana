@@ -85,4 +85,18 @@ public class CustomJsonParams {
 
         return params;
     }
+
+    public JSONObject getSelfTestParams(String user_id, int totalTrue) {
+        try {
+            params.put("userId", user_id);
+            params.put("numberOfTrue", totalTrue);
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
 }
