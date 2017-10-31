@@ -189,6 +189,7 @@ public class ConnectionMessageDialog extends DialogFragment {
             messageTxt = (TextView) dialog.findViewById(R.id.message);
             buttonTxt = (TextView) dialog.findViewById(R.id.button_text);
             cancelLayout = (LinearLayout) dialog.findViewById(R.id.cancel);
+            cancelLayout.setVisibility(View.VISIBLE);
             dialog.setCancelable(false);
 
             headingTxt.setText(title);
