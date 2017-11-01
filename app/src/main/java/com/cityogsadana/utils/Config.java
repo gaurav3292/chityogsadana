@@ -4,6 +4,7 @@ package com.cityogsadana.utils;
 public class Config {
 
 
+
     public static int DEVICE_WIDTH = 0;
     public static int DEVICE_HEIGHT = 0;
 
@@ -35,6 +36,9 @@ public class Config {
     public static final String YES = "YES";
     public static final String NO = "NO";
 
+    public static final String TRUE = "T";
+    public static final String FALSE = "F";
+
 
 
     //RESPONSE
@@ -57,10 +61,14 @@ public class Config {
     ///type of policies
     public static final String T_C = "T_C";
     public static final String P_P = "P_P";
-    public static final String WAIVER = "WAIVER";
+
 
     //Api
-    public static final String URL = "";
+    public static final String URL = "http://54.213.234.78/chityogws";
+    public static final String LOGIN_IN ="/login";
+    public static final String SIGN_UP ="/signup";
+    public static final String CHANGE_PASS ="/changePassword";
+    public static final String FORGOT_PASS ="/forgotPassword";
 
 }
 

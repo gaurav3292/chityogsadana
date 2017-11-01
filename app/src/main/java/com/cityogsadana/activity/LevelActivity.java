@@ -7,9 +7,20 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.activity.introduction.LevelFiveActivity;
+import com.cityogsadana.activity.introduction.LevelFiveActivity_;
+import com.cityogsadana.activity.introduction.LevelFourActivity;
+import com.cityogsadana.activity.introduction.LevelOneActivity;
+import com.cityogsadana.activity.introduction.LevelOneActivity_;
+import com.cityogsadana.activity.introduction.LevelThreeActivity;
+import com.cityogsadana.activity.introduction.LevelThreeActivity_;
+import com.cityogsadana.activity.introduction.LevelTwoActivity;
+import com.cityogsadana.activity.introduction.LevelTwoActivity_;
+import com.cityogsadana.activity.introduction.SubLevelFourActivity_;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
@@ -25,8 +36,16 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     TextView title;
     @ViewById(R.id.back_button)
     ImageButton backButton;
-    @ViewById(R.id.level2)
-    CardView level2;
+    @ViewById(R.id.level_one)
+    LinearLayout level1;
+    @ViewById(R.id.level_two)
+    LinearLayout level2;
+    @ViewById(R.id.level_three)
+    LinearLayout level3;
+    @ViewById(R.id.level_four)
+    LinearLayout level4;
+    @ViewById(R.id.level_five)
+    LinearLayout level5;
 
     @AfterViews
     public void setData()
@@ -36,7 +55,11 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         title.setText("Levels");
 
         backButton.setOnClickListener(this);
+        level1.setOnClickListener(this);
         level2.setOnClickListener(this);
+        level3.setOnClickListener(this);
+        level4.setOnClickListener(this);
+        level5.setOnClickListener(this);
 
     }
 
@@ -55,7 +78,30 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 onBackPressed();
                 break;
 
-            case R.id.level2:
+            case R.id.level_one:
+                Intent intent = new Intent(LevelActivity.this, LevelOneActivity_.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                break;
+            case R.id.level_two:
+                Intent intent2 = new Intent(LevelActivity.this, LevelTwoActivity_.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2);
+                break;
+            case R.id.level_three:
+                Intent intent3 = new Intent(LevelActivity.this, LevelThreeActivity_.class);
+                intent3.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent3);
+                break;
+            case R.id.level_four:
+                Intent intent4 = new Intent(LevelActivity.this, SubLevelFourActivity_.class);
+                intent4.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent4);
+                break;
+            case R.id.level_five:
+                Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
+                intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent5);
                 break;
 
         }
