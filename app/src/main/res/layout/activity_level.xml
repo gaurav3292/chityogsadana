@@ -27,7 +27,7 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-                style="@style/SelectableItemBackground"
+
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"
@@ -36,8 +36,10 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/level_one"
                     android:layout_width="match_parent"
                     android:padding="10dp"
+                    style="@style/SelectableItemBackground"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
@@ -107,7 +109,6 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-                style="@style/SelectableItemBackground"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"
@@ -115,8 +116,10 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/level_two"
                     android:layout_width="match_parent"
                     android:padding="10dp"
+                    style="@style/SelectableItemBackground"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
@@ -185,7 +188,7 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-                style="@style/SelectableItemBackground"
+
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"
@@ -193,8 +196,10 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/level_three"
                     android:layout_width="match_parent"
                     android:padding="10dp"
+                    style="@style/SelectableItemBackground"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
@@ -264,7 +269,6 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-                style="@style/SelectableItemBackground"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"
@@ -273,8 +277,10 @@
 
 
                 <LinearLayout
+                    android:id="@+id/level_four"
                     android:layout_width="match_parent"
                     android:padding="10dp"
+                    style="@style/SelectableItemBackground"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
@@ -343,7 +349,6 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-                style="@style/SelectableItemBackground"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"
@@ -351,8 +356,10 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/level_five"
                     android:layout_width="match_parent"
                     android:padding="10dp"
+                    style="@style/SelectableItemBackground"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
