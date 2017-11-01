@@ -46,6 +46,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     PieChart mChart;
 
     private UserBean userBean;
+    private int totalTrue,totalFalse;
+    private String msg,level;
 
     protected String[] mParties = new String[] {
             "True", "False"
@@ -173,6 +175,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        level = getIntent().getExtras().getString("level");
+        msg = getIntent().getExtras().getString("msg");
+        totalTrue = getIntent().getExtras().getInt("true");
+        totalFalse = getIntent().getExtras().getInt("false");
     }
 
 
