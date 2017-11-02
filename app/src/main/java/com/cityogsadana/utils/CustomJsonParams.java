@@ -87,6 +87,7 @@ public class CustomJsonParams {
     }
 
     public JSONObject getSelfTestParams(String user_id, int totalTrue) {
+        params = new JSONObject();
         try {
             params.put("userId", user_id);
             params.put("numberOfTrue", totalTrue);

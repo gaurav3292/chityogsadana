@@ -63,6 +63,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     private int masterPosition = 0;
     private ArrayList<SelfTestBean> data;
     private int totalTrue = 0;
+    private int sectionSize;
 
 
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
@@ -76,6 +77,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         ArrayList<SelfTestBean> data = getData();
         sectionName.setText(getData().get(masterPosition).getHeading());
 
+        sectionSize = getData().size();
 
         getAdapterData();
 
@@ -142,7 +144,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
                 boolean check = validate();
                 if(!check){
-                    if (masterPosition < getData().size()) {
+                    if (masterPosition < sectionSize-1) {
                         masterPosition = masterPosition + 1;
                         getAdapterData();
                         sectionName.setText(getData().get(masterPosition).getHeading());

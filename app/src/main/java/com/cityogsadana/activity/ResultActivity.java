@@ -12,9 +12,11 @@ import android.text.style.StyleSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cityogsadana.R;
 import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Global;
 import com.github.mikephil.charting.animation.Easing;
@@ -44,10 +46,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     ImageView homeImg;
     @ViewById(R.id.chart)
     PieChart mChart;
+    @ViewById(R.id.button_done)
+    TextView doneBtn;
 
     private UserBean userBean;
     private int totalTrue,totalFalse;
     private String msg,level;
+    private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
     protected String[] mParties = new String[] {
             "True", "False"
@@ -57,6 +62,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     public void setData(){
 
         Global.setFont(viewGroup,Global.regular);
+
+        doneBtn.setOnClickListener(this);
 
         homeImg.setOnClickListener(this);
         mChart.setUsePercentValues(true);
@@ -129,10 +136,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
-        for (int i = 0; i < count ; i++) {
-            entries.add(new PieEntry((float) ((Math.random() * mult) + mult / 5),
-                    mParties[i % mParties.length]));
-        }
+
+
+        entries.add(new PieEntry((float) ((totalTrue * mult) + mult / 5),
+                mParties[0]));
+
+        entries.add(new PieEntry((float) ((totalFalse * mult) + mult / 5),
+                mParties[1]));
 
         PieDataSet dataSet = new PieDataSet(entries, "Results");
 
@@ -198,6 +208,10 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 Intent level = new Intent(this,LevelActivity_.class);
                 level.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(level);
+                break;
+
+            case R.id.button_done:
+                cDialog.showResult(this, "Self Test", "Start your self assessment test", "Start", false);
                 break;
         }
 
