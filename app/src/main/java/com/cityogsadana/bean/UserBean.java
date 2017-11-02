@@ -23,7 +23,8 @@ public class UserBean implements Serializable {
     private String profile_pic;
     @SerializedName("numberOfTrue")
     private String self_result;
-    private String level;
+    private LevelBean level;
+
 
 
 
@@ -108,12 +109,11 @@ public class UserBean implements Serializable {
         this.user_id = user_id;
     }
 
-    public String getLevel() {
+    public LevelBean getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(LevelBean level) {
         this.level = level;
     }
-
 }

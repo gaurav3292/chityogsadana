@@ -3,12 +3,14 @@ package com.cityogsadana.prefrences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.cityogsadana.bean.LevelBean;
 import com.cityogsadana.bean.UserBean;
 import com.google.gson.Gson;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
 
 /**
  * Created by pc15 on 9/20/2017.
@@ -27,6 +29,8 @@ public class UserPref {
     private static final String GENDER = "user_gender";
     private static final String LEVEL = "level";
     private static final String SELF_RESULT = "self_result";
+    private static final String TOTAL_DAYS = "total_days";
+    private static final String COMPLETED_DAYS = "completed_days";
 
 
     public static void saveUser(Context context, UserBean user) {
@@ -43,8 +47,15 @@ public class UserPref {
             String profileImage = user.getProfile_pic();
             String address = user.getAddress();
             String gender = user.getGender();
-            String level = user.getLevel();
+            LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
+            String level = null,completedDays = null,totalDays = null;
+            if(levelBean!=null){
+                 totalDays = user.getLevel().getTotalNumberOfDays();
+                 level = user.getLevel().getLevel();
+                 completedDays = user.getLevel().getCompletedNumberOfDays();
+            }
+
 
             if (userId != null) {
                 editor.putString(USER_ID, userId);
@@ -81,6 +92,15 @@ public class UserPref {
                 editor.putString(SELF_RESULT,selfTest);
             }
 
+            if(totalDays!=null){
+                editor.putString(TOTAL_DAYS,totalDays);
+            }
+
+            if(completedDays!=null){
+                editor.putString(COMPLETED_DAYS,completedDays);
+            }
+
+
 
 
             editor.commit();
@@ -95,6 +115,7 @@ public class UserPref {
 
         try {
             UserBean user = new UserBean();
+            LevelBean levelBean = new LevelBean();
             SharedPreferences mPref = context.getSharedPreferences(USER_INFO, 0);
             user.setUser_id(mPref.getString(USER_ID, null));
             user.setName(mPref.getString(NAME, null));
@@ -104,8 +125,12 @@ public class UserPref {
             user.setIs_email_verified(mPref.getString(EMAIL_VERIFIED, null));
             user.setGender(mPref.getString(GENDER, null));
             user.setAddress(mPref.getString(ADDRESS, null));
-            user.setLevel(mPref.getString(LEVEL,null));
+
+            levelBean.setLevel(mPref.getString(LEVEL,null));
             user.setSelf_result(mPref.getString(SELF_RESULT,null));
+            levelBean.setTotalNumberOfDays(mPref.getString(TOTAL_DAYS,null));
+            levelBean.setCompletedNumberOfDays(mPref.getString(COMPLETED_DAYS,null));
+            user.setLevel(levelBean);
 
 
             return user;

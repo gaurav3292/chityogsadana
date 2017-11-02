@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
 import com.cityogsadana.adapter.SelfTestAdapter;
+import com.cityogsadana.bean.LevelBean;
 import com.cityogsadana.bean.QuestionBean;
 import com.cityogsadana.bean.SelfTestBean;
 import com.cityogsadana.bean.UserBean;
@@ -27,6 +28,7 @@ import com.cityogsadana.utils.CustomJsonParams;
 import com.cityogsadana.utils.DataEntry;
 import com.cityogsadana.utils.ErrorHelper;
 import com.cityogsadana.utils.Global;
+import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -215,8 +217,9 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         if (jsonObject != null) {
 
             try {
+                Gson gson = new Gson();
                 userBean.setSelf_result(String.valueOf(totalTrue));
-                userBean.setLevel(jsonObject.getString("level"));
+                userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
                 UserPref.saveUser(this,userBean);
                 Intent next = new Intent(this, ResultActivity_.class);
                 next.putExtra("msg", jsonObject.getString("msg"));
