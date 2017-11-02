@@ -61,6 +61,30 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         level4.setOnClickListener(this);
         level5.setOnClickListener(this);
 
+        setLevels("1");
+
+    }
+
+    private void setLevels(String level) {
+
+        switch (level)
+        {
+            case "1":
+                break;
+
+            case "2":
+                break;
+
+            case "3":
+                break;
+
+            case "4":
+                break;
+
+            case "5":
+                break;
+
+        }
     }
 
 

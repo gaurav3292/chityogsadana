@@ -11,6 +11,7 @@ import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,10 +49,14 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     PieChart mChart;
     @ViewById(R.id.button_done)
     TextView doneBtn;
+    @ViewById(R.id.back_button)
+    ImageButton backButton;
+    @ViewById(R.id.title)
+    TextView title;
 
     private UserBean userBean;
     private int totalTrue,totalFalse;
-    private String msg,level;
+    private String msg;
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
     protected String[] mParties = new String[] {
@@ -63,8 +68,10 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         Global.setFont(viewGroup,Global.regular);
 
-        doneBtn.setOnClickListener(this);
+        title.setText("Result");
 
+        doneBtn.setOnClickListener(this);
+        backButton.setOnClickListener(this);
         homeImg.setOnClickListener(this);
         mChart.setUsePercentValues(true);
         mChart.getDescription().setEnabled(false);
@@ -138,7 +145,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         // the chart.
 
 
-        entries.add(new PieEntry((float) ((totalTrue * mult) + mult / 5),
+        entries.add(new PieEntry((float) (( totalTrue* mult) + mult / 5),
                 mParties[0]));
 
         entries.add(new PieEntry((float) ((totalFalse * mult) + mult / 5),
@@ -185,10 +192,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        level = getIntent().getExtras().getString("level");
+        userBean = UserPref.getUser(this);
         msg = getIntent().getExtras().getString("msg");
-        totalTrue = getIntent().getExtras().getInt("true");
+        totalTrue = Integer.parseInt(userBean.getSelf_result());
         totalFalse = getIntent().getExtras().getInt("false");
     }
 
@@ -196,7 +202,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onResume() {
         super.onResume();
-        userBean = UserPref.getUser(this);
+
     }
 
     @Override
@@ -211,8 +217,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.button_done:
-                cDialog.showResult(this, "Self Test", "Start your self assessment test", "Start", false);
+                cDialog.showResult(this, "Congratulations",msg, "Start", false);
                 break;
+
+            case R.id.back_button:
+                onBackPressed();
+                break;
+
         }
 
     }

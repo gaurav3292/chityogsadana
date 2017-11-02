@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.Global;
 
@@ -78,6 +79,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.edit_logout:
+                UserPref.deleteUserInfo(this);
+                Intent logout = new Intent(this,MainActivity_.class);
+                logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logout);
                 break;
 
             case R.id.edit_profile_layout:

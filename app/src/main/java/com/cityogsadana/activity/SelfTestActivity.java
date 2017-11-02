@@ -39,7 +39,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @EActivity(R.layout.activity_self_test)
-public class SelfTestActivity extends AppCompatActivity implements View.OnClickListener,DataHandlerCallback {
+public class SelfTestActivity extends AppCompatActivity implements View.OnClickListener, DataHandlerCallback {
 
     @ViewById(R.id.activity_self_test)
     ViewGroup viewGroup;
@@ -143,8 +143,8 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
             case R.id.button_next:
 
                 boolean check = validate();
-                if(!check){
-                    if (masterPosition < sectionSize-1) {
+                if (!check) {
+                    if (masterPosition < sectionSize - 1) {
                         masterPosition = masterPosition + 1;
                         getAdapterData();
                         sectionName.setText(getData().get(masterPosition).getHeading());
@@ -154,7 +154,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
                     }
                 }
-
 
 
                 break;
@@ -174,21 +173,20 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
     private boolean validate() {
         boolean error = false;
-        int t=0;
-        List<QuestionBean> questionBeanList  = selfTestAdapter.getData();
-        for(int i=0;i<questionBeanList.size();i++){
+        int t = 0;
+        List<QuestionBean> questionBeanList = selfTestAdapter.getData();
+        for (int i = 0; i < questionBeanList.size(); i++) {
 
             QuestionBean queeBean = questionBeanList.get(i);
-            if(queeBean.getAnswers()==null){
+            if (queeBean.getAnswers() == null) {
                 error = true;
                 new CustomCrouton(this, "Please mark all questions", errorLayout).setInAnimation();
                 break;
 
-            }else{
-                if(queeBean.getAnswers().equalsIgnoreCase(Config.TRUE)){
+            } else {
+                if (queeBean.getAnswers().equalsIgnoreCase(Config.TRUE)) {
                     t++;
                 }
-
 
 
             }
@@ -196,10 +194,9 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         }
 
         data.get(masterPosition).setT(t);
-        data.get(masterPosition).setF(data.get(masterPosition).getQuestionBeanList().size()-t);
+        data.get(masterPosition).setF(data.get(masterPosition).getQuestionBeanList().size() - t);
 
-        totalTrue = totalTrue+t;
-
+        totalTrue = totalTrue + t;
 
 
         return error;
@@ -215,17 +212,15 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     public void onSuccess(HashMap<String, Object> map) {
 
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
-        if(jsonObject!=null){
+        if (jsonObject != null) {
 
             try {
-                String level = jsonObject.getString("level");
-                String msg = jsonObject.getString("msg");
-
+                userBean.setSelf_result(String.valueOf(totalTrue));
+                userBean.setLevel(jsonObject.getString("level"));
+                UserPref.saveUser(this,userBean);
                 Intent next = new Intent(this, ResultActivity_.class);
-                next.putExtra("level",level);
-                next.putExtra("msg",msg);
-                next.putExtra("true",totalTrue);
-                next.putExtra("false",data.get(masterPosition).getF());
+                next.putExtra("msg", jsonObject.getString("msg"));
+                next.putExtra("false", data.get(masterPosition).getF());
                 next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(next);
 
@@ -235,7 +230,6 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
 
         }
-
 
 
     }
