@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -48,6 +49,44 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     LinearLayout level4;
     @ViewById(R.id.level_five)
     LinearLayout level5;
+    @ViewById(R.id.icon_1)
+    ImageView icon1;
+    @ViewById(R.id.icon_2)
+    ImageView icon2;
+    @ViewById(R.id.icon_3)
+    ImageView icon3;
+    @ViewById(R.id.icon_4)
+    ImageView icon4;
+    @ViewById(R.id.icon_5)
+    ImageView icon5;
+    @ViewById(R.id.icon_6)
+    ImageView icon6;
+    @ViewById(R.id.result_1)
+    TextView result1;
+    @ViewById(R.id.result_2)
+    TextView result2;
+    @ViewById(R.id.result_3)
+    TextView result3;
+    @ViewById(R.id.result_4)
+    TextView result4;
+    @ViewById(R.id.result_5)
+    TextView result5;
+    @ViewById(R.id.result_6)
+    TextView result6;
+    @ViewById(R.id.days_1)
+    TextView days1;
+    @ViewById(R.id.days_2)
+    TextView days2;
+    @ViewById(R.id.days_3)
+    TextView days3;
+    @ViewById(R.id.days_4)
+    TextView days4;
+    @ViewById(R.id.days_5)
+    TextView days5;
+    @ViewById(R.id.days_6)
+    TextView days6;
+    @ViewById(R.id.level_six)
+    LinearLayout level6;
 
     private UserBean userBean;
 
@@ -88,6 +127,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
             case "5":
                 level5.setOnClickListener(this);
+                break;
+
+            case "6":
+                level6.setOnClickListener(this);
                 break;
 
         }
