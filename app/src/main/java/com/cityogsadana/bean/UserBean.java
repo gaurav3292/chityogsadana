@@ -26,9 +26,6 @@ public class UserBean implements Serializable {
     private LevelBean level;
 
 
-
-
-
     public String getSelf_result() {
         return self_result;
     }

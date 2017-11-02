@@ -10,16 +10,16 @@ import java.io.Serializable;
 
 public class LevelBean implements Serializable{
 
-    private String level;
+    private String userLevel;
     private String totalNumberOfDays;
     private String completedNumberOfDays;
 
     public String getLevel() {
-        return level;
+        return userLevel;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setLevel(String userLevel) {
+        this.userLevel = userLevel;
     }
 
     public String getTotalNumberOfDays() {
