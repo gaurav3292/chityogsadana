@@ -69,6 +69,7 @@ public class Config {
     public static final String SIGN_UP ="/signup";
     public static final String CHANGE_PASS ="/changePassword";
     public static final String FORGOT_PASS ="/forgotPassword";
+    public static final String SELF_TEST ="/selfTestResult";
 
 }
 

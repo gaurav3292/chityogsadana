@@ -31,6 +31,7 @@ import com.cityogsadana.utils.Global;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -166,7 +167,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     private void checkSelfTestResult() {
         CustomJsonParams customJsonParams = new CustomJsonParams();
         JSONObject params = customJsonParams.getSelfTestParams(userBean.getUser_id(), totalTrue);
-        new ApiHandler(SelfTestActivity.this).apiResponse(SelfTestActivity.this, Config.LOGIN_IN, params);
+        new ApiHandler(SelfTestActivity.this).apiResponse(SelfTestActivity.this, Config.SELF_TEST, params);
     }
 
     private boolean validate() {
@@ -213,9 +214,24 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if(jsonObject!=null){
-     /*       Intent next = new Intent(this, ResultActivity_.class);
-            next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(next);*/
+
+            try {
+                String level = jsonObject.getString("level");
+                String msg = jsonObject.getString("msg");
+
+                Intent next = new Intent(this, ResultActivity_.class);
+                next.putExtra("level",level);
+                next.putExtra("msg",msg);
+                next.putExtra("true",totalTrue);
+                next.putExtra("false",data.get(masterPosition).getF());
+                next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(next);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
         }
 
 
