@@ -21,6 +21,8 @@ import com.cityogsadana.activity.introduction.LevelThreeActivity_;
 import com.cityogsadana.activity.introduction.LevelTwoActivity;
 import com.cityogsadana.activity.introduction.LevelTwoActivity_;
 import com.cityogsadana.activity.introduction.SubLevelFourActivity_;
+import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
@@ -47,6 +49,8 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     @ViewById(R.id.level_five)
     LinearLayout level5;
 
+    private UserBean userBean;
+
     @AfterViews
     public void setData()
     {
@@ -55,13 +59,9 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         title.setText("Levels");
 
         backButton.setOnClickListener(this);
-        level1.setOnClickListener(this);
-        level2.setOnClickListener(this);
-        level3.setOnClickListener(this);
-        level4.setOnClickListener(this);
-        level5.setOnClickListener(this);
 
-        setLevels("1");
+
+        setLevels(userBean.getLevel());
 
     }
 
@@ -70,18 +70,24 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         switch (level)
         {
             case "1":
+
+                level1.setOnClickListener(this);
                 break;
 
             case "2":
+                level2.setOnClickListener(this);
                 break;
 
             case "3":
+                level3.setOnClickListener(this);
                 break;
 
             case "4":
+                level4.setOnClickListener(this);
                 break;
 
             case "5":
+                level5.setOnClickListener(this);
                 break;
 
         }
@@ -91,7 +97,8 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level);
+        userBean = UserPref.getUser(this);
+
     }
 
     @Override

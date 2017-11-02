@@ -43,8 +43,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     ViewGroup viewGroup;
     @ViewById(R.id.noti_img)
     ImageView profileTab;
-    @ViewById(R.id.home_img)
-    ImageView homeImg;
     @ViewById(R.id.chart)
     PieChart mChart;
     @ViewById(R.id.button_done)
@@ -72,7 +70,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         doneBtn.setOnClickListener(this);
         backButton.setOnClickListener(this);
-        homeImg.setOnClickListener(this);
         mChart.setUsePercentValues(true);
         mChart.getDescription().setEnabled(false);
         mChart.setExtraOffsets(5, 10, 5, 5);
@@ -210,11 +207,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         switch (v.getId())
         {
-            case R.id.home_img:
-                Intent level = new Intent(this,LevelActivity_.class);
-                level.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(level);
-                break;
 
             case R.id.button_done:
                 cDialog.showResult(this, "Congratulations",msg, "Start", false);

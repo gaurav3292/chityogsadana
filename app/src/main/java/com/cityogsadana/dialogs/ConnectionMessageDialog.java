@@ -269,6 +269,7 @@ public class ConnectionMessageDialog extends DialogFragment {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
+                    activity.finish();
 
                 }
             });

@@ -223,6 +223,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
                 next.putExtra("false", data.get(masterPosition).getF());
                 next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(next);
+                finish();
 
             } catch (JSONException e) {
                 e.printStackTrace();
