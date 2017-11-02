@@ -182,7 +182,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
             QuestionBean queeBean = questionBeanList.get(i);
             if (queeBean.getAnswers() == null) {
                 error = true;
-                new CustomCrouton(this, "Please mark all questions", errorLayout).setInAnimation();
+                new CustomCrouton(this, "Please mark all answers", errorLayout).setInAnimation();
                 break;
 
             } else {

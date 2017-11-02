@@ -170,12 +170,11 @@ public class AccountChecker {
 
     }
 
-    public static boolean checkDate(String eNdTime, String sTartTime) {
+    public static boolean checkTime( String sTartTime) {
         boolean valid = false;
         try {
 
-            String string1 = eNdTime;
-            Date endDate = new SimpleDateFormat("HH:mm:ss").parse(string1);
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("21:30:00");
 
             String string2 = sTartTime;
             Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);
