@@ -70,6 +70,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -149,6 +150,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -231,6 +233,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -312,6 +315,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -391,6 +395,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -441,6 +446,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/level_six"
                     android:layout_width="match_parent"
                     android:padding="10dp"
                     android:orientation="horizontal"
@@ -472,6 +478,7 @@
                             android:textSize="@dimen/app_text_size_large" />
 
                         <TextView
+                            android:id="@+id/days_6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
