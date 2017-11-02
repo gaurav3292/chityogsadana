@@ -49,11 +49,11 @@ public class UserPref {
             String gender = user.getGender();
             LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
-            String level = null,completedDays = null,totalDays = null;
-            if(levelBean!=null){
-                 totalDays = user.getLevel().getTotalNumberOfDays();
-                 level = user.getLevel().getLevel();
-                 completedDays = user.getLevel().getCompletedNumberOfDays();
+            String level = null, completedDays = null, totalDays = null;
+            if (levelBean != null) {
+                totalDays = user.getLevel().getTotalNumberOfDays();
+                level = user.getLevel().getLevel();
+                completedDays = user.getLevel().getCompletedNumberOfDays();
             }
 
 
@@ -85,22 +85,21 @@ public class UserPref {
                 editor.putString(ADDRESS, address);
             }
 
-            if(level!=null){
-                editor.putString(LEVEL,level);
+            if (level != null) {
+                editor.putString(LEVEL, level);
             }
-             if(selfTest!=null){
-                editor.putString(SELF_RESULT,selfTest);
-            }
-
-            if(totalDays!=null){
-                editor.putString(TOTAL_DAYS,totalDays);
+            if (selfTest != null) {
+                if (!selfTest.equalsIgnoreCase("-1"))
+                    editor.putString(SELF_RESULT, selfTest);
             }
 
-            if(completedDays!=null){
-                editor.putString(COMPLETED_DAYS,completedDays);
+            if (totalDays != null) {
+                editor.putString(TOTAL_DAYS, totalDays);
             }
 
-
+            if (completedDays != null) {
+                editor.putString(COMPLETED_DAYS, completedDays);
+            }
 
 
             editor.commit();
@@ -126,10 +125,10 @@ public class UserPref {
             user.setGender(mPref.getString(GENDER, null));
             user.setAddress(mPref.getString(ADDRESS, null));
 
-            levelBean.setLevel(mPref.getString(LEVEL,null));
-            user.setSelf_result(mPref.getString(SELF_RESULT,null));
-            levelBean.setTotalNumberOfDays(mPref.getString(TOTAL_DAYS,null));
-            levelBean.setCompletedNumberOfDays(mPref.getString(COMPLETED_DAYS,null));
+            levelBean.setLevel(mPref.getString(LEVEL, null));
+            user.setSelf_result(mPref.getString(SELF_RESULT, null));
+            levelBean.setTotalNumberOfDays(mPref.getString(TOTAL_DAYS, null));
+            levelBean.setCompletedNumberOfDays(mPref.getString(COMPLETED_DAYS, null));
             user.setLevel(levelBean);
 
 
