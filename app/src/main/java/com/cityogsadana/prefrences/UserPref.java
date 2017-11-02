@@ -25,6 +25,8 @@ public class UserPref {
     private static final String PROFILE_IMG = "user_image";
     private static final String ADDRESS = "user_address";
     private static final String GENDER = "user_gender";
+    private static final String LEVEL = "level";
+    private static final String SELF_RESULT = "self_result";
 
 
     public static void saveUser(Context context, UserBean user) {
@@ -41,6 +43,8 @@ public class UserPref {
             String profileImage = user.getProfile_pic();
             String address = user.getAddress();
             String gender = user.getGender();
+            String level = user.getLevel();
+            String selfTest = user.getSelf_result();
 
             if (userId != null) {
                 editor.putString(USER_ID, userId);
@@ -70,6 +74,15 @@ public class UserPref {
                 editor.putString(ADDRESS, address);
             }
 
+            if(level!=null){
+                editor.putString(LEVEL,level);
+            }
+             if(selfTest!=null){
+                editor.putString(SELF_RESULT,selfTest);
+            }
+
+
+
             editor.commit();
 
         } catch (Exception e) {
@@ -91,6 +104,8 @@ public class UserPref {
             user.setIs_email_verified(mPref.getString(EMAIL_VERIFIED, null));
             user.setGender(mPref.getString(GENDER, null));
             user.setAddress(mPref.getString(ADDRESS, null));
+            user.setLevel(mPref.getString(LEVEL,null));
+            user.setSelf_result(mPref.getString(SELF_RESULT,null));
 
 
             return user;

@@ -21,7 +21,10 @@ public class UserBean implements Serializable {
     private String address;
     private String is_email_verified;
     private String profile_pic;
+    @SerializedName("numberOfTrue")
     private String self_result;
+    private String level;
+
 
 
 
@@ -104,4 +107,13 @@ public class UserBean implements Serializable {
     public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
 }
