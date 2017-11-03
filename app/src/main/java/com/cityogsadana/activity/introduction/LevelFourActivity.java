@@ -39,7 +39,6 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
         step_one.setOnClickListener(this);
         step_two.setOnClickListener(this);
 
-
     }
 
 

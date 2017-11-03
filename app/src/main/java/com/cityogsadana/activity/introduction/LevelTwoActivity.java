@@ -77,7 +77,7 @@ public class LevelTwoActivity extends AppCompatActivity implements ActivitySet, 
                 break;
 
             case R.id.test:
-                if (userBean.getLevel().getTotalNumberOfDays() != null) {
+                if (userBean.getLevel().getTotalNumberOfDays() == null) {
                     cDialog.showStartRoutine(this, this, "Routine Test", "Do you want to start your routine test?", false);
                 } else {
                     Date currentTime = Calendar.getInstance().getTime();
