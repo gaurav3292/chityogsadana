@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.cityogsadana.R;
 import com.cityogsadana.application.AppController;
+import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
@@ -47,6 +48,8 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
     @ViewById(R.id.error_check_layout)
     RelativeLayout errorLayout;
 
+    private UserBean userBean;
+
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
@@ -61,11 +64,14 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
         ppLayout.setOnClickListener(this);
         termsLayout.setOnClickListener(this);
 
+        userName.setText(userBean.getName());
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        userBean = UserPref.getUser(this);
     }
 
     @Override
