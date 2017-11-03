@@ -91,7 +91,7 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
 
             case R.id.edit_profile_layout:
                 Intent profile = new Intent(this, EditProfileActivity_.class);
-                profile.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profile);
                 break;
 
