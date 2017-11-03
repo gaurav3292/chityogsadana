@@ -218,8 +218,8 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
             try {
                 Gson gson = new Gson();
-                userBean.setSelf_result(String.valueOf(totalTrue));
                 userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
+                userBean.setSelf_result(String.valueOf(totalTrue));
                 UserPref.saveUser(this,userBean);
                 Intent next = new Intent(this, ResultActivity_.class);
                 next.putExtra("msg", jsonObject.getString("msg"));

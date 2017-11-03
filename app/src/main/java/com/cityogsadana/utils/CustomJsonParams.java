@@ -45,6 +45,7 @@ public class CustomJsonParams {
 
 
     public JSONObject getForgotPass(String email) {
+        params = new JSONObject();
         try {
             params.put("email", email);
 
@@ -58,6 +59,7 @@ public class CustomJsonParams {
     }
 
     public JSONObject getSignupParams(String fullName, String email, String mobile, String address, String password, String country, String gender) {
+        params = new JSONObject();
         try {
 
 

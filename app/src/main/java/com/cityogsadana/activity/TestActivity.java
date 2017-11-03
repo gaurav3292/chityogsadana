@@ -105,7 +105,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean validate() {
         boolean error = false;
-        int t = 0;
+        int totalTrue = 0;
         List<QuestionBean> questionBeanList = selfTestAdapter.getData();
         for (int i = 0; i < questionBeanList.size(); i++) {
 
@@ -117,15 +117,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             } else {
                 if (queeBean.getAnswers().equalsIgnoreCase(Config.TRUE)) {
-                    t++;
+                    totalTrue++;
                 }
             }
         }
 
-//        data.get(masterPosition).setT(t);
-//        data.get(masterPosition).setF(data.get(masterPosition).getQuestionBeanList().size() - t);
-//
-//        totalTrue = totalTrue + t;
 
         return error;
     }
