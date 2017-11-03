@@ -65,7 +65,6 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
         step_two.setOnClickListener(this);
         testText.setOnClickListener(this);
 
-
     }
 
 
