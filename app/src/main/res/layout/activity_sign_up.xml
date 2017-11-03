@@ -12,11 +12,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:scrollbars="none"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:scrollbars="none">
 
 
         <RelativeLayout
@@ -32,8 +32,8 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="@color/activity_bg"
                 android:background="@color/app_white"
+                app:cardBackgroundColor="@color/activity_bg"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="7dp"
                 app:cardMaxElevation="7dp"
@@ -201,9 +201,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:digits="1234567890"
                             android:hint="Address*"
-                            android:inputType="number"
+                            android:inputType="text"
                             android:maxLength="10"
                             android:padding="10dp"
                             android:textColor="@color/text_color"
@@ -232,7 +231,7 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/icon_color"
                             android:foregroundTint="@color/text_color"
-                            android:spinnerMode="dropdown"  />
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
@@ -270,6 +269,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/app_red" />
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
