@@ -38,7 +38,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @ViewById(R.id.list)
     RecyclerView recyclerView;
     @ViewById(R.id.button_next)
-    TextView nextBtn;
+    TextView submitBtn;
     @ViewById(R.id.back_button)
     ImageButton backButton;
 

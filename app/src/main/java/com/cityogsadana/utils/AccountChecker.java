@@ -181,10 +181,10 @@ public class AccountChecker {
 
             if (endDate.after(beforeDate)) {
                 System.out.println("log_tag" + "Time is greater");
-                valid = true;
+                valid = false;
             } else {
                 System.out.println("log_tag" + "Time is smaller");
-                valid = false;
+                valid = true;
             }
         } catch (ParseException e) {
             e.printStackTrace();

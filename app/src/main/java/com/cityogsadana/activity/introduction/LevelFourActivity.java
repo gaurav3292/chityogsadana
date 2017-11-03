@@ -63,6 +63,7 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
         backButton.setOnClickListener(this);
         step_one.setOnClickListener(this);
         step_two.setOnClickListener(this);
+        testText.setOnClickListener(this);
 
 
     }
@@ -100,7 +101,7 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.test:
-                if (userBean.getLevel().getTotalNumberOfDays() != null) {
+                if (userBean.getLevel().getTotalNumberOfDays() == null) {
                     cDialog.showStartRoutine(this, this, "Routine Test", "Do you want to start your routine test?", false);
                 } else {
                     Date currentTime = Calendar.getInstance().getTime();

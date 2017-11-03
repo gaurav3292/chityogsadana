@@ -1,10 +1,12 @@
 package com.cityogsadana.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by pc15 on 10/23/2017.
  */
 
-public class QuestionBean {
+public class QuestionBean implements Serializable {
 
     public QuestionBean(String question) {
         this.question = question;
