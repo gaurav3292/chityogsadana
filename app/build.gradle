@@ -50,6 +50,7 @@ dependencies {
     compile 'com.kyleduo.switchbutton:library:1.4.6'
     compile 'com.github.Cutta:GifView:1.1'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    compile 'com.github.d-max:spots-dialog:0.4@aar'
 
 
     // JSON utility library.

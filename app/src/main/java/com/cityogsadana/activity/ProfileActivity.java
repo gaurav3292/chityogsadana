@@ -10,22 +10,32 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.cityogsadana.R;
 import com.cityogsadana.application.AppController;
 import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.handler.ApiHandler;
+import com.cityogsadana.interfaces.DataHandlerCallback;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
 import com.cityogsadana.utils.CustomCrouton;
+import com.cityogsadana.utils.CustomJsonParams;
 import com.cityogsadana.utils.Global;
+import com.github.siyamed.shapeimageview.CircularImageView;
+import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 
 @EActivity(R.layout.activity_profile)
-public class ProfileActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener {
+public class ProfileActivity extends AppCompatActivity implements DataHandlerCallback, ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener {
 
     @ViewById(R.id.activity_profile)
     ViewGroup viewGroup;
@@ -47,8 +57,11 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
     LinearLayout editProfileLayout;
     @ViewById(R.id.error_check_layout)
     RelativeLayout errorLayout;
+    @ViewById(R.id.user_profile)
+    CircularImageView userImage;
 
     private UserBean userBean;
+    private ImageLoader imageLoader;
 
     @AfterViews
     public void setData() {
@@ -64,7 +77,8 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
         ppLayout.setOnClickListener(this);
         termsLayout.setOnClickListener(this);
 
-        userName.setText(userBean.getName());
+
+        getUserData();
 
     }
 
@@ -73,6 +87,16 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
         super.onCreate(savedInstanceState);
         userBean = UserPref.getUser(this);
     }
+
+    private void getUserData() {
+
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.getUserData(userBean.getUser_id());
+        new ApiHandler(ProfileActivity.this).apiResponse(ProfileActivity.this, Config.GET_USER, params);
+
+    }
+
+
 
     @Override
     public void onClick(View v) {
@@ -125,6 +149,24 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
     protected void onResume() {
         super.onResume();
         AppController.getInstance().setConnectivityListener(this);
+        imageLoader = AppController.getInstance().getImageLoader();
+
+        setUserData();
+
+
+    }
+
+    private void setUserData() {
+
+        userName.setText(userBean.getName());
+
+        if (userBean.getProfile_pic() != null) {
+            imageLoader.get(userBean.getProfile_pic(), ImageLoader.getImageListener(
+                    userImage, R.drawable.ic_user_yog, R.drawable.ic_user_yog));
+        } else {
+            userImage.setImageResource(R.drawable.ic_user_yog);
+        }
+
     }
 
     @Override
@@ -132,5 +174,25 @@ public class ProfileActivity extends AppCompatActivity implements ConnectivityRe
         if (!isConnected) {
             new CustomCrouton(this, getString(R.string.no_connection), errorLayout).setInAnimation();
         }
+    }
+
+    @Override
+    public void onSuccess(HashMap<String, Object> map) {
+        JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
+        if (jsonObject != null) {
+            try {
+                Gson gson = new Gson();
+                UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
+                UserPref.saveUser(this, user);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    @Override
+    public void onFailure(HashMap<String, Object> map) {
+
     }
 }

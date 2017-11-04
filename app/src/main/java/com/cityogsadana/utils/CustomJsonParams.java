@@ -102,4 +102,58 @@ public class CustomJsonParams {
 
         return params;
     }
+
+    public JSONObject getUserData(String user_id) {
+
+        params = new JSONObject();
+        try {
+            params.put("userId", user_id);
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
+
+    public JSONObject getProfileUpdate(String userId,String name, String mobile, String address, String profileImg, String gender) {
+        params = new JSONObject();
+        try {
+            params.put("userId", userId);
+            params.put("name", name);
+            params.put("phone", mobile);
+            params.put("address", address);
+            params.put("profilePic", profileImg);
+            if (gender.equalsIgnoreCase("Male")) {
+                params.put("gender", "M");
+            } else if (gender.equalsIgnoreCase("Female")) {
+                params.put("gender", "F");
+            } else {
+                params.put("gender", "O");
+            }
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
+    public JSONObject getVerifyEmail(String userId,String email) {
+        params = new JSONObject();
+        try {
+            params.put("userId", userId);
+            params.put("email", email);
+
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+    }
 }

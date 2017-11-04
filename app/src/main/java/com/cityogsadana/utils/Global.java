@@ -25,6 +25,8 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.cityogsadana.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +38,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import dmax.dialog.SpotsDialog;
 
 
 public class Global {
@@ -96,6 +100,15 @@ public class Global {
 
 
 
+    }
+
+    public static void showProgress(Context context) {
+        try {
+            dialog = new SpotsDialog(context, R.style.Custom);
+            Global.overrideFont(context, "MONOSPACE", Fonts.REGULAR);
+            dialog.show();
+        }catch (Exception e)
+        {e.printStackTrace();}
     }
 
     public static void overrideFont(Context context, String defaultFontNameToOverride, String customFontFileNameInAssets) {

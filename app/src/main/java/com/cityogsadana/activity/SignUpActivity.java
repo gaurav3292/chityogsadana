@@ -151,6 +151,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                     String country = (String) countrySpinner.getSelectedItem();
                     String gender = (String) genderSpinner.getSelectedItem();
 
+                    Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
                     JSONObject params = customJsonParams.getSignupParams(fullName,email,mobile,address, password,country,gender);
                     new ApiHandler(SignUpActivity.this).apiResponse(SignUpActivity.this, Config.SIGN_UP, params);
@@ -181,7 +182,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
             } else if (password.isEmpty()) {
                 new CustomCrouton(this, "Password is required", errorLayout).setInAnimation();
             } else if (confirmPassword.isEmpty()) {
-                new CustomCrouton(this, "Name is required", errorLayout).setInAnimation();
+                new CustomCrouton(this, "Confirm Password is required", errorLayout).setInAnimation();
             }
 
         } else {
@@ -234,6 +235,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
     @Override
     public void onSuccess(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             try {
@@ -250,7 +252,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
     @Override
     public void onFailure(HashMap<String, Object> map) {
-
+        Global.dialog.dismiss();
         if (map.containsKey(Config.ERROR)) {
             cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
         } else {

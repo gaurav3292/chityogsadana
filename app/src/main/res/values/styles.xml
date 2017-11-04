@@ -155,4 +155,15 @@
 
     </style>
 
+    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Loading. Please Wait...</item>
+        <item name="DialogSpotColor">@color/icon_color</item>
+        <item name="DialogSpotCount">5</item>
+        <item name="android:background">@color/app_white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+
 </resources>

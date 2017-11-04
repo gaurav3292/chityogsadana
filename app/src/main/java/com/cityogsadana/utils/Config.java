@@ -70,6 +70,9 @@ public class Config {
     public static final String CHANGE_PASS ="/changePassword";
     public static final String FORGOT_PASS ="/forgotPassword";
     public static final String SELF_TEST ="/selfTestResult";
+    public static final String GET_USER ="/getUserDetail";
+    public static final String EDIT_PROFILE ="/editProfile";
+    public static final String VERIFY_EMAIL ="/verifyEmail";
 
 }
 

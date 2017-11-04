@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
                 boolean check = validate(email, password);
                 if (!check) {
-
+                    Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
                     JSONObject params = customJsonParams.getLogIn(email, password);
                     new ApiHandler(LoginActivity.this).apiResponse(LoginActivity.this, Config.LOGIN_IN, params);
@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
     @Override
     public void onSuccess(HashMap<String, Object> map) {
-
+        Global.dialog.dismiss();
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             try {
@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
 
     @Override
     public void onFailure(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
         if (map.containsKey(Config.ERROR)) {
             cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
         } else {

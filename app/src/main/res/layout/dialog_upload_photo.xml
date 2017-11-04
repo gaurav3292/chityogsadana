@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    android:id="@+id/dialog_upload_photo"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Profile picture"
+        android:textSize="@dimen/app_text_size_medium"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/open_gallery"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10dp"
+            style="@style/SelectableItemBackground"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:elevation="4dp"
+                android:padding="13dp"
+                android:src="@drawable/ic_gallery"
+                android:tint="@color/icon_color"
+                android:background="@drawable/circle_shape"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Gallery"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_small"
+                android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/open_camera"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10dp"
+            style="@style/SelectableItemBackground"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:elevation="4dp"
+                android:padding="13dp"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/icon_color"
+                android:background="@drawable/circle_shape"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Camera"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_small"
+                android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+
+</LinearLayout>
