@@ -57,6 +57,7 @@ public class ChangePassword extends AppCompatActivity implements DataHandlerCall
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
     private UserBean userBean;
 
+
     @AfterViews
     public  void setData(){
 
