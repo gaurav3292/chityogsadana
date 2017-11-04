@@ -1,16 +1,22 @@
 package com.cityogsadana.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.application.AppController;
+import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
+import com.cityogsadana.utils.ConnectivityReceiver;
+import com.cityogsadana.utils.CustomCrouton;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
@@ -19,7 +25,7 @@ import org.androidannotations.annotations.ViewById;
 
 
 @EActivity(R.layout.activity_profile)
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
+public class ProfileActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener {
 
     @ViewById(R.id.activity_profile)
     ViewGroup viewGroup;
@@ -35,14 +41,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     TextView termsLayout;
     @ViewById(R.id.user_name)
     TextView userName;
+    @ViewById(R.id.title)
+    TextView title;
     @ViewById(R.id.edit_profile_layout)
     LinearLayout editProfileLayout;
+    @ViewById(R.id.error_check_layout)
+    RelativeLayout errorLayout;
+
+    private UserBean userBean;
 
     @AfterViews
-    public void setData()
-    {
-        Global.setFont(viewGroup,Global.regular);
-        Global.setCustomFont(Global.italic,termsLayout,ppLayout);
+    public void setData() {
+        Global.setFont(viewGroup, Global.regular);
+        Global.setCustomFont(Global.italic, termsLayout, ppLayout);
+
+        title.setText("Profile");
 
         backButton.setOnClickListener(this);
         editChangePass.setOnClickListener(this);
@@ -51,17 +64,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         ppLayout.setOnClickListener(this);
         termsLayout.setOnClickListener(this);
 
+        userName.setText(userBean.getName());
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        userBean = UserPref.getUser(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId())
-        {
+        switch (v.getId()) {
 
             case R.id.back_button:
                 onBackPressed();
@@ -74,9 +89,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.edit_logout:
+                UserPref.deleteUserInfo(this);
+                Intent logout = new Intent(this, MainActivity_.class);
+                logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logout);
                 break;
 
             case R.id.edit_profile_layout:
+                Intent profile = new Intent(this, EditProfileActivity_.class);
+                profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(profile);
                 break;
 
             case R.id.p_p_layout:
@@ -96,6 +118,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom);
                 break;
 
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppController.getInstance().setConnectivityListener(this);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if (!isConnected) {
+            new CustomCrouton(this, getString(R.string.no_connection), errorLayout).setInAnimation();
         }
     }
 }

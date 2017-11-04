@@ -1,5 +1,7 @@
 package com.cityogsadana.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,7 @@ public class UserBean implements Serializable {
 
     private String name;
     private String country;
+    @SerializedName("userId")
     private String user_id;
     private String gender;
     private String email;
@@ -18,6 +21,18 @@ public class UserBean implements Serializable {
     private String address;
     private String is_email_verified;
     private String profile_pic;
+    @SerializedName("numberOfTrue")
+    private String self_result;
+    private LevelBean level;
+
+
+    public String getSelf_result() {
+        return self_result;
+    }
+
+    public void setSelf_result(String self_result) {
+        this.self_result = self_result;
+    }
 
     public String getProfile_pic() {
         return profile_pic;
@@ -89,5 +104,13 @@ public class UserBean implements Serializable {
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
+    }
+
+    public LevelBean getLevel() {
+        return level;
+    }
+
+    public void setLevel(LevelBean level) {
+        this.level = level;
     }
 }

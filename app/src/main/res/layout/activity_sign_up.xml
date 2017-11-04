@@ -12,6 +12,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@android:color/transparent"
         android:scrollbars="none">
 
@@ -29,8 +32,8 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="@color/activity_bg"
                 android:background="@color/app_white"
+                app:cardBackgroundColor="@color/activity_bg"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="7dp"
                 app:cardMaxElevation="7dp"
@@ -47,20 +50,20 @@
 
                     <ImageButton
                         android:id="@+id/close"
+                        style="@style/SelectableItemBackground"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        style="@style/SelectableItemBackground"
                         android:layout_gravity="end"
                         android:background="@color/activity_bg"
-                        android:tint="@color/icon_color"
-                        android:src="@drawable/ic_cancel" />
+                        android:src="@drawable/ic_cancel"
+                        android:tint="@color/icon_color" />
 
                     <TextView
                         android:id="@+id/signUp_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginTop="-5dp"
+                        android:gravity="center"
                         android:text="Sign up"
                         android:textColor="@color/colorAccent"
                         android:textSize="18sp" />
@@ -69,8 +72,8 @@
                         android:layout_width="25dp"
                         android:layout_height="1dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
                         android:background="@color/app_red"
                         android:gravity="center" />
 
@@ -87,7 +90,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:digits="abcdefghijklmnopqrstuvwxyz_. "
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                             android:hint="Full Name*"
                             android:inputType="textCapWords"
                             android:maxLength="100"
@@ -174,8 +177,9 @@
                             android:id="@+id/country"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:padding="10dp" />
+                            android:backgroundTint="@color/icon_color"
+                            android:foregroundTint="@color/text_color"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
@@ -197,10 +201,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:digits="1234567890"
                             android:hint="Address*"
-                            android:inputType="number"
-                            android:maxLength="10"
+                            android:inputType="text"
+                            android:maxLength="50"
                             android:padding="10dp"
                             android:textColor="@color/text_color"
                             android:textColorHint="@color/text_hint_color"
@@ -212,7 +215,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/app_red" />
-
 
 
                     <LinearLayout
@@ -227,8 +229,9 @@
                             android:id="@+id/spinner_gender"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:padding="10dp" />
+                            android:backgroundTint="@color/icon_color"
+                            android:foregroundTint="@color/text_color"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
@@ -266,6 +269,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/app_red" />
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -306,8 +310,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:gravity="center"
-                            android:buttonTint="@color/icon_color" />
+                            android:buttonTint="@color/icon_color"
+                            android:gravity="center" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -316,9 +321,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"
+                                android:text="By signing up to agree to the"
                                 android:textColor="@color/text_color"
-                                android:text="By signing up to agree to the"/>
+                                android:textSize="12sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -354,7 +359,6 @@
                             </LinearLayout>
 
 
-
                         </LinearLayout>
                     </LinearLayout>
 
@@ -372,14 +376,14 @@
 
                     <LinearLayout
                         android:id="@+id/already_layout"
+                        style="@style/SelectableItemBackground"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="15dp"
-                        android:padding="5dp"
                         android:gravity="center"
-                        style="@style/SelectableItemBackground"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
                         <TextView
                             android:layout_width="wrap_content"
