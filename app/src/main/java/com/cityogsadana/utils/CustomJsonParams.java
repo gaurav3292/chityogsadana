@@ -125,7 +125,6 @@ public class CustomJsonParams {
             params.put("name", name);
             params.put("phone", mobile);
             params.put("address", address);
-            params.put("profilePic", profileImg);
             if (gender.equalsIgnoreCase("Male")) {
                 params.put("gender", "M");
             } else if (gender.equalsIgnoreCase("Female")) {
@@ -134,6 +133,7 @@ public class CustomJsonParams {
                 params.put("gender", "O");
             }
 
+            params.put("profilePic", profileImg);
             Log.d("params...", params.toString());
 
         } catch (JSONException e) {

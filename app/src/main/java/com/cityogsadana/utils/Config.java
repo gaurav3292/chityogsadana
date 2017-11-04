@@ -65,6 +65,7 @@ public class Config {
 
     //Api
     public static final String URL = "http://54.213.234.78/chityogws";
+   // public static final String URL = "http://b9b272dc.ngrok.io/chityogws";
     public static final String LOGIN_IN ="/login";
     public static final String SIGN_UP ="/signup";
     public static final String CHANGE_PASS ="/changePassword";
