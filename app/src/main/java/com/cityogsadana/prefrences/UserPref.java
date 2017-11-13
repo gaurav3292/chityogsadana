@@ -27,6 +27,7 @@ public class UserPref {
     private static final String PROFILE_IMG = "user_image";
     private static final String ADDRESS = "user_address";
     private static final String GENDER = "user_gender";
+    private static final String COUNTRY = "country";
     private static final String LEVEL = "level";
     private static final String SELF_RESULT = "self_result";
     private static final String TOTAL_DAYS = "total_days";
@@ -47,6 +48,7 @@ public class UserPref {
             String profileImage = user.getProfile_pic();
             String address = user.getAddress();
             String gender = user.getGender();
+            String country = user.getCountry();
             LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
             String level = null, completedDays = null, totalDays = null;
@@ -59,6 +61,9 @@ public class UserPref {
 
             if (userId != null) {
                 editor.putString(USER_ID, userId);
+            }
+            if (country != null) {
+                editor.putString(COUNTRY, country);
             }
 
             if (fullName != null) {
@@ -121,6 +126,7 @@ public class UserPref {
             user.setProfile_pic(mPref.getString(PROFILE_IMG, null));
             user.setPhone(mPref.getString(PHONE, null));
             user.setEmail(mPref.getString(EMAIL, null));
+            user.setCountry(mPref.getString(COUNTRY, null));
             user.setIs_email_verified(mPref.getString(EMAIL_VERIFIED, null));
             user.setGender(mPref.getString(GENDER, null));
             user.setAddress(mPref.getString(ADDRESS, null));

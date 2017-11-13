@@ -12,6 +12,7 @@ public class UserBean implements Serializable {
 
 
     private String name;
+    @SerializedName("country")
     private String country;
     @SerializedName("userId")
     private String user_id;
@@ -19,6 +20,7 @@ public class UserBean implements Serializable {
     private String email;
     private String phone;
     private String address;
+    @SerializedName("isEmailVerify")
     private String is_email_verified;
     private String profile_pic;
     @SerializedName("numberOfTrue")

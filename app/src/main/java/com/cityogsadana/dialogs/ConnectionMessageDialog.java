@@ -205,7 +205,7 @@ public class ConnectionMessageDialog extends DialogFragment {
                 public void onClick(View view) {
                     dialog.dismiss();
                     Intent intent = new Intent(activity, SelfTestActivity_.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);
                     activity.overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
 

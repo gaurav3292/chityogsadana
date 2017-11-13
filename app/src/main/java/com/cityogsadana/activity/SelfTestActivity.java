@@ -168,6 +168,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void checkSelfTestResult() {
+        Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
         JSONObject params = customJsonParams.getSelfTestParams(userBean.getUser_id(), totalTrue);
         new ApiHandler(SelfTestActivity.this).apiResponse(SelfTestActivity.this, Config.SELF_TEST, params);
@@ -212,7 +213,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onSuccess(HashMap<String, Object> map) {
-
+        Global.dialog.dismiss();
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
 
@@ -240,6 +241,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onFailure(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
         if (map.containsKey(Config.ERROR)) {
             cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
         } else {

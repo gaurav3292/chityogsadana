@@ -26,17 +26,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
+                android:background="@color/app_gray"
                 android:orientation="horizontal">
 
-                <com.android.volley.ui.NetworkImageView
-                    android:id="@+id/user_image"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/profile_place_holder" />
+                    android:gravity="center"
+                    android:layout_height="120dp">
 
-                />
+
+                    <com.github.siyamed.shapeimageview.CircularImageView
+                        android:id="@+id/user_profile"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/circle_shape"
+                        android:padding="13dp"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_user_yog" />
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,18 +116,13 @@
                 android:background="@color/app_white"
                 android:padding="5dp">
 
-                <EditText
+                <TextView
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:digits="abcdefghijklmnopqrstuvwxyz_.@1234567890"
-                    android:hint="Email Address*"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="100"
                     android:padding="10dp"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_hint_color"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -129,6 +134,7 @@
 
 
             <LinearLayout
+                android:id="@+id/verify_email_layout"
                 android:layout_width="match_parent"
                 android:layout_gravity="right"
                 android:gravity="end|right"
@@ -185,15 +191,16 @@
                 android:layout_marginBottom="0.5dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/app_white"
-                android:padding="10dp">
+                android:padding="4dp">
 
-                <Spinner
-                    android:id="@+id/country"
+                <TextView
+                    android:id="@+id/edit_country"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/icon_color"
-                    android:foregroundTint="@color/text_color"
-                    android:spinnerMode="dropdown" />
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -255,35 +262,6 @@
                 android:background="@color/app_red" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0.5dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/app_white"
-                android:padding="5dp">
-
-
-                <EditText
-                    android:id="@+id/edit_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Password*"
-                    android:inputType="textPassword"
-                    android:maxLength="16"
-                    android:padding="10dp"
-                    android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_hint_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/app_red" />
 
             <TextView
                 android:id="@+id/save_button"

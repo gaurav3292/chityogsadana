@@ -82,9 +82,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.home_img:
-                Intent profile = new Intent(this, ProfileActivity_.class);
-                profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(profile);
+                if (userBean.getUser_id() != null) {
+                    Intent profile = new Intent(this, ProfileActivity_.class);
+                    profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(profile);
+                }else {
+                    Intent intent5 = new Intent(this, LoginActivity_.class);
+                    intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent5);
+                }
                 break;
 
             case R.id.noti_img:
