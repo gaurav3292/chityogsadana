@@ -5,12 +5,7 @@ import android.content.SharedPreferences;
 
 import com.cityogsadana.bean.LevelBean;
 import com.cityogsadana.bean.UserBean;
-import com.google.gson.Gson;
 
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Level;
 
 /**
  * Created by pc15 on 9/20/2017.
@@ -51,10 +46,11 @@ public class UserPref {
             String country = user.getCountry();
             LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
-            String level = null, completedDays = null, totalDays = null;
+            String level = null;
+            int completedDays = 0, totalDays = 0;
             if (levelBean != null) {
                 totalDays = user.getLevel().getTotalNumberOfDays();
-                level = user.getLevel().getLevel();
+                level = user.getLevel().getUserLevel();
                 completedDays = user.getLevel().getCompletedNumberOfDays();
             }
 
@@ -98,13 +94,10 @@ public class UserPref {
                     editor.putString(SELF_RESULT, selfTest);
             }
 
-            if (totalDays != null) {
-                editor.putString(TOTAL_DAYS, totalDays);
-            }
 
-            if (completedDays != null) {
-                editor.putString(COMPLETED_DAYS, completedDays);
-            }
+                editor.putInt(TOTAL_DAYS, totalDays);
+                editor.putInt(COMPLETED_DAYS, completedDays);
+
 
 
             editor.commit();
@@ -131,10 +124,10 @@ public class UserPref {
             user.setGender(mPref.getString(GENDER, null));
             user.setAddress(mPref.getString(ADDRESS, null));
 
-            levelBean.setLevel(mPref.getString(LEVEL, null));
+            levelBean.setUserLevel(mPref.getString(LEVEL, null));
             user.setSelf_result(mPref.getString(SELF_RESULT, null));
-            levelBean.setTotalNumberOfDays(mPref.getString(TOTAL_DAYS, null));
-            levelBean.setCompletedNumberOfDays(mPref.getString(COMPLETED_DAYS, null));
+            levelBean.setTotalNumberOfDays(mPref.getInt(TOTAL_DAYS,0));
+            levelBean.setCompletedNumberOfDays(mPref.getInt(COMPLETED_DAYS, 0));
             user.setLevel(levelBean);
 
 

@@ -42,6 +42,7 @@
             android:gravity="center"
             android:textSize="20dp"
             android:id="@+id/test"
+            android:textColor="@color/text_color"
             android:visibility="gone"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"

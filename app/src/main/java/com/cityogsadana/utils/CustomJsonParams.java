@@ -156,4 +156,20 @@ public class CustomJsonParams {
 
         return params;
     }
+
+    public JSONObject startTest(String userId,String date,String levelNumber) {
+        params = new JSONObject();
+        try {
+            params.put("userId",userId );
+            params.put("date", date);
+            params.put("levelNumber",levelNumber);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return params;
+
+    }
 }

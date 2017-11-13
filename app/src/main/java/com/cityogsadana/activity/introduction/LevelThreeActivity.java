@@ -50,7 +50,7 @@ public class LevelThreeActivity extends AppCompatActivity implements View.OnClic
         title.setText("Level 3");
         testText.setVisibility(View.VISIBLE);
 
-        if (userBean.getLevel().getTotalNumberOfDays() != null) {
+        if (userBean.getLevel().getTotalNumberOfDays() == 0) {
             testText.setText("Start Routine");
         } else {
             testText.setText("Start Test");
@@ -77,7 +77,7 @@ public class LevelThreeActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.test:
-                if (userBean.getLevel().getTotalNumberOfDays() == null) {
+                if (userBean.getLevel().getTotalNumberOfDays() == 0) {
                     cDialog.showStartRoutine(this, this, "Routine Test", "Do you want to start your routine test?", false);
                 } else {
                     Date currentTime = Calendar.getInstance().getTime();

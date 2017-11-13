@@ -74,6 +74,8 @@ public class Config {
     public static final String GET_USER ="/getUserDetail";
     public static final String EDIT_PROFILE ="/editProfile";
     public static final String VERIFY_EMAIL ="/verifyEmail";
+    public static final String START_TEST ="/startTest";
+    public static final String SUBMIT_TEST ="/submitTest";
 
 }
 

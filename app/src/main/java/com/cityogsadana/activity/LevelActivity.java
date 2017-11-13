@@ -107,11 +107,11 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
     private void setLevels(LevelBean level) {
 
-        switch (level.getLevel())
+        switch (level.getUserLevel())
         {
             case "1":
                 icon1.setImageResource(R.drawable.ic_unlocked);
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result1.setVisibility(View.VISIBLE);
                     days1.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{
@@ -125,7 +125,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon1.setImageResource(R.drawable.ic_check);
                 icon2.setImageResource(R.drawable.ic_unlocked);
                 days1.setText("Completed");
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result2.setVisibility(View.VISIBLE);
                     days2.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{
@@ -140,7 +140,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon3.setImageResource(R.drawable.ic_unlocked);
                 days1.setText("Completed");
                 days2.setText("Completed");
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result3.setVisibility(View.VISIBLE);
                     days3.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{
@@ -157,7 +157,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days1.setText("Completed");
                 days2.setText("Completed");
                 days3.setText("Completed");
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result4.setVisibility(View.VISIBLE);
                     days4.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{
@@ -176,7 +176,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 days3.setText("Completed");
                 days4.setText("Completed");
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result5.setVisibility(View.VISIBLE);
                     days5.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{
@@ -197,7 +197,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 days4.setText("Completed");
                 days5.setText("Completed");
-                if(level.getCompletedNumberOfDays()!=null){
+                if(level.getCompletedNumberOfDays()>0){
                     result6.setVisibility(View.VISIBLE);
                     days6.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
                 }else{

@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         userBean = UserPref.getUser(this);
 
-        if (userBean.getUser_id() != null && userBean.getSelf_result() == null) {
-            cDialog.showSelfTest(this, "Self Test", "Start your self assessment test", "Start", false);
-        }
+//        if (userBean.getUser_id() != null && userBean.getSelf_result() == null) {
+//            cDialog.showSelfTest(this, "Self Test", "Start your self assessment test", "Start", false);
+//        }
     }
 
     @Override
