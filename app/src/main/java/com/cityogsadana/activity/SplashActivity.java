@@ -24,6 +24,7 @@ public class SplashActivity extends Activity {
 
     @ViewById(R.id.activity_splash)
     ViewGroup viewGroup;
+
     UserBean userBean;
 
     @Override

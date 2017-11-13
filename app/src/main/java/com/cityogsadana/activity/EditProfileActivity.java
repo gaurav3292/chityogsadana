@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.android.volley.cache.SimpleImageLoader;
 import com.android.volley.error.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.ui.NetworkImageView;
+
 import com.cityogsadana.R;
 import com.cityogsadana.adapter.CountrySpinnerAdapter;
 import com.cityogsadana.application.AppController;
