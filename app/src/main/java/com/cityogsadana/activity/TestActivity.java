@@ -23,7 +23,11 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @EActivity(R.layout.activity_test)
@@ -45,12 +49,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private SelfTestAdapter selfTestAdapter;
     private ArrayList<QuestionBean> listData;
 
+    private int totalNumberOfTrue = 0;
+
 
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
         title.setText("Test");
 
+        submitBtn.setOnClickListener(this);
 
         getAdapterData();
     }
@@ -96,6 +103,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_next:
                 boolean check = validate();
                 if (!check) {
+                    Date currentDate = Calendar.getInstance().getTime();
+                    DateFormat df = new SimpleDateFormat("yyyy:MM:dd");
+                    String currentDateStr = df.format(currentDate);
+
+
 
                 }
                 break;
@@ -121,6 +133,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+
+        totalNumberOfTrue = totalTrue;
 
 
         return error;
