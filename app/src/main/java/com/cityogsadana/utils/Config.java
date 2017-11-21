@@ -39,6 +39,11 @@ public class Config {
     public static final String TRUE = "T";
     public static final String FALSE = "F";
 
+    //Number of Question
+    public static final int LevelOne = 7;
+    public static final int LevelTwo = 15;
+    public static final int LevelThree = 11;
+
 
 
     //RESPONSE
@@ -65,7 +70,7 @@ public class Config {
 
     //Api
     public static final String URL = "http://54.213.234.78/chityogws";
-   // public static final String URL = "http://b9b272dc.ngrok.io/chityogws";
+    // public static final String URL = "http://b9b272dc.ngrok.io/chityogws";
     public static final String LOGIN_IN ="/login";
     public static final String SIGN_UP ="/signup";
     public static final String CHANGE_PASS ="/changePassword";

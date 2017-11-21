@@ -1,9 +1,8 @@
 package com.cityogsadana.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -12,14 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
-import com.cityogsadana.activity.introduction.LevelFiveActivity;
 import com.cityogsadana.activity.introduction.LevelFiveActivity_;
-import com.cityogsadana.activity.introduction.LevelFourActivity;
-import com.cityogsadana.activity.introduction.LevelOneActivity;
 import com.cityogsadana.activity.introduction.LevelOneActivity_;
-import com.cityogsadana.activity.introduction.LevelThreeActivity;
 import com.cityogsadana.activity.introduction.LevelThreeActivity_;
-import com.cityogsadana.activity.introduction.LevelTwoActivity;
 import com.cityogsadana.activity.introduction.LevelTwoActivity_;
 import com.cityogsadana.activity.introduction.SubLevelFourActivity_;
 import com.cityogsadana.bean.LevelBean;
@@ -92,9 +86,8 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     private UserBean userBean;
 
     @AfterViews
-    public void setData()
-    {
-        Global.setFont(viewGroup,Global.regular);
+    public void setData() {
+        Global.setFont(viewGroup, Global.regular);
 
         title.setText("Levels");
 
@@ -107,17 +100,15 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
     private void setLevels(LevelBean level) {
 
-        switch (level.getUserLevel())
-        {
+        switch (level.getUserLevel()) {
             case "1":
                 icon1.setImageResource(R.drawable.ic_unlocked);
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result1.setVisibility(View.VISIBLE);
-                    days1.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days1.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days1.setText("Start your test");
                 }
-
                 level1.setOnClickListener(this);
                 break;
 
@@ -125,10 +116,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon1.setImageResource(R.drawable.ic_check);
                 icon2.setImageResource(R.drawable.ic_unlocked);
                 days1.setText("Completed");
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result2.setVisibility(View.VISIBLE);
-                    days2.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days2.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days2.setText("Start your test");
                 }
                 level2.setOnClickListener(this);
@@ -140,10 +131,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon3.setImageResource(R.drawable.ic_unlocked);
                 days1.setText("Completed");
                 days2.setText("Completed");
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result3.setVisibility(View.VISIBLE);
-                    days3.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days3.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days3.setText("Start your test");
                 }
                 level3.setOnClickListener(this);
@@ -157,10 +148,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days1.setText("Completed");
                 days2.setText("Completed");
                 days3.setText("Completed");
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result4.setVisibility(View.VISIBLE);
-                    days4.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days4.setText("Start your test");
                 }
                 level4.setOnClickListener(this);
@@ -176,10 +167,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 days3.setText("Completed");
                 days4.setText("Completed");
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result5.setVisibility(View.VISIBLE);
-                    days5.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days5.setText("Start your test");
                 }
                 level5.setOnClickListener(this);
@@ -197,10 +188,10 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 days4.setText("Completed");
                 days5.setText("Completed");
-                if(level.getCompletedNumberOfDays()>0){
+                if (level.getCompletedNumberOfDays() > 0) {
                     result6.setVisibility(View.VISIBLE);
-                    days6.setText(level.getCompletedNumberOfDays()+"/"+level.getTotalNumberOfDays());
-                }else{
+                    days6.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
                     days6.setText("Start your test");
                 }
                 level6.setOnClickListener(this);
@@ -219,8 +210,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch(v.getId())
-        {
+        switch (v.getId()) {
             case R.id.back_button:
                 onBackPressed();
                 break;
@@ -250,8 +240,6 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent5);
                 break;
-
-
 
 
         }

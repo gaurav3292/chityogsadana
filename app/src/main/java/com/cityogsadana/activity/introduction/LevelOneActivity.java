@@ -160,6 +160,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                     {
                         Intent intent = new Intent(this, TestActivity_.class);
                         intent.putExtra("data",dataEntry.getLevelOneList());
+                        intent.putExtra("ques",Config.LevelOne);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 
@@ -185,7 +186,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
     @Override
     public void startRoutineTest() {
         Date currentDate = Calendar.getInstance().getTime();
-        DateFormat df = new SimpleDateFormat("yy:MM:dd");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String currentDateStr = df.format(currentDate);
         Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
@@ -201,7 +202,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             Gson gson = new Gson();
             userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
             UserPref.saveUser(this,userBean);
-            cDialog.successShow(this, "Congratulations!","Your test will be active at 21:30:00. (09:30 pm)", "Ok", false);
+            cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:30:00. (09:30 pm)", "Ok", false);
 
             startNotification();
         }

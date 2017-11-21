@@ -73,21 +73,22 @@
                     android:orientation="horizontal">
 
 
-                    <TextView
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:text="T"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/app_text_size_medium" />
+                        android:tint="@color/icon_color"
+                        android:layout_marginRight="7dp"
+                        android:src="@drawable/ic_check"
+                        />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:text="F"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/app_text_size_medium" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:tint="@color/icon_color"
+                        android:layout_marginLeft="7dp"
+                        android:src="@drawable/ic_close_button"
+                        />
+
 
                 </LinearLayout>
 

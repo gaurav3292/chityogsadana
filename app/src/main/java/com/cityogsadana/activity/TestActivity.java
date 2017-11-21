@@ -10,28 +10,41 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
+import com.cityogsadana.activity.introduction.LevelOneActivity;
 import com.cityogsadana.adapter.SelfTestAdapter;
 import com.cityogsadana.application.AppController;
 import com.cityogsadana.bean.QuestionBean;
+import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.dialogs.ConnectionMessageDialog;
+import com.cityogsadana.handler.ApiHandler;
+import com.cityogsadana.interfaces.DataHandlerCallback;
+import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
 import com.cityogsadana.utils.CustomCrouton;
+import com.cityogsadana.utils.CustomJsonParams;
+import com.cityogsadana.utils.ErrorHelper;
 import com.cityogsadana.utils.Global;
+import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @EActivity(R.layout.activity_test)
-public class TestActivity extends AppCompatActivity implements View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
+public class TestActivity extends AppCompatActivity implements DataHandlerCallback, View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
     @ViewById(R.id.activity_test)
     ViewGroup viewGroup;
@@ -48,8 +61,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private SelfTestAdapter selfTestAdapter;
     private ArrayList<QuestionBean> listData;
-
+    private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
     private int totalNumberOfTrue = 0;
+    private UserBean userBean;
+    private int ques;
 
 
     @AfterViews
@@ -58,6 +73,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         title.setText("Test");
 
         submitBtn.setOnClickListener(this);
+        backButton.setOnClickListener(this);
 
         getAdapterData();
     }
@@ -80,8 +96,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        userBean = UserPref.getUser(this);
         listData = (ArrayList<QuestionBean>) getIntent().getSerializableExtra("data");
+        ques = (int) getIntent().getSerializableExtra("ques");
     }
 
 
@@ -104,10 +121,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 boolean check = validate();
                 if (!check) {
                     Date currentDate = Calendar.getInstance().getTime();
-                    DateFormat df = new SimpleDateFormat("yyyy:MM:dd");
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                     String currentDateStr = df.format(currentDate);
-
-
+                    Global.showProgress(this);
+                    CustomJsonParams customJsonParams = new CustomJsonParams();
+                    JSONObject params = customJsonParams.submitTest(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel(),totalNumberOfTrue,ques);
+                    new ApiHandler(TestActivity.this).apiResponse(TestActivity.this, Config.SUBMIT_TEST, params);
 
                 }
                 break;
@@ -138,5 +157,35 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
 
         return error;
+    }
+
+    @Override
+    public void onSuccess(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
+        JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
+        if (jsonObject != null) {
+            Gson gson = new Gson();
+            userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
+            UserPref.saveUser(this,userBean);
+            try {
+                cDialog.successShowHome(this, "Congratulations!",jsonObject.getString("msg"), "Ok", false);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    @Override
+    public void onFailure(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
+        if (map.containsKey(Config.ERROR)) {
+            cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
+        } else {
+            VolleyError error = (VolleyError) map.get(Config.VOLLEY_ERROR);
+            cDialog.successShow(this, "Error!", ErrorHelper.getErrorResponse(error), "Ok", false);
+
+        }
     }
 }

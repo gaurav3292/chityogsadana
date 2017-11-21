@@ -172,4 +172,22 @@ public class CustomJsonParams {
         return params;
 
     }
+
+    public JSONObject submitTest(String userId, String currentDateStr, String userLevel,int trues, int ques) {
+        params = new JSONObject();
+        try {
+            params.put("userId",userId );
+            params.put("date", currentDateStr);
+            params.put("levelNumber",userLevel);
+            params.put("isResult","YES");
+            params.put("numberOfTrue",trues);
+            params.put("totalNumberOfQuestions",ques);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
 }
