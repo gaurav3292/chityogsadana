@@ -137,7 +137,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     days3.setText("Start your test");
                 }
-              //  level3.setOnClickListener(this);
+                level3.setOnClickListener(this);
                 break;
 
             case "4":
@@ -154,7 +154,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     days4.setText("Start your test");
                 }
-              //  level4.setOnClickListener(this);
+                level4.setOnClickListener(this);
                 break;
 
             case "5":
@@ -173,7 +173,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     days5.setText("Start your test");
                 }
-              //  level5.setOnClickListener(this);
+                level5.setOnClickListener(this);
                 break;
 
             case "6":
@@ -194,7 +194,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     days6.setText("Start your test");
                 }
-             //   level6.setOnClickListener(this);
+                level6.setOnClickListener(this);
                 break;
 
         }

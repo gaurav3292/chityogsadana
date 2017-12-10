@@ -19,11 +19,23 @@
         android:layout_height="350dp"
         custom:gif="@drawable/animated_logo"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Path to well being"
+        android:id="@+id/welbeing_txt"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/app_text_size_xmedium"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_height="wrap_content" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 

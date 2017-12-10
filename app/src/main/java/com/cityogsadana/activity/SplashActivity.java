@@ -31,6 +31,8 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Global.setFont(viewGroup,Global.regular);
+
         Global.setCustomFont(Global.italic, findViewById(R.id.welcome_txt));
 
         userBean = UserPref.getUser(this);
