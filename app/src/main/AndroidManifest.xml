@@ -145,14 +145,15 @@
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
-        <activity android:name=".activity.EditProfileActivity_"
+        <activity
+            android:name=".activity.EditProfileActivity_"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.LevelResultActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -190,4 +190,18 @@ public class CustomJsonParams {
         }
         return params;
     }
+
+    public JSONObject getLevelResultParams(String user_id, String levelNumber) {
+        params = new JSONObject();
+        try {
+            params.put("userId",user_id );
+            params.put("levelNumber", levelNumber);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
 }

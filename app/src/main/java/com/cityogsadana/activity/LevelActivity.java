@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
 import com.cityogsadana.activity.introduction.LevelFiveActivity_;
 import com.cityogsadana.activity.introduction.LevelOneActivity_;
@@ -17,16 +18,27 @@ import com.cityogsadana.activity.introduction.LevelThreeActivity_;
 import com.cityogsadana.activity.introduction.LevelTwoActivity_;
 import com.cityogsadana.activity.introduction.SubLevelFourActivity_;
 import com.cityogsadana.bean.LevelBean;
+import com.cityogsadana.bean.LevelResultBean;
 import com.cityogsadana.bean.UserBean;
+import com.cityogsadana.dialogs.ConnectionMessageDialog;
+import com.cityogsadana.handler.ApiHandler;
+import com.cityogsadana.interfaces.DataHandlerCallback;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.utils.Config;
+import com.cityogsadana.utils.CustomJsonParams;
+import com.cityogsadana.utils.ErrorHelper;
 import com.cityogsadana.utils.Global;
+import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 @EActivity(R.layout.activity_level)
-public class LevelActivity extends AppCompatActivity implements View.OnClickListener {
+public class LevelActivity extends AppCompatActivity implements View.OnClickListener,DataHandlerCallback {
 
     @ViewById(R.id.activity_level)
     ViewGroup viewGroup;
@@ -85,6 +97,8 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
     private UserBean userBean;
 
+    private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
+
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
@@ -105,6 +119,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon1.setImageResource(R.drawable.ic_unlocked);
                 if (level.getCompletedNumberOfDays() > 0) {
                     result1.setVisibility(View.VISIBLE);
+                    result1.setOnClickListener(this);
                     days1.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days1.setText("Start your test");
@@ -118,6 +133,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days1.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result2.setVisibility(View.VISIBLE);
+                    result2.setOnClickListener(this);
                     days2.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days2.setText("Start your test");
@@ -133,6 +149,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result3.setVisibility(View.VISIBLE);
+                    result3.setOnClickListener(this);
                     days3.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days3.setText("Start your test");
@@ -150,6 +167,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result4.setVisibility(View.VISIBLE);
+                    result4.setOnClickListener(this);
                     days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days4.setText("Start your test");
@@ -169,6 +187,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days4.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result5.setVisibility(View.VISIBLE);
+                    result5.setOnClickListener(this);
                     days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days5.setText("Start your test");
@@ -241,7 +260,63 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent5);
                 break;
 
+            case R.id.result_1:
+                showResult("1");
+                break;
+
+            case R.id.result_2:
+                showResult("2");
+                break;
+
+            case R.id.result_3:
+                showResult("3");
+                break;
+
+            case R.id.result_4:
+                showResult("4");
+                break;
+
+            case R.id.result_5:
+                showResult("5");
+                break;
+
 
         }
+    }
+
+    private void showResult(String levelNumber) {
+
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.getLevelResultParams(userBean.getUser_id(),levelNumber);
+        new ApiHandler(this).apiResponse(this,Config.LEVEL_RESULT,params);
+    }
+
+    @Override
+    public void onSuccess(HashMap<String, Object> map) {
+        Global.dialog.dismiss();
+        JSONObject obj = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
+        if(obj!=null){
+            Gson gson = new Gson();
+            LevelResultBean levelResultBean = gson.fromJson(obj.toString(),LevelResultBean.class);
+            Intent intent = new Intent(LevelActivity.this,LevelResultActivity_.class);
+            intent.putExtra("result",levelResultBean);
+            startActivity(intent);
+        }
+
+    }
+
+    @Override
+    public void onFailure(HashMap<String, Object> map) {
+
+        Global.dialog.dismiss();
+        if (map.containsKey(Config.ERROR)) {
+            cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
+        } else {
+            VolleyError error = (VolleyError) map.get(Config.VOLLEY_ERROR);
+            cDialog.successShow(this, "Error!", ErrorHelper.getErrorResponse(error), "Ok", false);
+
+        }
+
     }
 }
