@@ -207,5 +207,36 @@ public class DataEntry {
 
     }
 
+    public ArrayList<QuestionBean> getLevelFour_OneList(){
+        ArrayList<QuestionBean> levelFour_OneList = new ArrayList<>();
+        levelFour_OneList.add(new QuestionBean("Get angry?"));
+        levelFour_OneList.add(new QuestionBean("Feel jealous?"));
+        levelFour_OneList.add(new QuestionBean("Feel hatred towards another person?"));
+        levelFour_OneList.add(new QuestionBean("Feel frustrated?"));
+        levelFour_OneList.add(new QuestionBean("Cheat on someone?"));
+        levelFour_OneList.add(new QuestionBean("Steal anything?"));
+        levelFour_OneList.add(new QuestionBean("Get nervous?"));
+        levelFour_OneList.add(new QuestionBean("Tell a lie?"));
+        levelFour_OneList.add(new QuestionBean("Do anything which you were not supposed to do?"));
+        levelFour_OneList.add(new QuestionBean("Say something hurtful to your parents?"));
+        levelFour_OneList.add(new QuestionBean("Get upset with your children?"));
+        levelFour_OneList.add(new QuestionBean("Treat your employees badly?"));
+        levelFour_OneList.add(new QuestionBean("Deal badly with a work colleague?"));
+
+        return levelFour_OneList;
+
+
+    }
+
+    public ArrayList<QuestionBean> getLevelFour_TwoList(){
+        ArrayList<QuestionBean> levelFour_TwoList = new ArrayList<>();
+        levelFour_TwoList.add(new QuestionBean("Face the mirror"));
+
+
+        return levelFour_TwoList;
+
+
+    }
+
 
 }

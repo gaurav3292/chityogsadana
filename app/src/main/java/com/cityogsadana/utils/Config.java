@@ -43,6 +43,7 @@ public class Config {
     public static final int LevelOne = 7;
     public static final int LevelTwo = 15;
     public static final int LevelThree = 11;
+    public static final int LevelFour_one = 13;
 
 
 
@@ -82,6 +83,7 @@ public class Config {
     public static final String START_TEST ="/startTest";
     public static final String SUBMIT_TEST ="/submitTest";
     public static final String LEVEL_RESULT = "/levelResult";
+
 
 }
 

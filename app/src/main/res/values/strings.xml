@@ -4,70 +4,68 @@
     <string name="forgot_pass1">Enter your email address and we\'ll send you a confirmation email!</string>
 
     //What is Chit yog
-    <string name="chit_yog">\u2022 Chit Yog Sadhana is a process to understand why and how we suffer from various imbalances at every level; physical, mental and emotional.\n\n
-\u2022 Chit Yog Sadhana tells us that whenever one is dis-connected from their Chit, problems will come their way.\n\n
-\u2022 Chit Yog Sadhana is a pathway to connect to your pure consciousness to overcome one’s ailments at all levels; physical, mental and emotional.\n\n
-\u2022 Chit Yog Sadhana is for those who have tried various methods to overcome their issues, such as anxiety, stress, depression, panic attacks, paranoia, jealousy and hatred, either by:\n
-       \t\t\t \u25BA Working in the gym;\n
+    <string name="chit_yog">\u2022 Chit Yog Sadhana is based on ancient wisdom and time-tested methods that helps us to understand that until a holistic approach is followed, we will stay dis-connected from our Chit and keep suffering at every level\n\n
+\u2022 Chit Yog Sadhana shows us how the coverings to our Chit are formed by our mind making wrong choices (called Pragya-aparadh in Sanskrit), which leads to a dis-connection between Mind, Body and Chit. \n\n
+\u2022 Chit Yog Sadhana tells us that whenever we are dis-connected from their Chit, problems will come our way. \n\n
+\u2022 Chit Yog Sadhana is a process to remove these coverings one by one and bring harmony between Mind, Body and Chit. \n\n
+\u2022 Chit Yog Sadhana is a pathway to connect to our pure consciousness and to overcome our ailments at all levels; physical, mental and emotional.  \n\n
+\u2022 Chit Yog Sadhana is for those who have tried various methods to overcome their issues, such as anxiety, stress, depression, panic attacks, paranoia, jealousy and hatred or physical problems from simple hay fever to severe health problems by:   \n\n
+       \t\t\t \u25BA Working in the gym/exercise;\n
 
-       \t\t\t \u25BA Following various diet;\n
+       \t\t\t \u25BA Following various diet/nutrition plans;\n
 
-       \t\t\t \u25BA Following various meditation techniques.\n\n
-\u2022 Chit Yog Sadhana is based on ancient wisdom and time-tested methods that prove that until a complete approach of purification is followed, coverings from our Chit will not be removed and we will stay dis-connected and keep suffering at every level.\n\n
-\u2022 Chit Yog Sadhana helps in all kinds of issues such as depression, anxiety stress, panic attacks, paranoia jealousy, hatred and physical problems\n\n
-\u2022 Chit Yog Sadhana empowers an individual to overcome their problems with their own efforts, rather than seeking help or guidance from others or looking to mask their symptoms with pills or potions.\n\n
-\u2022 Chit Yog Sadhana helps an individual remove the root cause of their suffering, layer by layer, by following simple, practical routines in their day to day life so they can enjoy the benefits of their own awareness.\n\n
+       \t\t\t \u25BA Following various meditation techniques but failing to achieve the desired results.\n\n
+\u2022 Chit Yog Sadhana empowers us to overcome these problems through our own efforts, rather than seeking help from others or looking to mask our problems with pills or potions. \n\n
+\u2022 Chit Yog Sadhana helps us remove the root cause of our suffering, layer by layer, by following simple, practical routines in our day to day life so we can enjoy the benefits of our own awareness.\n\n
 \u2022 Chit Yog Sadhana is path of action\n</string>
 
 
     //what is chit
-    <string name="chit">\u2022 Chit is our true self.\n\n
-\u2022 It is our pure consciousness.\n\n
-\u2022 Chit is one’s identity.\n\n
-\u2022 Chit caries all the memories that impact on our actions, thoughts and deeds.\n\n
-\u2022 Chit is our true awareness.\n\n
-\u2022 Chit is our protection from all sorts of problems; physical, mental or
-emotional.\n\n
-As long as one is connected to his/her Chit, they are protected and able to keep themselves away from any physical, mental and emotional problems. The moment one gets dis-connected from their Chit, problems start building.\n\n
-This dis-connection starts when we make wrong choices through our actions, deeds and thoughts. These wrong choices create a covering over our Chit, dis-connection us from our true self.\n\n</string>
+    <string name="chit">Chit is a Sanskrit word meaning awareness or consciousness:\n\n
+\u2022 True awareness or to be aware of \n\n
+\u2022 To understand.\n\n
+\u2022 To comprehend\n\n
+
+       \n\n It is the core principle in all levels of progress in life, physical, mental and spiritual.\n\n
+        \u2022 Chit is our true self.  \n\n
+\u2022 Chit is our identity\n\n
+\u2022 Chit caries all the memories that impact on our actions, thoughts and deeds. \n\n
+\u2022 Chit is our protection from all sorts of problems; physical, mental or emotional.  \n\n
+
+As long as we are connected to our Chit, we can keep ourselves away from any physical, mental and emotional problems.\n\n The moment we get dis-connected from our Chit, these problems start building.
+This dis-connection starts when we make wrong choices through our actions, deeds and thoughts. These wrong choices create a covering over our Chit, dis-connecting us from our true, inner self. \n\n</string>
 
     //our aim
-    <string name="aim">Aim of Chit Yog Sadhana is to\n\n
-        \u2022 Bring wellbeing, peace, calmness and freedom from ailments.\n\n
-        \u2022 Enable everyone to reveal their inner core.\n\n
-        \u2022 Helps us realise pain and suffering are our own creation and we have the
-ability to correct them\n\n
-        \u2022 Enhance awareness that peace is inside everyone\n\n
-        \u2022 Enable everyone to face the world with courage and honesty\n\n
+    <string name="aim">Chit Yog Sadhana is designed to  \n\n
+        \u2022 Bring wellbeing, peace, calmness and freedom from ailments; \n\n
+        \u2022 Enable us to reveal our inner core.\n\n
+        \u2022 Help us realise pain and suffering are our own creation and we can correct them; \n\n
+        \u2022 Enhance awareness that peace is inside us all; \n\n
+        \u2022 Enable us to face the world with courage and honesty. \n\n
     </string>
 
     //how it works
-    <string name="need">\u2022 Those who are suffering at emotional, physical or mental level;\n\n
-        \u2022 Those who are tried everything and it did not work;\n\n
-        \u2022 Those who feel empty inside;\n\n
-        \u2022 Those who feel dis-connected;\n\n
-        \u2022 Those who are seeking inner peace;\n\n
-        \u2022 Those who want total wellness;\n\n
-        \u2022 Those who don’t want to mask their symptoms;\n\n
-        \u2022 Those who want to have better relationships in life.\n\n
-        Each of us need to understand we are responsible for our own state of health. Unless we amend our actions, we will not be able to move forward.\n\n
-        Chit Yog Whatever problems we suffer from cannot be resolved by a fragmented approach so each component of this programme needs to be followed. Those who feel there is an easy way out or think they can skip sections of this programme and achieve the desired result, then this path is not for you.\n\n
-        Chit Yog Sadhana is process if followed sincerely, honestly and with commitment, will achieve success for you.</string>
+    <string name="works">\u2022 You will complete a questionnaire to determine your physical, mental and emotional state.  \n\n
+        \u2022 The result will determine your entry point to the programme. \n\n
+        \u2022 Each stage of the programme will ask you to complete a number of tasks to enhance your health and connect to your Chit. \n\n
+        \u2022 At each stage, your efforts will be monitored \n\n
+        \u2022 On completion of a stage you will assesses how effectively you have incorporated these tasks into your life\n\n
+       \t\t \u2022 If successful, the next stage will be opened for you. \n\n
+       \t\t \u2022 If unsuccessful, you will repeat a section of the stage\n\n
+        \u2022 There are 6 stages in this programme. Stages 1-3 are free. There is a small fee after this point to move deeper into the programme \n\n
+        Each stage of this programme has its own power to remove the covering from our Chit so don’t rush. Until you are fully satisfied with the results from each stage, don’t move to the next because the result will elude you. If this process is followed sincerely and honestly, you will achieve success</string>
 
 
     //who needs it
-    <string name="works">\u2022 Chit Yog Sadhana is a practical path to achieve success.\n\n
-        \u2022 You will complete a questionnaire to determine your physical, mental and
-emotional state. The result will determine your entry point to the
-programme.\n\n
-        \u2022 Each stage of the programme will ask you to complete a number of tasks to
-enhance your health and connect you to your Chit.\n\n
-        \u2022 At each stage, your efforts will be monitored\n\n
-        \u2022 At the conclusion of the stage you will assesses how sincerely and effectively you have incorporated these tasks into your life.\n\n
-        \u2022 If successful, the next stage will be opened for you.\n\n
-        \u2022 If unsuccessful, you will repeat a section of the stage.\n\n
-        \u2022 There are 6 stages in this programme. Stages 1-3 are free. There is a small fee after this point as you move deeper into the programme\n\n
-        \u2022 Every stage of this programme has its own importance and power to remove the covering from one’s Chit so until you are fully satisfied with the result at each stage and are able to incorporate them into your life, don’t move to next stage because the result will elude you. Then you will say Chit Yog Sadhana does not work when in fact it is you who need to reflect on your actions.\n\n</string>
+    <string name="need">Anyone who is: \n\n
+        \u2022 Suffering at emotional, physical or mental level; \n\n
+        \u2022 Tired of trying everything only to find nothing worked; \n\n
+        \u2022 Feeling empty inside; \n\n
+        \u2022 Feeling dis-connected; \n\n
+        \u2022 Seeking inner peace; \n\n
+        \u2022 Wanting total wellness; \n\n
+        \u2022 TWanting to have better relationships in life. \n\n
+    \n\nIt is important that each component of this programme must be followed in the sequence it is explained. There are no short cuts and we advise you not to skip any sections of this programme as missing a step will not help you achieve the desired result.</string>
 
 
     //Level one intro
