@@ -22,7 +22,7 @@ public class Config {
     public static  final  String CHIT_YOG = "What is CHIT YOG?";
     public static  final  String CHIT = " What is CHIT";
     public static  final  String AIM = " Our Aim";
-    public static  final  String WORKS = "How it works?";
+    public static  final  String WORKS = "How does it works?";
     public static  final  String NEED = "Who needs it?";
     public static  final  String TEST = "TEST";
 

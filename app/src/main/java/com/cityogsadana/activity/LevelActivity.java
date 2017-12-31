@@ -119,6 +119,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 icon1.setImageResource(R.drawable.ic_unlocked);
                 if (level.getCompletedNumberOfDays() > 0) {
                     result1.setVisibility(View.VISIBLE);
+                    result1.setText("Track Progress");
                     result1.setOnClickListener(this);
                     days1.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
@@ -133,6 +134,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days1.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result2.setVisibility(View.VISIBLE);
+                    result2.setText("Track Progress");
                     result2.setOnClickListener(this);
                     days2.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
@@ -149,6 +151,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result3.setVisibility(View.VISIBLE);
+                    result3.setText("Track Progress");
                     result3.setOnClickListener(this);
                     days3.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
@@ -167,6 +170,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result4.setVisibility(View.VISIBLE);
+                    result4.setText("Track Progress");
                     result4.setOnClickListener(this);
                     days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
@@ -187,6 +191,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days4.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result5.setVisibility(View.VISIBLE);
+                    result5.setText("Track Progress");
                     result5.setOnClickListener(this);
                     days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
@@ -209,6 +214,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days5.setText("Completed");
                 if (level.getCompletedNumberOfDays() > 0) {
                     result6.setVisibility(View.VISIBLE);
+                    result6.setText("Track Progress");
                     days6.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days6.setText("Start your test");

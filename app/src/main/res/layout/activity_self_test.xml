@@ -73,23 +73,27 @@
                     android:orientation="horizontal">
 
 
-                    <ImageView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tint="@color/icon_color"
+                        android:textColor="@color/icon_color"
                         android:layout_marginRight="7dp"
-                        android:src="@drawable/ic_check"
+                        android:gravity="center"
+                        android:text="Yes"
                         />
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:tint="@color/icon_color"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/icon_color"
                         android:layout_marginLeft="7dp"
-                        android:src="@drawable/ic_close_button"
+                        android:gravity="center"
+                        android:text="No"
                         />
+
 
                 </LinearLayout>
+
 
 
             </LinearLayout>

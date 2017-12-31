@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.telephony.gsm.GsmCellLocation;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -43,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @EActivity(R.layout.activity_sign_up)
-public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener,DataHandlerCallback {
+public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener,DataHandlerCallback,CompoundButton.OnCheckedChangeListener {
 
 
     @ViewById(R.id.activity_signup)
@@ -76,11 +78,14 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
     EditText editPassword;
     @ViewById(R.id.edit_confirm_password)
     EditText editConfirmPassword;
+    @ViewById(R.id.check)
+    CheckBox checkBox;
 
     private CountrySpinnerAdapter countrySpinnerAdapter;
     private CountrySpinnerAdapter genderAdapter;
 
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
+    private boolean isChecked = false;
 
     @AfterViews
     public void setData() {
@@ -187,20 +192,18 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
         } else {
 
-            boolean checkEmail = AccountChecker.checkEmail(email);
             boolean checkPassword = AccountChecker.checkPasswordlength(password);
             boolean checkCcomfirmPassword = AccountChecker.checkConfirmPassword(password, confirmPassword);
 
-            if (!checkEmail) {
-                error = true;
-                new CustomCrouton(this, "Provide a valid email id", errorLayout).setInAnimation();
-
-            } else if (!checkPassword) {
+            if (!checkPassword) {
                 error = true;
                 new CustomCrouton(this, "Password should be equal to or greater than 6 characters", errorLayout).setInAnimation();
             } else if (!checkCcomfirmPassword) {
                 error = true;
                 new CustomCrouton(this, "Passwords do not match", errorLayout).setInAnimation();
+            }else if(isChecked==false){
+                error = true;
+                new CustomCrouton(this, "Please mark the terms and conditions checkbox", errorLayout).setInAnimation();
             }
 
 
@@ -261,5 +264,10 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
         }
 
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean b) {
+        isChecked = b;
     }
 }

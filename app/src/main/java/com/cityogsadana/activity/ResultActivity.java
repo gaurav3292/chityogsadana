@@ -58,7 +58,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
     protected String[] mParties = new String[] {
-            "True", "False"
+            "Yes", "No"
     };
 
     @AfterViews

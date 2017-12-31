@@ -66,7 +66,7 @@ public class LevelResultActivity extends AppCompatActivity implements View.OnCli
     };
 
     protected String[] mParties1 = new String[] {
-            "true","false"
+            "Yes","No"
     };
 
 
