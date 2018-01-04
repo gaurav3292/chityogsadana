@@ -161,6 +161,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                         Intent intent = new Intent(this, TestActivity_.class);
                         intent.putExtra("data",dataEntry.getLevelOneList());
                         intent.putExtra("ques",Config.LevelOne);
+                        intent.putExtra("title","Level one");
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 

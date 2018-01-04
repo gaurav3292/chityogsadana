@@ -8,14 +8,20 @@ import java.util.Date;
 
 public class AccountChecker {
 
-    private static String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\"
-            + "@([\\w]+\\.)+[\\w]+[\\w]$";
+    private static String EMAIL_REGEX = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
     private static String NUMBER_REGEX = "[0-9]+";
+    private static String PASSWORD_REGEX = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
     public static boolean show = false;
     public static boolean convertDone = false;
 
     public static boolean checkEmail(String email) {
         Boolean b = email.matches(EMAIL_REGEX);
+        return b;
+
+    }
+
+    public static boolean checkPassword(String password) {
+        Boolean b = password.matches(PASSWORD_REGEX);
         return b;
 
     }
@@ -170,7 +176,7 @@ public class AccountChecker {
 
     }
 
-    public static boolean checkTime( String sTartTime) {
+    public static boolean checkTime(String sTartTime) {
         boolean valid = false;
         try {
 

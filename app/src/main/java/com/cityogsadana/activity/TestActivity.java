@@ -65,12 +65,15 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
     private int totalNumberOfTrue = 0;
     private UserBean userBean;
     private int ques;
+    private String t;
 
 
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
-        title.setText("Test");
+
+        t = getIntent().getExtras().getString("title");
+        title.setText(t);
 
         submitBtn.setOnClickListener(this);
         backButton.setOnClickListener(this);
@@ -99,6 +102,7 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
         userBean = UserPref.getUser(this);
         listData = (ArrayList<QuestionBean>) getIntent().getSerializableExtra("data");
         ques = (int) getIntent().getSerializableExtra("ques");
+
     }
 
 
@@ -125,7 +129,7 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
                     String currentDateStr = df.format(currentDate);
                     Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.submitTest(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel(),totalNumberOfTrue,ques);
+                    JSONObject params = customJsonParams.submitTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel(), totalNumberOfTrue, ques);
                     new ApiHandler(TestActivity.this).apiResponse(TestActivity.this, Config.SUBMIT_TEST, params);
 
                 }
@@ -165,10 +169,10 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             Gson gson = new Gson();
-            userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
-            UserPref.saveUser(this,userBean);
+            userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+            UserPref.saveUser(this, userBean);
             try {
-                cDialog.successShowHome(this, "Congratulations!",jsonObject.getString("msg"), "Ok", false);
+                cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

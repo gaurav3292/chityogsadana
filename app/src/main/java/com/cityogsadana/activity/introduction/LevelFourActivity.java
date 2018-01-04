@@ -114,6 +114,7 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
                         Intent intent1 = new Intent(this, TestActivity_.class);
                         intent1.putExtra("data",dataEntry.getLevelFourList());
                         intent1.putExtra("ques", Config.LevelFour_one);
+                        intent1.putExtra("title","Level four");
                         intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent1);
 

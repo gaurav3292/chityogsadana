@@ -114,14 +114,14 @@ public class DataEntry {
 
     public ArrayList<QuestionBean> getDietList() {
         ArrayList<QuestionBean> dietList = new ArrayList<>();
-        dietList.add(new QuestionBean("I eat meat x12 times a week"));
-        dietList.add(new QuestionBean("I eat meat x6 times a week"));
-        dietList.add(new QuestionBean("I eat tinned foods often"));
-        dietList.add(new QuestionBean("I use processed foods often"));
+        dietList.add(new QuestionBean("I eat meat at least twice a day"));
+        dietList.add(new QuestionBean("I eat meat at least once a day"));
+        dietList.add(new QuestionBean("I eat a lot of tinned foods"));
+        dietList.add(new QuestionBean("I eat a lot of processed foods."));
         dietList.add(new QuestionBean("I eat organic tinned foods"));
         dietList.add(new QuestionBean("I drink alcohol x5 times week"));
         dietList.add(new QuestionBean("I drink alcohol x3 times a week"));
-        dietList.add(new QuestionBean("I drink Fiji Water 6-7 times a week"));
+        dietList.add(new QuestionBean("I drink sparkling Water 6-7 times a week"));
         dietList.add(new QuestionBean("I drink coffee 2-3 times a week"));
         dietList.add(new QuestionBean("I eat a lot of frozen foods"));
         dietList.add(new QuestionBean("I suffer from constipation"));

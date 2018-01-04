@@ -99,6 +99,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
                         Intent intent = new Intent(this, TestActivity_.class);
                         intent.putExtra("data",dataEntry.getlevelThreeList());
                         intent.putExtra("ques",Config.LevelThree);
+                        intent.putExtra("title","Level three");
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 

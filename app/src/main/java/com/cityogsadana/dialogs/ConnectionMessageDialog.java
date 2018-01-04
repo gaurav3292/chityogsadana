@@ -131,6 +131,7 @@ public class ConnectionMessageDialog extends DialogFragment {
     }
 
 
+
     public void successShowActivityDismiss(final Activity activity, String title, String message, String button, Boolean b) {
 
         try {

@@ -28,6 +28,7 @@ import com.cityogsadana.utils.CustomJsonParams;
 import com.cityogsadana.utils.DataEntry;
 import com.cityogsadana.utils.ErrorHelper;
 import com.cityogsadana.utils.Global;
+import com.cityogsadana.utils.StickyScrollView;
 import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
@@ -57,6 +58,8 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
     TextView sectionName;
     @ViewById(R.id.title)
     TextView title;
+    @ViewById(R.id.scroll)
+    StickyScrollView scrollView;
 
     private UserBean userBean;
     private SelfTestAdapter selfTestAdapter;
@@ -93,6 +96,7 @@ public class SelfTestActivity extends AppCompatActivity implements View.OnClickL
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(selfTestAdapter);
         recyclerView.setNestedScrollingEnabled(false);
+        scrollView.fullScroll(View.FOCUS_UP);
 
     }
 

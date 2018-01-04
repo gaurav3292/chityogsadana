@@ -98,6 +98,7 @@ public class LevelTwoActivity extends AppCompatActivity implements DataHandlerCa
                         Intent intent = new Intent(this, TestActivity_.class);
                         intent.putExtra("data", dataEntry.getlevelTwoList());
                         intent.putExtra("ques",Config.LevelTwo);
+                        intent.putExtra("title","Level two");
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 

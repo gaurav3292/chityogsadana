@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @EActivity(R.layout.activity_sign_up)
-public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener,DataHandlerCallback,CompoundButton.OnCheckedChangeListener {
+public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener, View.OnClickListener, DataHandlerCallback, CompoundButton.OnCheckedChangeListener {
 
 
     @ViewById(R.id.activity_signup)
@@ -98,6 +98,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
         buttonSignUp.setOnClickListener(this);
         alreadyLayout.setOnClickListener(this);
         closeButton.setOnClickListener(this);
+        checkBox.setOnCheckedChangeListener(this);
 
         countrySpinnerAdapter = new CountrySpinnerAdapter(this, Global.getCountries());
         countrySpinner.setAdapter(countrySpinnerAdapter);
@@ -158,7 +159,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
                     Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.getSignupParams(fullName,email,mobile,address, password,country,gender);
+                    JSONObject params = customJsonParams.getSignupParams(fullName, email, mobile, address, password, country, gender);
                     new ApiHandler(SignUpActivity.this).apiResponse(SignUpActivity.this, Config.SIGN_UP, params);
                 }
                 break;
@@ -192,16 +193,21 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
         } else {
 
-            boolean checkPassword = AccountChecker.checkPasswordlength(password);
+            boolean checkEmail = AccountChecker.checkEmail(email);
+            boolean checkPassword = AccountChecker.checkPassword(password);
             boolean checkCcomfirmPassword = AccountChecker.checkConfirmPassword(password, confirmPassword);
 
-            if (!checkPassword) {
+            if (!checkEmail) {
+
                 error = true;
-                new CustomCrouton(this, "Password should be equal to or greater than 6 characters", errorLayout).setInAnimation();
+                new CustomCrouton(this, "PLease enter a valid email address", errorLayout).setInAnimation();
+            } else if (!checkPassword) {
+                error = true;
+                new CustomCrouton(this, "Password should contains eight characters including one uppercase letter, one lowercase letter, and one number or special character", errorLayout).setInAnimation();
             } else if (!checkCcomfirmPassword) {
                 error = true;
                 new CustomCrouton(this, "Passwords do not match", errorLayout).setInAnimation();
-            }else if(isChecked==false){
+            } else if (isChecked == false) {
                 error = true;
                 new CustomCrouton(this, "Please mark the terms and conditions checkbox", errorLayout).setInAnimation();
             }
@@ -246,7 +252,8 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                 UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
                 UserPref.saveUser(this, user);
                 //finish();
-                cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                String fullName[] = user.getName().split(" ");
+                cDialog.successShowHome(this, "", "Thanks "+fullName[0]+" registering with us ", "Let's Begin", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

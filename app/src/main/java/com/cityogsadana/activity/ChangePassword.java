@@ -130,10 +130,10 @@ public class ChangePassword extends AppCompatActivity implements DataHandlerCall
             }
         } else {
 
-            boolean checkPasword = AccountChecker.checkPasswordlength(newPass);
+            boolean checkPasword = AccountChecker.checkPassword(newPass);
             if (!checkPasword) {
                 error = true;
-                new CustomCrouton(this, "Password is too short.", errorLayout).setInAnimation();
+                new CustomCrouton(this, "Password should contains eight characters including one uppercase letter, one lowercase letter, and one number or special character", errorLayout).setInAnimation();
             } else if (newPass.equalsIgnoreCase(current)) {
                 error = true;
                 new CustomCrouton(this, "Please choose your new password different from your current password.", errorLayout).setInAnimation();

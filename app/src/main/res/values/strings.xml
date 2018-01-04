@@ -64,46 +64,45 @@ This dis-connection starts when we make wrong choices through our actions, deeds
         \u2022 Feeling dis-connected; \n\n
         \u2022 Seeking inner peace; \n\n
         \u2022 Wanting total wellness; \n\n
-        \u2022 TWanting to have better relationships in life. \n\n
+        \u2022 Wanting to have better relationships in life. \n\n
     \n\nIt is important that each component of this programme must be followed in the sequence it is explained. There are no short cuts and we advise you not to skip any sections of this programme as missing a step will not help you achieve the desired result.</string>
 
 
     //Level one intro
-    <string name="one_intro">The first stage of Chit Yog Sadhana is various routines to cleanse the system and build the foundation for the next stage. Each action of this stage will strengthen every individual to take up the next part of the journey, where one will burn the layers covering their Chit and make their way through the darkness of mental and emotional problems to see the light at the end of the tunnel.
-\n\nYou will follow these daily regimes for 30 days.</string>
+    <string name="one_intro">This stage of Chit Yog Sadhana comprises various daily routines to cleanse and strengthen your body, which builds the foundation for the next stage. Each action will strengthen your body and mind and prepare you to embark on the next stage of your journey, where you will burn the layers covering your Chit and make your way through the darkness of mental and emotional problems to the light at the end of the tunnel. </string>
     <string name="step1_1">1. Get up early</string>
-    <string name="step1_1_detail">It is advisable for you wake up between 5.00 – 5.30 am as this time is considered as pure consciousness time (Brahma Muhurta). In Vedic philosophy, it is said that from 3.30am till sunrise one has more ability to connect with their Chit as the coverings are less potent during this period and one’s Chit has the natural ability to move upwards towards its source.
-\nAt this time, the qualities of the environment are pure, calm, clear and vibrant so one’s mind is calm, clear and stable and has the ability to connect with the body easily.
-\nOn physical level waking up during this period provides more clarity, stability in thoughts.</string>
+    <string name="step1_1_detail">You should wake up between 5.00–5.30 am as this time is considered a time of pure consciousness (Brahma Muhurta). In Vedic philosophy, it is said that from 3.30am till sunrise it is easier to connect to your Chit as the coverings are less potent during this time and our Chit has the natural ability to move upwards towards its source.
+\n\nThe qualities of the environment at this time are pure, calm, clear and vibrant so our mind is calm, clear and stable and has the ability to connect easily with the body.
+\n\nOn a physical level waking up during this period provides more clarity, stability in thoughts and actions as well as more vitality and energy. </string>
     <string name="step1_2">2. Brush your teeth and scrape your tongue</string>
-    <string name="step1_2_detail">Those who are dis-connected from their Chit or have lots of covering on their Chit will find their tongues will always have a coating in the morning when they wake up.
-\nThe colour of the coating will be based on the type of emotions one suffers from. Those suffering from anxiety, worries, fear will have light white, brown coating on their tongue. Those suffering from anger, frustration, jealously, hatred, stress will have a coating of white-yellow colour. Those suffering from depression, possessiveness, greed, sadness will have white thick costing on their tongue.
-\nIf one does not remove this coating within 3 minutes of waking up the coating will be re-absorbed and create more coating on their Chit. Hence it is advisable to brush teeth and scrape tongue within 3 minutes of getting up.</string>
+    <string name="step1_2_detail">You should brush your teeth and scrape your tongue as soon as you wake up.
+\n\nHave you ever noticed the coating on your tongue when you wake up? This is a sure sign you are dis-connected from your Chit. If you don’t remove this coating within 3 minutes of waking up, it will be re-absorbed and create more coating on your Chit.
+\n\nThe colour of the coating will give you an idea of the type of problems you have. A cream or brown coating is a sign you suffer from anxiety, worries, or fear. Those suffering from anger, frustration, jealously, hatred or stress will have a yellowish coating while a thick, white coating is a sign you suffer from depression or possessiveness.</string>
     <string name="step_1_3">3. Make a morning de-tox drink</string>
     <string name="step_1_3_detail">Make a drink first thing in the morning. To a glass of warm water add,\n
 \u2022 ½ teaspoon of grated ginger\n
 \u2022 ½ teaspoon of honey\n
 \u2022 ½ teaspoon of lemon juice\n
-\nThis helps to flush the toxins from the gut before they get re-absorbed. Those who suffer from various emotions will always has a build-up of toxins in their gut and this helps to flush them out. If not, these toxins ultimately create another covering on their Chit and a stronger dis-connection from their Chit.</string>
+\nThis helps to flush the toxins from the gut before they get re-absorbed. If you suffer from various emotional problems, you will always have a build-up of toxins in your gut and this helps to flush them out. If not, these toxins ultimately create another covering on your Chit</string>
     <string name="step_1_4">4. Nasya (nasal drops)</string>
-    <string name="step_1_4_detail">Everyone should put three drops of warm, cold pressed black sesame oil in each nostril and massage around the eyes and nose three times.
-\nThose who are dis-connected from their Chit always tend to experience a lack of enthusiasm or lack of cheerfulness. Sometime don’t feel like talking to anyone or get irritated and impatient easily. They tend to get angry or frustrated very easily.
-\nThese drops help to counter these emotions and help to remove the covering from their Chit.</string>
+    <string name="step_1_4_detail">Every morning, put three drops of warm, cold pressed black sesame oil in each nostril and massage around the eyes and nose three times.
+\n\nWhen dis-connected from your Chit you tend to feel a lack of enthusiasm or lack of cheerfulness, don’t feel like talking to anyone or get irritated and impatient easily. These drops help to counter these emotions and help to remove the covering from your Chit.
+\n\nHow to use: Put the dropper bottle in a container of hot water for 10-15 minutes until the bottle feels warm. Then tilt your head back and apply the drops to your nose.
+</string>
     <string name="step_1_5">5. Avoid hot showers</string>
-    <string name="step_1_5_detail">Those who are dis-connected from their Chit always like hot showers. The more dis-connected, the hotter the shower but this can be counter-productive. This heat affects the pituitary and pineal glands which impacts on the secretion of serotonin, making a person feel dull, heavy and lacking in enthusiasm.
-\nTo know if your shower is too hot, check if the steam rises above your head. If it does, it is too hot. Also, when you finish the shower, if you have red/pink skin, the shower was too hot.</string>
+    <string name="step_1_5_detail">Another sure sign you are dis-connected from your Chit is a desire for a hot shower. The more dis-connected you feel, the hotter the shower but this is counter-productive. This heat affects the pituitary and pineal glands which impacts on the secretion of serotonin, making a person feel dull, heavy and lacking in enthusiasm.
+\n\nTo know if your shower is too hot, check if the steam rises above your head. If it does, it is too hot. Also, when you finish the shower, if you have reddish skin, the shower was too hot.</string>
     <string name="step_1_6">6. Self-massage with warm oil</string>
-    <string name="step_1_6_detail">Those suffering from emotions such as anxiety, worries, fear, confusion will always have stiff and tight bodies, their hand and feet will always be cold and their skin dry.
-\nThose suffering from anger, frustration, jealously hatred their bodies will always be hot with skin rashes and boils.
-\nThose suffering from greed, passiveness, depression, suicidal thoughts will always have sluggish lymphatic system their bodies will have a natural tendency to hold water. This also stagnates your energy flow.
-\nAll these are a sign of how you are dis-connected from your Chit.
-\nEvery morning, before your shower, one should massage their body with warmed, cold-pressed black sesame oil in upward circular motion. It helps to improve lymphatic and circulation systems and flush toxins from lymphatic system and improve the immune system. This massage also makes bodily energy flow more rhythmically. </string>
+    <string name="step_1_6_detail">Every morning, before your shower, massage your body with warmed, cold-pressed black sesame oil in upward circular motion.
+\n\nIf you experience emotions such as anxiety, worries, fear or confusion, you will always have a stiff and tight body, your hands and feet will be cold and your skin, dry. If you suffer from anger, frustration, jealousy or hatred your body will always be hot with skin rashes and boils while if you feel greed, depression or suicidal thoughts you will always have a sluggish lymphatic system which stagnates your energy flow. All these symptoms are signs of how dis-connected you are from your Chit.
+\n\nDaily massage helps to improve circulation and flush toxins from the lymphatic system, allowing bodily energy to flow more rhythmically.  </string>
     <string name="step_1_7">7. Deep breathing</string>
-    <string name="step_1_7_detail">Shallow breathing is an indicator you are dis-connected from your Chit.
-\nEveryone must take 10-15 long, deep, slow breaths through the nose three times a day. This helps to provide fresh prana to one’s body which brings more vitality, vigour and ability connect to one’s Chit.</string>
+    <string name="step_1_7_detail">At least three times a day, pause and take 10-15 long, deep, slow breaths through the nose.
+\n\nShallow breathing is an indicator you are dis-connected from your Chit, so this helps to provide more fresh oxygen, which brings more vitality, vigour and ability connect to your Chit. </string>
     <string name="step_1_8">8. Morning and evening walk</string>
-    <string name="step_1_8_detail">One must go for a 30 minute walk every day around 6.00am. and again at 6.00 pm This helps to bring more vitality, vigour and alertness. It loosens the body, improves circulation, bring more groundedness and stablises the immune system.
-\nUntil or unless one is physically and mentally strong and stable one cannot make effort to connect with his/her Chit.</string>
+    <string name="step_1_8_detail">Every day, go for a 30-minute walk; once at around 6.00 am. and again at 6.00 pm
+\n\nThis helps to bring more vitality, vigour and alertness. It loosens the body, improves circulation, bring more
+groundedness and stablises the immune system. Until or unless you are physically and mentally strong and stable you cannot achieve the goal to connect with your Chit. </string>
 
 
     <!--//Level two intro -->
