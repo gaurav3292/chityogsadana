@@ -30,7 +30,7 @@ public class CustomJsonParams {
     public JSONObject getChangePass(String userId, String password, String newPass) {
         params = new JSONObject();
         try {
-            params.put("UserId", userId);
+            params.put("userId", userId);
             params.put("oldPassword", password);
             params.put("newPassword", newPass);
 
