@@ -180,7 +180,28 @@ public class AccountChecker {
         boolean valid = false;
         try {
 
-            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("21:30:00");
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("21:00:00");
+
+            String string2 = sTartTime;
+            Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);
+
+            if (endDate.after(beforeDate)) {
+                System.out.println("log_tag" + "Time is greater");
+                valid = false;
+            } else {
+                System.out.println("log_tag" + "Time is smaller");
+                valid = true;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return valid;
+    }
+    public static boolean checkTimeMorning(String sTartTime) {
+        boolean valid = false;
+        try {
+
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("04:30:00");
 
             String string2 = sTartTime;
             Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);

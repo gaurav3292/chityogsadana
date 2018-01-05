@@ -44,6 +44,7 @@ public class Config {
     public static final int LevelTwo = 15;
     public static final int LevelThree = 11;
     public static final int LevelFour_one = 13;
+    public static final int LevelFour_two = 1;
 
 
 

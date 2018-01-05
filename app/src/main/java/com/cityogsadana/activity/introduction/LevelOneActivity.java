@@ -154,7 +154,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                     Date currentTime = Calendar.getInstance().getTime();
                     DateFormat df = new SimpleDateFormat("HH:mm:ss");
                     String currentTimeStr = df.format(currentTime);
-                    boolean check = AccountChecker.checkTime(currentTimeStr);
+                    boolean check = AccountChecker.checkTimeMorning(currentTimeStr);
 
                     if(check)
                     {
@@ -166,7 +166,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                         startActivity(intent);
 
                     }else {
-                        cDialog.successShow(this, "Alert!", "Your test will be active at 21:30:00. (09:30 pm)","Ok", false);
+                        cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)","Ok", false);
 
                     }
 
@@ -203,7 +203,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             Gson gson = new Gson();
             userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
             UserPref.saveUser(this,userBean);
-            cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:30:00. (09:30 pm)", "Ok", false);
+            cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
 
             startNotification();
         }

@@ -13,10 +13,10 @@ import android.widget.TextView;
 import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
 import com.cityogsadana.activity.introduction.LevelFiveActivity_;
+import com.cityogsadana.activity.introduction.LevelFourActivity_;
 import com.cityogsadana.activity.introduction.LevelOneActivity_;
 import com.cityogsadana.activity.introduction.LevelThreeActivity_;
 import com.cityogsadana.activity.introduction.LevelTwoActivity_;
-import com.cityogsadana.activity.introduction.SubLevelFourActivity_;
 import com.cityogsadana.bean.LevelBean;
 import com.cityogsadana.bean.LevelResultBean;
 import com.cityogsadana.bean.UserBean;
@@ -38,7 +38,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 @EActivity(R.layout.activity_level)
-public class LevelActivity extends AppCompatActivity implements View.OnClickListener,DataHandlerCallback {
+public class LevelActivity extends AppCompatActivity implements View.OnClickListener, DataHandlerCallback {
 
     @ViewById(R.id.activity_level)
     ViewGroup viewGroup;
@@ -107,7 +107,6 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
         backButton.setOnClickListener(this);
 
-
         setLevels(userBean.getLevel());
 
     }
@@ -160,7 +159,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 level3.setOnClickListener(this);
                 break;
 
-            case "4":
+            case "41":
                 icon1.setImageResource(R.drawable.ic_check);
                 icon2.setImageResource(R.drawable.ic_check);
                 icon3.setImageResource(R.drawable.ic_check);
@@ -172,7 +171,26 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                     result4.setVisibility(View.VISIBLE);
                     result4.setText("Track Progress");
                     result4.setOnClickListener(this);
-                    days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                    days4.setText("");
+                } else {
+                    days4.setText("Start your test");
+                }
+                level4.setOnClickListener(this);
+                break;
+
+            case "42":
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_check);
+                icon3.setImageResource(R.drawable.ic_check);
+                icon4.setImageResource(R.drawable.ic_unlocked);
+                days1.setText("Completed");
+                days2.setText("Completed");
+                days3.setText("Completed");
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result4.setVisibility(View.VISIBLE);
+                    result4.setText("Track Progress");
+                    result4.setOnClickListener(this);
+                    days4.setText("");
                 } else {
                     days4.setText("Start your test");
                 }
@@ -256,7 +274,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent3);
                 break;
             case R.id.level_four:
-                Intent intent4 = new Intent(LevelActivity.this, SubLevelFourActivity_.class);
+                Intent intent4 = new Intent(LevelActivity.this, LevelFourActivity_.class);
                 intent4.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent4);
                 break;
@@ -279,7 +297,9 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.result_4:
-                showResult("4");
+                Intent intent1 = new Intent(this, ResultFourActivity_.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1);
                 break;
 
             case R.id.result_5:
@@ -294,19 +314,19 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 
         Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
-        JSONObject params = customJsonParams.getLevelResultParams(userBean.getUser_id(),levelNumber);
-        new ApiHandler(this).apiResponse(this,Config.LEVEL_RESULT,params);
+        JSONObject params = customJsonParams.getLevelResultParams(userBean.getUser_id(), levelNumber);
+        new ApiHandler(this).apiResponse(this, Config.LEVEL_RESULT, params);
     }
 
     @Override
     public void onSuccess(HashMap<String, Object> map) {
         Global.dialog.dismiss();
         JSONObject obj = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
-        if(obj!=null){
+        if (obj != null) {
             Gson gson = new Gson();
-            LevelResultBean levelResultBean = gson.fromJson(obj.toString(),LevelResultBean.class);
-            Intent intent = new Intent(LevelActivity.this,LevelResultActivity_.class);
-            intent.putExtra("result",levelResultBean);
+            LevelResultBean levelResultBean = gson.fromJson(obj.toString(), LevelResultBean.class);
+            Intent intent = new Intent(LevelActivity.this, LevelResultActivity_.class);
+            intent.putExtra("result", levelResultBean);
             startActivity(intent);
         }
 

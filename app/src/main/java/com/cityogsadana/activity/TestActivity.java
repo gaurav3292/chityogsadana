@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
-import com.cityogsadana.activity.introduction.LevelOneActivity;
 import com.cityogsadana.adapter.SelfTestAdapter;
 import com.cityogsadana.application.AppController;
 import com.cityogsadana.bean.QuestionBean;
@@ -21,6 +20,7 @@ import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.handler.ApiHandler;
 import com.cityogsadana.interfaces.DataHandlerCallback;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.utils.AccountChecker;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
 import com.cityogsadana.utils.CustomCrouton;
@@ -124,14 +124,25 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
             case R.id.button_next:
                 boolean check = validate();
                 if (!check) {
-                    Date currentDate = Calendar.getInstance().getTime();
-                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                    String currentDateStr = df.format(currentDate);
-                    Global.showProgress(this);
-                    CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.submitTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel(), totalNumberOfTrue, ques);
-                    new ApiHandler(TestActivity.this).apiResponse(TestActivity.this, Config.SUBMIT_TEST, params);
 
+                    Date currentTime = Calendar.getInstance().getTime();
+                    DateFormat df1 = new SimpleDateFormat("HH:mm:ss");
+                    String currentTimeStr = df1.format(currentTime);
+                    boolean check1 = AccountChecker.checkTime(currentTimeStr);
+
+                    if (!check1) {
+                        Date currentDate = Calendar.getInstance().getTime();
+                        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                        String currentDateStr = df.format(currentDate);
+                        Global.showProgress(this);
+                        CustomJsonParams customJsonParams = new CustomJsonParams();
+                        JSONObject params = customJsonParams.submitTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel(), totalNumberOfTrue, ques);
+                        new ApiHandler(TestActivity.this).apiResponse(TestActivity.this, Config.SUBMIT_TEST, params);
+
+                    }else {
+                        cDialog.successShow(this, "Alert!", "Your test submit will be active at 21:00:00. (09:00 pm)","Ok", false);
+
+                    }
                 }
                 break;
 
