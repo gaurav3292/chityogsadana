@@ -64,7 +64,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
-        title.setText(title_txt);
+        title.setText("Level 4");
 
         backButton.setOnClickListener(this);
         alarm.setOnClickListener(this);
@@ -73,12 +73,14 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
 
         if (is_true) {
             alarm.setVisibility(View.GONE);
-            introTxt.setText(R.string.four_step_2);
+            introTxt.setText(title_txt+"\n"+R.string.four_step_2);
             if (userBean.getLevel().getUserLevel().equalsIgnoreCase("42")) {
                 if (userBean.getLevel().getTotalNumberOfDays() == 0) {
                     testText.setText("Start Routine");
+                    testText.setVisibility(View.VISIBLE);
                 } else {
                     testText.setText("Start Test");
+                    testText.setVisibility(View.VISIBLE);
                 }
             } else {
                 testText.setVisibility(View.GONE);
@@ -87,13 +89,16 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
 
         } else {
             alarm.setVisibility(View.VISIBLE);
-            introTxt.setText(R.string.four_step_1);
+            introTxt.setText(title_txt+"\n"+R.string.four_step_1);
+
 
             if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")) {
                 if (userBean.getLevel().getTotalNumberOfDays() == 0) {
+                    testText.setVisibility(View.VISIBLE);
                     testText.setText("Start Routine");
                 } else {
                     testText.setText("Start Test");
+                    testText.setVisibility(View.VISIBLE);
                 }
             } else {
                 testText.setVisibility(View.GONE);

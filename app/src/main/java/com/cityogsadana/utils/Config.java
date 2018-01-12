@@ -84,6 +84,7 @@ public class Config {
     public static final String START_TEST ="/startTest";
     public static final String SUBMIT_TEST ="/submitTest";
     public static final String LEVEL_RESULT = "/levelResult";
+    public static final String SUBMIT_RATING = "/submitRating";
 
 
 }

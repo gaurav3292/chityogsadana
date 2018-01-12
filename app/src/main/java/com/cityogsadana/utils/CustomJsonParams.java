@@ -204,4 +204,19 @@ public class CustomJsonParams {
         }
         return params;
     }
+
+    public JSONObject submitRating(String user_id, String levelNumber,String subLevel) {
+        params = new JSONObject();
+        try {
+            params.put("userId",user_id );
+            params.put("levelNumber", levelNumber);
+            params.put("lineRating", subLevel);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
 }

@@ -11,6 +11,7 @@ import java.io.Serializable;
 public class LevelBean implements Serializable{
 
     private String userLevel;
+    private String userSubLevel;
     private int totalNumberOfDays;
     private int completedNumberOfDays;
     private int skippedNumberOfDays;
@@ -19,6 +20,14 @@ public class LevelBean implements Serializable{
     private int numberOfTrue;
     private int totalNumberOfQuestions;
     private int attendedNumberOfDays;
+
+    public String getUserSubLevel() {
+        return userSubLevel;
+    }
+
+    public void setUserSubLevel(String userSubLevel) {
+        this.userSubLevel = userSubLevel;
+    }
 
     public String getUserLevel() {
         return userLevel;

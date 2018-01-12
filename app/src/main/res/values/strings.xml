@@ -150,7 +150,8 @@ Chit Yog Sadhana advises us superficial changes never help to take the covering 
     </string>
 
     //Level four sub intro
-    <string name="four_step_1">We all understand that our thoughts become our emotions and our emotions lead to our actions, which can either create a covering on our Chit or help to remove it, depending on the nature of the deed. Therefore, it is important to process these thoughts and emotions on a daily basis because if we don’t, they can create more coverings to our Chit.
+    <string name="four_step_1">
+        \n\nWe all understand that our thoughts become our emotions and our emotions lead to our actions, which can either create a covering on our Chit or help to remove it, depending on the nature of the deed. Therefore, it is important to process these thoughts and emotions on a daily basis because if we don’t, they can create more coverings to our Chit.
 \n\nWhen one goes to sleep and enters a sub-conscious state, these emotions become active. According to the qualities of these emotions, they leave an imprint on our body and nervous system. For example, if one has un-processed emotions of anxiety and worry, they can impact the body in this form. The result of this situation is that despite a person having 8 -10 hours’ sleep, rather than being in a state of relaxation, our body and nervous system remain in an active mode, so we wake up feeling exhausted and fatigued rather than rested and calm. We are all aware that sleep is when the body repairs itself from the wear and tear of daily living. If our body is in an active state during this time, the repair work does not take place, and slowly the body’s immune system can become affected.
 \n\nTo prevent this process, it is very important that we process our thoughts on a daily basis. No matter how busy you are, before going to bed sit for 10 minutes to review the day. Close your eyes and ask yourself:
 \u2022 Did I get angry today?\n
@@ -174,7 +175,8 @@ If the answer to any of the above if ‘Yes”
 Continue this practice for 15 days.</string>
 
     //Level four sub intro 2
-    <string name="four_step_2">\u2022 Each evening, before bed, stand in front of a mirror\n
+    <string name="four_step_2">
+        \n\n\u2022 Each evening, before bed, stand in front of a mirror\n
 \u2022 Look into to your eyes\n
 \u2022 Place you hand on you heart and ask yourself, “Have I done anything wrong today?\n
 \u2022 Keep repeating this question for 5 minutes, looking into your eyes the whole time\n
@@ -222,4 +224,120 @@ Continue this practice for 15 days.</string>
     </string>
 
 
+    <string name="step_five">\u2022 You are almost there.\n\n
+\u2022 You are knocking at the door that will take you to connect to you Chit.\n\n
+\u2022 Through this process of Chit Yog Sadhana you will be able to burn the layers faster and forever.\n\n
+\u2022 Complete the questionnaire below and you will get x2 guided techniques.\n\n
+\u2022 Follow them and the door will open!\n\n
+        \nRate the emotional states below in the order that best represents how you feel most of the time (where 1 is the most accurate and 4 is the least accurate):\n\n
+
+    </string>
+
+    <string name="step_5_1">
+      \u2022 Anxiety, worries, fear or panic attacks? depression
+    </string>
+    <string name="step_5_2">
+     \u2022 Rejection, lack of respect, taken for granted, feeling used, being abused, childhood abuse
+    </string>
+    <string name="step_5_3">
+    \u2022 Sensitivity, holding emotions, inability to express yourself, suppressed emotions
+    </string>
+    <string name="step_5_4">
+     \u2022 Stress, anger, frustration, jealousy and hatred?
+    </string>
+
+
+    <string name="p1_52">\u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+    \n\u2022 Place a picture of someone who you respect, like and admire or feel connected with. It can either be you mother, father, teacher, guru or any other individual to whom you feel connected. This should be a person, not a picture of nature.
+    \n\u2022 Keep looking at the picture.
+    \n\u2022 Look into the eyes of the picture.
+   \n\u2022 Bring your focus to that level that you start only seeing the picture and the room goes dark.
+    \n\u2022 Maintain deep breathing.
+    \n\u2022 Continue in this state for 15 minutes.\n\n
+    You should do this first stage for at least 15 days.
+    \n\nHow to identify you are ready for the next stage of clinical guided meditation?\n When you start seeing the eyes in the picture and nothing of your surroundings and can maintain this for 15 minutes you are ready to go the next stage, which is closed eye candle meditation.\n\n
+   </string>
+
+    <string name="p2_52">
+        \u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+\n\u2022 Place a lighted candle at an arm’s length at eye level.
+\n\u2022 Focus your attention on the lighted candle for 15 seconds and then close your eyes.
+\n\u2022 Visualise the image of the lighted candle on your third eye and try to keep your concentration around that light.
+\n\u2022 After few seconds, you might notice the flame is gone. If this happens, open your eyes again, look at the flame for 10 seconds and repeat the visualisation.
+\n\u2022 Keep this practice going until the image of the lighted candle stops flickering and becomes more stable and remains there for the time of meditation for a minimum of 20 minutes.
+\n\u2022 Repeat this meditation every day without much expectation and monitor your progress.
+\n\u2022 Once you are able to keep the flame at 3rd eye for 20 minutes, you can go to the last stage of Chit Yog.\n\n
+NB: Make sure you blow out the candle when finished\n\n
+You should do this first stage for at least 15 days.\n\n
+    </string>
+
+    <string name="p1_51">\u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+\n\u2022 Put a lighted candle at arms length at eye level.
+\n\u2022 Start looking at the flame. You don’t need to think of anything. Just focus on the flame.
+\n\u2022 Keep looking at the flame (during this period you can blink your eyes).
+\n\u2022 Maintain deep breathing.
+\n\u2022 Do this for 15 minutes.
+\n\u2022 Do this every day, at the same time and in the same place.
+\n\nNB: Make sure you blow out the candle when finished\n\n
+You should do this first stage for at least 15 days.\n\n
+How to identify you are ready for the next stage of clinical guided meditation?\n When you start seeing the flame of candle in the room and nothing of your surroundings and can maintain this for 15 minutes you are ready to go the next stage, which is closed eye candle meditation.\n\n
+    </string>
+
+    <string name="p2_51">
+        \u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+\n\u2022 Place a lighted candle at an arm’s length at eye level.
+\n\u2022 Focus your attention on the lighted candle for 15 seconds and then close your eyes.
+\n\u2022 Visualise the image of the lighted candle on your third eye and try to keep your concentration around that light.
+\n\u2022 After few seconds, you might notice the flame is gone. If this happens, open your eyes again, look at the flame for 10 seconds and repeat the visualisation.
+\n\u2022 Keep this practice going until the image of the lighted candle stops flickering and becomes more stable and remains there for the time of meditation for a minimum of 20 minutes.
+\n\u2022 Repeat this meditation every day without much expectation and monitor your progress.
+\n\u2022 Once you are able to keep the flame at 3rd eye for 20 minutes, you can go to the last stage of Chit Yog.
+\n\nNB: Make sure you blow out the candle when finished\n\n
+You should do this first stage for at least 15 days.\n\n
+    </string>
+
+    <string name="p1_53">
+        \u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+        \n\u2022 Start chanting word, “OM” (Om is the universal sound, known as the 1st sound that manifest from the un-manifested state. The vibration of this word helps energy to flow in the body and helps to take the covering from you Chit).
+\n\u2022 Do for 20 minutes daily.
+\n\u2022 You should do this first stage for at least 15 days\n\n
+    </string>
+    <string name="p2_53">\u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+\n\u2022 Place a lighted candle at an arm’s length at eye level.
+\n\u2022 Focus your attention on the lighted candle for 15 seconds and then close your eyes.
+\n\u2022 Visualise the image of the lighted candle on your third eye and try to keep your concentration around that light.
+\n\u2022 After few seconds, you might notice the flame is gone. If this happens, open your eyes again, look at the flame for 10 seconds and repeat the visualisation.
+\n\u2022 Keep this practice going until the image of the lighted candle stops flickering and becomes more stable and remains there for the time of meditation for a minimum of 20 minutes.
+\n\u2022 Repeat this meditation every day without much expectation and monitor your progress.
+\n\u2022 Once you are able to keep the flame at 3rd eye for 20 minutes, you can go to the last stage of Chit Yog.
+\n\nNB: Make sure you blow out the candle when finished\n\n
+You should do this first stage for at least 15 days.\n\n
+
+    </string>
+
+    <string name="p1_54">This form of meditation is good for people suffering from stress, anger, aggression, jealousy and hatred. In this meditation, you need to use light music to build on the ability to concentrate.
+ \n\n\u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+ \n\u2022 Count your pulse rate as you begin.
+ \n\u2022 Play light soothing music
+ \n\u2022 Keep listening to the music for 20 minutes
+ \n\u2022 Now count your pulse rate. If it has come down by at least 10 beats per minute the meditation has worked.
+ \n\u2022 You can now go the next stage.
+ \n\u2022 You might experience some dry tears in your eyes. This is a normal sign.\n\n
+You should do this first stage for at least 15 days.\n\n
+
+    </string>
+    <string name="p2_54">
+        \u2022 Sit in a comfortable position and in a quiet place. (Never use your bedroom for meditation!)
+\n\u2022 Place a lighted candle at an arm’s length at eye level.
+\n\u2022 Focus your attention on the lighted candle for 15 seconds and then close your eyes.
+\n\u2022 Visualise the image of the lighted candle on your third eye and try to keep your concentration around that light.
+\n\u2022 After few seconds, you might notice the flame is gone. If this happens, open your eyes again, look at the flame for 10 seconds and repeat the visualisation.
+\n\u2022 Keep this practice going until the image of the lighted candle stops flickering and becomes more stable and remains there for the time of meditation for a minimum of 20 minutes.
+\n\u2022 Repeat this meditation every day without much expectation and monitor your progress.
+\n\u2022 Once you are able to keep the flame at 3rd eye for 20 minutes, you can go to the last stage of Chit Yog.
+\n\nNB: Make sure you blow out the candle when finished\n\n
+You should do this first stage for at least 15 days.\n\n
+
+
+    </string>
 </resources>

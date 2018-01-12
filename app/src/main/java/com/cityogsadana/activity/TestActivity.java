@@ -130,7 +130,7 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
                     String currentTimeStr = df1.format(currentTime);
                     boolean check1 = AccountChecker.checkTime(currentTimeStr);
 
-                    if (!check1) {
+                    if (check1) {
                         Date currentDate = Calendar.getInstance().getTime();
                         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                         String currentDateStr = df.format(currentDate);

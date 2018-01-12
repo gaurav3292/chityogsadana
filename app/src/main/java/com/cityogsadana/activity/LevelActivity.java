@@ -207,14 +207,14 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 days3.setText("Completed");
                 days4.setText("Completed");
-                if (level.getCompletedNumberOfDays() > 0) {
-                    result5.setVisibility(View.VISIBLE);
-                    result5.setText("Track Progress");
-                    result5.setOnClickListener(this);
-                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
-                } else {
-                    days5.setText("Start your test");
-                }
+//                if (level.getCompletedNumberOfDays() > 0) {
+//                    result5.setVisibility(View.VISIBLE);
+//                    result5.setText("Track Progress");
+//                    result5.setOnClickListener(this);
+//                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+//                } else {
+//                    days5.setText("Start your test");
+//                }
                 level5.setOnClickListener(this);
                 break;
 
@@ -230,13 +230,13 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 days4.setText("Completed");
                 days5.setText("Completed");
-                if (level.getCompletedNumberOfDays() > 0) {
-                    result6.setVisibility(View.VISIBLE);
-                    result6.setText("Track Progress");
-                    days6.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
-                } else {
-                    days6.setText("Start your test");
-                }
+//                if (level.getCompletedNumberOfDays() > 0) {
+//                    result6.setVisibility(View.VISIBLE);
+//                    result6.setText("Track Progress");
+//                    days6.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+//                } else {
+//                    days6.setText("Start your test");
+//                }
                 level6.setOnClickListener(this);
                 break;
 
@@ -279,9 +279,16 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent4);
                 break;
             case R.id.level_five:
-                Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
-                intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent5);
+                if(userBean.getLevel().getUserLevel().equalsIgnoreCase("5")) {
+                    Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
+                    intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent5);
+                }else {
+                    Intent intent5 = new Intent(LevelActivity.this, LevelFiveProgramActivity_.class);
+                    intent5.putExtra("value",userBean.getLevel().getUserLevel());
+                    intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent5);
+                }
                 break;
 
             case R.id.result_1:
