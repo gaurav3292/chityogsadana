@@ -253,7 +253,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                 UserPref.saveUser(this, user);
                 //finish();
                 String fullName[] = user.getName().split(" ");
-                cDialog.successShowHome(this, "", "Thanks "+fullName[0]+" registering with us ", "Let's Begin", false);
+                cDialog.successShowHome(this, "Welcome", "Thanks "+fullName[0]+" for registering with us ", "Let's Begin", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
