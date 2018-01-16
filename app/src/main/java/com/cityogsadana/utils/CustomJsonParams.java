@@ -191,6 +191,22 @@ public class CustomJsonParams {
         return params;
     }
 
+    public JSONObject submitProgram(String userId, String currentDateStr, String userLevel) {
+        params = new JSONObject();
+        try {
+            params.put("userId",userId );
+            params.put("date", currentDateStr);
+            params.put("levelNumber",userLevel);
+            params.put("isResult","YES");
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
+
     public JSONObject getLevelResultParams(String user_id, String levelNumber) {
         params = new JSONObject();
         try {
