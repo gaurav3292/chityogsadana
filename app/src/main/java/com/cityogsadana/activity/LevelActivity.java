@@ -15,6 +15,7 @@ import com.cityogsadana.R;
 import com.cityogsadana.activity.introduction.LevelFiveActivity_;
 import com.cityogsadana.activity.introduction.LevelFourActivity_;
 import com.cityogsadana.activity.introduction.LevelOneActivity_;
+import com.cityogsadana.activity.introduction.LevelSixActivity;
 import com.cityogsadana.activity.introduction.LevelThreeActivity_;
 import com.cityogsadana.activity.introduction.LevelTwoActivity_;
 import com.cityogsadana.bean.LevelBean;
@@ -291,6 +292,12 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
 
+            case R.id.level_six:
+                Intent intent6 = new Intent(LevelActivity.this, LevelSixActivity_.class);
+                intent6.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent6);
+                break;
+
             case R.id.result_1:
                 showResult("1");
                 break;
@@ -310,7 +317,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.result_5:
-                showResult("5");
+             //   showResult("5");
                 break;
 
 
