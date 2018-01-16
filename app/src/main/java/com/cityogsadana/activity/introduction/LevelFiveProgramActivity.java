@@ -42,8 +42,13 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
         title.setText("Level 5");
 
         backButton.setOnClickListener(this);
-        step1.setOnClickListener(this);
-        step2.setOnClickListener(this);
+
+        if (userBean.getLevel().getUserSubLevel().equalsIgnoreCase("1")) {
+            step1.setOnClickListener(this);
+        } else {
+            step2.setOnClickListener(this);
+        }
+
 
         setValueData(value);
 
@@ -94,16 +99,16 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
             case R.id.step_1:
                 Intent intent5 = new Intent(this, ProgramDetailActivity_.class);
                 intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent5.putExtra("value",value);
-                intent5.putExtra("subLevel","1");
+                intent5.putExtra("value", value);
+                intent5.putExtra("subLevel", "1");
                 startActivity(intent5);
                 break;
 
             case R.id.step_2:
                 Intent intent = new Intent(this, ProgramDetailActivity_.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("value",value);
-                intent.putExtra("subLevel","2");
+                intent.putExtra("value", value);
+                intent.putExtra("subLevel", "2");
                 startActivity(intent);
                 break;
 
