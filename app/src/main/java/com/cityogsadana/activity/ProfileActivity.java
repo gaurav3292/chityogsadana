@@ -114,7 +114,7 @@ public class ProfileActivity extends AppCompatActivity implements DataHandlerCal
 
             case R.id.edit_logout:
                 UserPref.deleteUserInfo(this);
-                Intent logout = new Intent(this, MainActivity_.class);
+                Intent logout = new Intent(this, LoginActivity_.class);
                 logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(logout);
                 break;
