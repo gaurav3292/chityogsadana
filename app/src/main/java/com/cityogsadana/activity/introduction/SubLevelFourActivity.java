@@ -73,7 +73,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
 
         if (is_true) {
             alarm.setVisibility(View.GONE);
-            introTxt.setText(title_txt+"\n"+R.string.four_step_2);
+            introTxt.setText(title_txt+"\n"+getString(R.string.four_step_2));
             if (userBean.getLevel().getUserLevel().equalsIgnoreCase("42")) {
                 if (userBean.getLevel().getTotalNumberOfDays() == 0) {
                     testText.setText("Start Routine");
@@ -89,7 +89,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
 
         } else {
             alarm.setVisibility(View.VISIBLE);
-            introTxt.setText(title_txt+"\n"+R.string.four_step_1);
+            introTxt.setText(title_txt+"\n"+getString(R.string.four_step_1));
 
 
             if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")) {

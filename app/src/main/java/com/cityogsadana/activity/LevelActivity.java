@@ -174,7 +174,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                     result4.setVisibility(View.VISIBLE);
                     result4.setText("Track Progress");
                     result4.setOnClickListener(this);
-                    days4.setText("");
+                    days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days4.setText("Start your test");
                 }
@@ -193,7 +193,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                     result4.setVisibility(View.VISIBLE);
                     result4.setText("Track Progress");
                     result4.setOnClickListener(this);
-                    days4.setText("");
+                    days4.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
                 } else {
                     days4.setText("Start your test");
                 }
