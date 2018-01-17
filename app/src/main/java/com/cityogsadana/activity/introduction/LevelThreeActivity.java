@@ -37,7 +37,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 @EActivity(R.layout.activity_level_three)
-public class LevelThreeActivity extends AppCompatActivity implements DataHandlerCallback, View.OnClickListener,ActivitySet{
+public class LevelThreeActivity extends AppCompatActivity implements DataHandlerCallback, View.OnClickListener, ActivitySet {
 
     @ViewById(R.id.activity_level_three)
     ViewGroup viewGroup;
@@ -53,8 +53,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
     private DataEntry dataEntry = new DataEntry();
 
     @AfterViews
-    public  void setData()
-    {
+    public void setData() {
         Global.setFont(viewGroup, Global.regular);
         title.setText("Level 3");
         testText.setVisibility(View.VISIBLE);
@@ -79,8 +78,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
 
     @Override
     public void onClick(View view) {
-        switch(view.getId())
-        {
+        switch (view.getId()) {
             case R.id.back_button:
                 onBackPressed();
                 break;
@@ -94,17 +92,11 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
                     String currentTimeStr = df.format(currentTime);
                     boolean check = AccountChecker.checkTimeMorning(currentTimeStr);
 
-                    if(check)
-                    {
-                        Intent intent = new Intent(this, TestActivity_.class);
-                        intent.putExtra("data",dataEntry.getlevelThreeList());
-                        intent.putExtra("ques",Config.LevelThree);
-                        intent.putExtra("title","Level three");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
+                    if (check) {
+                        checkTestSubmittion();
 
-                    }else {
-                        cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)","Ok", false);
+                    } else {
+                        cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)", "Ok", false);
 
                     }
 
@@ -114,6 +106,17 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
         }
     }
 
+    private void checkTestSubmittion() {
+        Date currentDate = Calendar.getInstance().getTime();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(currentDate);
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel());
+        new ApiHandler(LevelThreeActivity.this).apiResponseCheck(LevelThreeActivity.this, Config.CHECK_SUBMITTION, params);
+    }
+
+
     @Override
     public void startRoutineTest() {
         Date currentDate = Calendar.getInstance().getTime();
@@ -121,7 +124,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
         String currentDateStr = df.format(currentDate);
         Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
-        JSONObject params = customJsonParams.startTest(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        JSONObject params = customJsonParams.startTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel());
         new ApiHandler(LevelThreeActivity.this).apiResponse(LevelThreeActivity.this, Config.START_TEST, params);
 
     }
@@ -133,11 +136,21 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             Gson gson = new Gson();
-            userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
-            UserPref.saveUser(this,userBean);
-            cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
+            userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+            UserPref.saveUser(this, userBean);
+            cDialog.successShow(this, "Congratulations!", "Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
 
             startNotification();
+        }
+
+        JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
+        if (checkObj != null) {
+            Intent intent = new Intent(this, TestActivity_.class);
+            intent.putExtra("data", dataEntry.getlevelThreeList());
+            intent.putExtra("ques", Config.LevelThree);
+            intent.putExtra("title", "Level three");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 

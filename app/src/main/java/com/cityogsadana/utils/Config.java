@@ -61,6 +61,7 @@ public class Config {
     public static final String GET_RESPONSE = "GET_RESPONSE";
     public static final String MULTIPART_FILE_RESPONSE = "MULTIPART_FILE_RESPONSE";
     public static final String POST_JSON_RESPONSE = "POST_JSON_RESPONSE";
+    public static final String CHECK_RESPONSE = "CHECK_RESPONSE";
     public static final String VERIFY_EMAIL_JSON_RESPONSE = "VERIFY_EMAIL_JSON_RESPONSE";
     public static final String LOG_TAG = "Google Places Autocomplete";
 
@@ -86,6 +87,7 @@ public class Config {
     public static final String LEVEL_RESULT = "/levelResult";
     public static final String SUBMIT_RATING = "/submitRating";
     public static final String SUBMIT_PROGRAM = "/submitProgramme";
+    public static final String CHECK_SUBMITTION = "/checkSubmittion";
 
 
 }

@@ -1,5 +1,6 @@
 package com.cityogsadana.activity.introduction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
+import com.cityogsadana.activity.TestActivity_;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.handler.ApiHandler;
@@ -128,18 +130,22 @@ public class ProgramDetailActivity extends AppCompatActivity implements DataHand
                 break;
 
             case R.id.done_button:
-                Date currentDate = Calendar.getInstance().getTime();
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                String currentDateStr = df.format(currentDate);
-                Global.showProgress(this);
-                CustomJsonParams customJsonParams = new CustomJsonParams();
-                JSONObject params = customJsonParams.submitProgram(userBean.getUser_id(),currentDateStr,value);
-                new ApiHandler(ProgramDetailActivity.this).apiResponse(ProgramDetailActivity.this, Config.SUBMIT_PROGRAM, params);
+                checkTestSubmittion();
 
 
                 break;
 
         }
+    }
+
+    private void checkTestSubmittion() {
+        Date currentDate = Calendar.getInstance().getTime();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(currentDate);
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        new ApiHandler(ProgramDetailActivity.this).apiResponseCheck(ProgramDetailActivity.this, Config.CHECK_SUBMITTION, params);
     }
 
     @Override
@@ -155,6 +161,20 @@ public class ProgramDetailActivity extends AppCompatActivity implements DataHand
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+        }
+
+        JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
+        if(checkObj!=null){
+
+            Date currentDate = Calendar.getInstance().getTime();
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String currentDateStr = df.format(currentDate);
+            Global.showProgress(this);
+            CustomJsonParams customJsonParams = new CustomJsonParams();
+            JSONObject params = customJsonParams.submitProgram(userBean.getUser_id(),currentDateStr,value);
+            new ApiHandler(ProgramDetailActivity.this).apiResponse(ProgramDetailActivity.this, Config.SUBMIT_PROGRAM, params);
+
 
         }
     }

@@ -235,4 +235,20 @@ public class CustomJsonParams {
         }
         return params;
     }
+
+    public JSONObject checkSubmittion(String user_id, String currentDateStr, String userLevel) {
+
+        params = new JSONObject();
+        try {
+            params.put("userId",user_id );
+            params.put("levelNumber", userLevel);
+            params.put("date", currentDateStr);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
 }

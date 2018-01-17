@@ -138,19 +138,9 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
                     boolean check = AccountChecker.checkTimeMorning(currentTimeStr);
 
                     if (check) {
-                        Intent intent = new Intent(this, TestActivity_.class);
-                        if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")) {
-                            intent.putExtra("data", dataEntry.getLevelFour_OneList());
-                            intent.putExtra("ques", Config.LevelFour_one);
-                        } else {
+                        checkTestSubmittion();
 
-                            intent.putExtra("data", dataEntry.getLevelFour_TwoList());
-                            intent.putExtra("ques", Config.LevelFour_two);
-                        }
 
-                        intent.putExtra("title", "Level four");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
 
                     } else {
                         cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)", "Ok", false);
@@ -186,6 +176,16 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
 
     }
 
+    private void checkTestSubmittion() {
+        Date currentDate = Calendar.getInstance().getTime();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(currentDate);
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        new ApiHandler(SubLevelFourActivity.this).apiResponseCheck(SubLevelFourActivity.this, Config.CHECK_SUBMITTION, params);
+    }
+
     @Override
     public void startRoutineTest() {
         Date currentDate = Calendar.getInstance().getTime();
@@ -209,6 +209,23 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
             cDialog.successShow(this, "Congratulations!", "Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
 
             startNotification();
+        }
+
+        JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
+        if(checkObj!=null){
+            Intent intent = new Intent(this, TestActivity_.class);
+            if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")) {
+                intent.putExtra("data", dataEntry.getLevelFour_OneList());
+                intent.putExtra("ques", Config.LevelFour_one);
+            } else {
+
+                intent.putExtra("data", dataEntry.getLevelFour_TwoList());
+                intent.putExtra("ques", Config.LevelFour_two);
+            }
+
+            intent.putExtra("title", "Level four");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 

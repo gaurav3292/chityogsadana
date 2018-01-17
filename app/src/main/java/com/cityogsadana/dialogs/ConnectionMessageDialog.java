@@ -78,6 +78,50 @@ public class ConnectionMessageDialog extends DialogFragment {
 
     }
 
+    public void successBack(final Activity activity, String title, String message, String button, Boolean b) {
+
+        try {
+            dialog = new Dialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_alert);
+            dialog.getWindow().getAttributes().width = ViewGroup.LayoutParams.FILL_PARENT;
+            viewGroup = (ViewGroup) dialog.findViewById(R.id.dialog_alert);
+            Global.setFont(viewGroup, Global.regular);
+
+            okButton = (LinearLayout) dialog.findViewById(R.id.ok_button);
+            cancelButton = (LinearLayout) dialog.findViewById(R.id.cancel_button);
+            headingTxt = (TextView) dialog.findViewById(R.id.heading);
+            messageTxt = (TextView) dialog.findViewById(R.id.message);
+            buttonTxt = (TextView) dialog.findViewById(R.id.button_text);
+            dialog.setCancelable(true);
+
+            headingTxt.setText(title);
+            messageTxt.setText(message);
+            buttonTxt.setText(button);
+
+
+            okButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                    activity.finish();
+                }
+            });
+
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            // Showing Alert Message
+            dialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public void successShowHome(final Activity activity, String title, String message, String button, Boolean b) {
 
@@ -105,9 +149,9 @@ public class ConnectionMessageDialog extends DialogFragment {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity_.class);
+                  /*  Intent intent = new Intent(activity, MainActivity_.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    activity.startActivity(intent);
+                    activity.startActivity(intent);*/
                     activity.finish();
                 }
             });
@@ -116,9 +160,9 @@ public class ConnectionMessageDialog extends DialogFragment {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
-                    Intent intent = new Intent(activity, MainActivity_.class);
+                  /*  Intent intent = new Intent(activity, MainActivity_.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    activity.startActivity(intent);
+                    activity.startActivity(intent);*/
                     activity.finish();
                 }
             });

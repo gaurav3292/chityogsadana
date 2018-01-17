@@ -95,12 +95,9 @@ public class LevelTwoActivity extends AppCompatActivity implements DataHandlerCa
                     boolean check = AccountChecker.checkTimeMorning(currentTimeStr);
 
                     if (check) {
-                        Intent intent = new Intent(this, TestActivity_.class);
-                        intent.putExtra("data", dataEntry.getlevelTwoList());
-                        intent.putExtra("ques",Config.LevelTwo);
-                        intent.putExtra("title","Level two");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
+
+                        checkTestSubmittion();
+
 
                     } else {
                         cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)", "Ok", false);
@@ -109,6 +106,16 @@ public class LevelTwoActivity extends AppCompatActivity implements DataHandlerCa
                 }
                 break;
         }
+    }
+
+    private void checkTestSubmittion() {
+        Date currentDate = Calendar.getInstance().getTime();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(currentDate);
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        new ApiHandler(LevelTwoActivity.this).apiResponseCheck(LevelTwoActivity.this, Config.CHECK_SUBMITTION, params);
     }
 
     @Override
@@ -135,6 +142,17 @@ public class LevelTwoActivity extends AppCompatActivity implements DataHandlerCa
             cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
 
             startNotification();
+        }
+
+
+        JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
+        if(checkObj!=null){
+            Intent intent = new Intent(this, TestActivity_.class);
+            intent.putExtra("data", dataEntry.getlevelTwoList());
+            intent.putExtra("ques",Config.LevelTwo);
+            intent.putExtra("title","Level two");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 

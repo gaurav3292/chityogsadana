@@ -203,4 +203,11 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
 
         }
     }
+
+    @Override
+    public void onBackPressed() {
+
+        cDialog.successBack(this, "Error!", "Going back from test will reset your answers you have to fill up your answers again", "Ok", false);
+
+    }
 }

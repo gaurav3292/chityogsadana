@@ -158,12 +158,10 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
                     if(check)
                     {
-                        Intent intent = new Intent(this, TestActivity_.class);
-                        intent.putExtra("data",dataEntry.getLevelOneList());
-                        intent.putExtra("ques",Config.LevelOne);
-                        intent.putExtra("title","Level one");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
+
+                        checkTestSubmittion();
+
+
 
                     }else {
                         cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)","Ok", false);
@@ -175,6 +173,16 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
 
         }
+    }
+
+    private void checkTestSubmittion() {
+        Date currentDate = Calendar.getInstance().getTime();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(currentDate);
+        Global.showProgress(this);
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        new ApiHandler(LevelOneActivity.this).apiResponseCheck(LevelOneActivity.this, Config.CHECK_SUBMITTION, params);
     }
 
 
@@ -199,6 +207,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
     public void onSuccess(HashMap<String, Object> map) {
         Global.dialog.dismiss();
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
+
         if (jsonObject != null) {
             Gson gson = new Gson();
             userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
@@ -207,6 +216,17 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
             startNotification();
         }
+
+        JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
+        if(checkObj!=null){
+            Intent intent = new Intent(this, TestActivity_.class);
+            intent.putExtra("data",dataEntry.getLevelOneList());
+            intent.putExtra("ques",Config.LevelOne);
+            intent.putExtra("title","Level one");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
     }
 
     private void startNotification() {
