@@ -32,6 +32,7 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
     TextView step_one;
     @ViewById(R.id.step_2)
     TextView step_two;
+    private UserBean userBean;
 
 
 
@@ -42,14 +43,20 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
 
         backButton.setOnClickListener(this);
 
-        step_one.setOnClickListener(this);
-        step_two.setOnClickListener(this);
+        if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")){
+            step_one.setOnClickListener(this);
+        }else{
+
+            step_two.setOnClickListener(this);
+        }
+
     }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        userBean = UserPref.getUser(this);
     }
 
     @Override
@@ -81,4 +88,10 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        userBean = UserPref.getUser(this);
+    }
 }

@@ -54,13 +54,6 @@
                 </View>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/four_intro"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_medium" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
@@ -107,6 +100,14 @@
                     android:textSize="@dimen/app_text_size_medium" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/four_intro"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_medium" />
+
 
         </LinearLayout>
 
