@@ -109,8 +109,8 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         title.setText("Levels");
 
         backButton.setOnClickListener(this);
-
         setLevels(userBean.getLevel());
+
 
     }
 
@@ -282,13 +282,13 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent4);
                 break;
             case R.id.level_five:
-                if(userBean.getLevel().getUserLevel().equalsIgnoreCase("5")) {
+                if (userBean.getLevel().getUserLevel().equalsIgnoreCase("5")) {
                     Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
                     intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent5);
-                }else {
+                } else {
                     Intent intent5 = new Intent(LevelActivity.this, LevelFiveProgramActivity_.class);
-                    intent5.putExtra("value",userBean.getLevel().getUserLevel());
+                    intent5.putExtra("value", userBean.getLevel().getUserLevel());
                     intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent5);
                 }
@@ -319,7 +319,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.result_5:
-             //   showResult("5");
+                //   showResult("5");
                 break;
 
 
@@ -358,6 +358,19 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
             VolleyError error = (VolleyError) map.get(Config.VOLLEY_ERROR);
             cDialog.successShow(this, "Error!", ErrorHelper.getErrorResponse(error), "Ok", false);
 
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        userBean = UserPref.getUser(this);
+
+        try {
+            setLevels(userBean.getLevel());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

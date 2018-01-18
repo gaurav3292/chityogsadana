@@ -139,8 +139,8 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
                         JSONObject params = customJsonParams.submitTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel(), totalNumberOfTrue, ques);
                         new ApiHandler(TestActivity.this).apiResponse(TestActivity.this, Config.SUBMIT_TEST, params);
 
-                    }else {
-                        cDialog.successShow(this, "Alert!", "Your test submit will be active at 21:00:00. (09:00 pm)","Ok", false);
+                    } else {
+                        cDialog.successShow(this, "Alert!", "Your test submit will be active at 21:00:00. (09:00 pm)", "Ok", false);
 
                     }
                 }
@@ -180,13 +180,28 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             Gson gson = new Gson();
-            userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
-            UserPref.saveUser(this, userBean);
-            try {
-                cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
-            } catch (JSONException e) {
-                e.printStackTrace();
+            UserBean userBean1 = gson.fromJson(jsonObject.toString(), UserBean.class);
+
+            if (userBean1.getLevel().getUserLevel().equalsIgnoreCase(userBean.getLevel().getUserLevel())) {
+                userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                UserPref.saveUser(this, userBean);
+
+                try {
+                    cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                UserPref.saveUser(this, userBean);
+
+                try {
+                    cDialog.successShowLevelMenu(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+
 
         }
 

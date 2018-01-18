@@ -50,6 +50,8 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
     EditText prg4;
     @ViewById(R.id.error_check_layout)
     RelativeLayout errorLayout;
+    @ViewById(R.id.submit_button)
+    TextView submitBtn;
 
     private String finalValue;
     private UserBean userBean;
@@ -62,6 +64,7 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
         title.setText("Level 5");
 
         backButton.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
 
     }
 

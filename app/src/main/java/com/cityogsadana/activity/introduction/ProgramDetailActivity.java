@@ -154,13 +154,39 @@ public class ProgramDetailActivity extends AppCompatActivity implements DataHand
         JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
         if (jsonObject != null) {
             Gson gson = new Gson();
-            userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
-            UserPref.saveUser(this,userBean);
-            try {
-                cDialog.successShow(this, "Congratulations!",jsonObject.getString("msg"), "Ok", false);
-            } catch (JSONException e) {
-                e.printStackTrace();
+            UserBean userBean1 = gson.fromJson(jsonObject.toString(), UserBean.class);
+            if(userBean1.getLevel().getUserSubLevel()!=null){
+                if (userBean1.getLevel().getUserSubLevel().equalsIgnoreCase(userBean.getLevel().getUserSubLevel())) {
+                    userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                    UserPref.saveUser(this, userBean);
+
+                    try {
+                        cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                    UserPref.saveUser(this, userBean);
+
+                    try {
+                        cDialog.successShowLevelMenu(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else{
+                userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                UserPref.saveUser(this, userBean);
+
+                try {
+                    cDialog.successShowLevelMenu(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+
+
 
         }
 
