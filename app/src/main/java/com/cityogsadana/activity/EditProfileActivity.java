@@ -274,7 +274,7 @@ public class EditProfileActivity extends AppCompatActivity implements UploadPhot
                 UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
                 UserPref.saveUser(this, user);
                 //finish();
-                cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                cDialog.successShowMain(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

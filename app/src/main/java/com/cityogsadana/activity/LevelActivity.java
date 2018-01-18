@@ -220,6 +220,89 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 }
                 level5.setOnClickListener(this);
                 break;
+            case "51":
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_check);
+                icon3.setImageResource(R.drawable.ic_check);
+                icon4.setImageResource(R.drawable.ic_check);
+                icon5.setImageResource(R.drawable.ic_unlocked);
+                days1.setText("Completed");
+                days2.setText("Completed");
+                days3.setText("Completed");
+                days4.setText("Completed");
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result5.setVisibility(View.VISIBLE);
+                    result5.setText("");
+                    result5.setOnClickListener(this);
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
+                    days5.setText("Start your test");
+                }
+                level5.setOnClickListener(this);
+                break;
+
+            case "52":
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_check);
+                icon3.setImageResource(R.drawable.ic_check);
+                icon4.setImageResource(R.drawable.ic_check);
+                icon5.setImageResource(R.drawable.ic_unlocked);
+                days1.setText("Completed");
+                days2.setText("Completed");
+                days3.setText("Completed");
+                days4.setText("Completed");
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result5.setVisibility(View.VISIBLE);
+                    result5.setText("");
+                    result5.setOnClickListener(this);
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
+                    days5.setText("Start your test");
+                }
+                level5.setOnClickListener(this);
+                break;
+
+            case "53":
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_check);
+                icon3.setImageResource(R.drawable.ic_check);
+                icon4.setImageResource(R.drawable.ic_check);
+                icon5.setImageResource(R.drawable.ic_unlocked);
+                days1.setText("Completed");
+                days2.setText("Completed");
+                days3.setText("Completed");
+                days4.setText("Completed");
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result5.setVisibility(View.VISIBLE);
+                    result5.setText("");
+                    result5.setOnClickListener(this);
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
+                    days5.setText("Start your test");
+                }
+                level5.setOnClickListener(this);
+                break;
+
+            case "54":
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_check);
+                icon3.setImageResource(R.drawable.ic_check);
+                icon4.setImageResource(R.drawable.ic_check);
+                icon5.setImageResource(R.drawable.ic_unlocked);
+                days1.setText("Completed");
+                days2.setText("Completed");
+                days3.setText("Completed");
+                days4.setText("Completed");
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result5.setVisibility(View.VISIBLE);
+                    result5.setText("");
+                    result5.setOnClickListener(this);
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
+                    days5.setText("Start your test");
+                }
+                level5.setOnClickListener(this);
+                break;
 
             case "6":
                 icon1.setImageResource(R.drawable.ic_check);
@@ -233,6 +316,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days3.setText("Completed");
                 days4.setText("Completed");
                 days5.setText("Completed");
+                days6.setText("Unlocked");
 //                if (level.getCompletedNumberOfDays() > 0) {
 //                    result6.setVisibility(View.VISIBLE);
 //                    result6.setText("Track Progress");

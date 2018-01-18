@@ -143,7 +143,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
                 Gson gson = new Gson();
                 UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
                 UserPref.saveUser(this, user);
-                cDialog.successShowHome(this, "Welcome","Logged in successfully", "Proceed", false);
+                cDialog.successShowMain(this, "Welcome","Logged in successfully", "Proceed", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

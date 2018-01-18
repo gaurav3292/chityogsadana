@@ -29,6 +29,10 @@ import org.androidannotations.annotations.ViewById;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 @EActivity(R.layout.activity_level_five)
@@ -100,9 +104,13 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
                         finalValue = "4";
                     }
 
+                    Date currentDate = Calendar.getInstance().getTime();
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                    String currentDateStr = df.format(currentDate);
+
                     Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.submitRating(userBean.getUser_id(), userBean.getLevel().getUserLevel(), finalValue);
+                    JSONObject params = customJsonParams.submitRating(userBean.getUser_id(), userBean.getLevel().getUserLevel(), finalValue,currentDateStr);
                     new ApiHandler(LevelFiveActivity.this).apiResponse(LevelFiveActivity.this, Config.SUBMIT_RATING, params);
                 }
 
@@ -158,7 +166,7 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
                 userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
                 UserPref.saveUser(this, userBean);
 
-                cDialog.successShow(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                cDialog.successShowLevelMenu(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

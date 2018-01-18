@@ -221,12 +221,13 @@ public class CustomJsonParams {
         return params;
     }
 
-    public JSONObject submitRating(String user_id, String levelNumber,String subLevel) {
+    public JSONObject submitRating(String user_id, String levelNumber, String subLevel, String currentDateStr) {
         params = new JSONObject();
         try {
             params.put("userId",user_id );
             params.put("levelNumber", levelNumber);
             params.put("lineRating", subLevel);
+            params.put("date", currentDateStr);
             Log.d("params...", params.toString());
 
         } catch (JSONException e) {
