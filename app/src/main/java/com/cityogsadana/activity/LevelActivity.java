@@ -210,14 +210,14 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 days3.setText("Completed");
                 days4.setText("Completed");
-//                if (level.getCompletedNumberOfDays() > 0) {
-//                    result5.setVisibility(View.VISIBLE);
-//                    result5.setText("Track Progress");
-//                    result5.setOnClickListener(this);
-//                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
-//                } else {
-//                    days5.setText("Start your test");
-//                }
+                if (level.getCompletedNumberOfDays() > 0) {
+                    result5.setVisibility(View.VISIBLE);
+                    result5.setText("");
+                    result5.setOnClickListener(this);
+                    days5.setText(level.getCompletedNumberOfDays() + "/" + level.getTotalNumberOfDays());
+                } else {
+                    days5.setText("Start your test");
+                }
                 level5.setOnClickListener(this);
                 break;
 
