@@ -93,7 +93,7 @@ public class ConnectionMessageDialog extends DialogFragment {
             headingTxt = (TextView) dialog.findViewById(R.id.heading);
             messageTxt = (TextView) dialog.findViewById(R.id.message);
             buttonTxt = (TextView) dialog.findViewById(R.id.button_text);
-            dialog.setCancelable(true);
+            dialog.setCancelable(false);
 
             headingTxt.setText(title);
             messageTxt.setText(message);

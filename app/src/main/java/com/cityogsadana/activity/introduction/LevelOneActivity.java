@@ -212,7 +212,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             Gson gson = new Gson();
             userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
             UserPref.saveUser(this,userBean);
-            cDialog.successShow(this, "Congratulations!","Your test will be active tomorrow at 21:00:00. (09:00 pm)", "Ok", false);
+            cDialog.successBack(this, "Congratulations!","Your test will be active from tomorrow", "Ok", false);
 
             startNotification();
         }
