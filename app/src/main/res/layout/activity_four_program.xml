@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_four_program"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    tools:context="com.cityogsadana.activity.introduction.FourProgramActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/include2"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/heading_txt"
+                android:layout_gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_xlarge"
+                android:text="Meditation Programs"
+                android:gravity="center"
+
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/app_red"
+                android:layout_height="1.25dp">
+
+            </View>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/text_color"
+            android:text="1. Anxiety, worries, fear or panic attacks"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:id="@+id/prog_1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_square"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Program 1"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text_color"
+            android:text="2. Rejection, lack of respect, taken for granted, feeling used, being abused, childhood abuse"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:id="@+id/prog_2"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_square"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Program 2"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="3. Sensitivity, holding emotions, inability to express yourself, suppressed emotions and depression"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:id="@+id/prog_3"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_square"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Program 3"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Stress, anger, frustration, jealousy and hatred"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+        <TextView
+            android:id="@+id/prog_4"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_square"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Program 4"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/app_text_size_medium" />
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
+
+    <include
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+    </include>
+
+</RelativeLayout>

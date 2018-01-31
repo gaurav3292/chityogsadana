@@ -382,6 +382,133 @@
 
 
             </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/extra_detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="7dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/extra_1"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_medium" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/green_grass"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/green_grass_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/pore_rose"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/pore_rose_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/extra_2"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/sun"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/sun_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/gandoosh"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/gandoosh_deatil"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
         </LinearLayout>
 
     </ScrollView>

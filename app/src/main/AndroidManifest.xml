@@ -170,11 +170,16 @@
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.introduction.LevelSixActivity_"
+        <activity
+            android:name=".activity.introduction.LevelSixActivity_"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.introduction.FourProgramActivity_"
             android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            />
+            ></activity>
     </application>
 
 </manifest>

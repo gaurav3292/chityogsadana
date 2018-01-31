@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView testTxt;
     @ViewById(R.id.aim)
     CardView aimTxt;
+    @ViewById(R.id.owner)
+    CardView owner;
     @ViewById(R.id.noti_img)
     ImageView profileTab;
     @ViewById(R.id.home_img)
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         worksTxt.setOnClickListener(this);
         needsTxt.setOnClickListener(this);
         profileTab.setOnClickListener(this);
+        owner.setOnClickListener(this);
 
 
     }
@@ -143,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent5);
                         overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
-
                     } else {
                         Intent intent5 = new Intent(this, LevelActivity_.class);
                         intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -156,6 +158,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent5);
                     overridePendingTransition(R.anim.enter_friom_rignt_fast, R.anim.no_change);
                 }
+                break;
+
+
+            case R.id.owner:
+                cDialog.successShow(this, "Owner", "Chit Yog Sadhana is developed by Dr. S. Ajit, an ayurvedic consultant based in Australasia for 23 years, with 38 years clinical experience.","Ok", false);
                 break;
 
         }

@@ -17,9 +17,11 @@ public class LevelBean implements Serializable{
     private int skippedNumberOfDays;
     private String startDate;
     private String isResult;
+    private int isExtraResult;
     private int numberOfTrue;
     private int totalNumberOfQuestions;
     private int attendedNumberOfDays;
+
 
     public String getUserSubLevel() {
         return userSubLevel;

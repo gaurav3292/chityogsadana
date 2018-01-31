@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.error.VolleyError;
@@ -65,6 +66,8 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
     TextView alarm8;
     @ViewById(R.id.test)
     TextView testText;
+    @ViewById(R.id.extra_detail_layout)
+    LinearLayout extraDetailLayout;
 
     private UserBean userBean;
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
@@ -93,6 +96,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
         alarm7.setOnClickListener(this);
         alarm8.setOnClickListener(this);
         testText.setOnClickListener(this);
+
 
     }
 

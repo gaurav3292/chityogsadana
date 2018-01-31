@@ -325,6 +325,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 //                    days6.setText("Start your test");
 //                }
                 level6.setOnClickListener(this);
+                level5.setOnClickListener(this);
                 break;
 
         }
@@ -366,15 +367,25 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent4);
                 break;
             case R.id.level_five:
-                if (userBean.getLevel().getUserLevel().equalsIgnoreCase("5")) {
-                    Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
+                if(userBean.getLevel().getUserLevel().equalsIgnoreCase("6"))
+                {
+                    Intent intent5 = new Intent(LevelActivity.this, FourProgramActivity_.class);
                     intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent5);
-                } else {
-                    Intent intent5 = new Intent(LevelActivity.this, LevelFiveProgramActivity_.class);
-                    intent5.putExtra("value", userBean.getLevel().getUserLevel());
-                    intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent5);
+
+                }else {
+
+                    if (userBean.getLevel().getUserLevel().equalsIgnoreCase("5")) {
+                        Intent intent5 = new Intent(LevelActivity.this, LevelFiveActivity_.class);
+                        intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent5);
+                    } else {
+                        Intent intent5 = new Intent(LevelActivity.this, LevelFiveProgramActivity_.class);
+                        intent5.putExtra("value", userBean.getLevel().getUserLevel());
+                        intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent5);
+                    }
+
                 }
                 break;
 
