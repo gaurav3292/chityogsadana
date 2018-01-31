@@ -6,15 +6,9 @@
     //What is Chit yog
     <string name="chit_yog">\u2022 Chit Yog Sadhana is based on ancient wisdom and time-tested methods that helps us to understand that until a holistic approach is followed, we will stay dis-connected from our Chit and keep suffering at every level\n\n
 \u2022 Chit Yog Sadhana shows us how the coverings to our Chit are formed by our mind making wrong choices (called Pragya-aparadh in Sanskrit), which leads to a dis-connection between Mind, Body and Chit. \n\n
-\u2022 Chit Yog Sadhana tells us that whenever we are dis-connected from their Chit, problems will come our way. \n\n
+\u2022 Chit Yog Sadhana tells us that whenever we are dis-connected from our Chit, problems will come our way. \n\n
 \u2022 Chit Yog Sadhana is a process to remove these coverings one by one and bring harmony between Mind, Body and Chit. \n\n
-\u2022 Chit Yog Sadhana is a pathway to connect to our pure consciousness and to overcome our ailments at all levels; physical, mental and emotional.  \n\n
-\u2022 Chit Yog Sadhana is for those who have tried various methods to overcome their issues, such as anxiety, stress, depression, panic attacks, paranoia, jealousy and hatred or physical problems from simple hay fever to severe health problems by:   \n\n
-       \t\t\t \u25BA Working in the gym/exercise;\n
-
-       \t\t\t \u25BA Following various diet/nutrition plans;\n
-
-       \t\t\t \u25BA Following various meditation techniques but failing to achieve the desired results.\n\n
+\u2022 Chit Yog Sadhana is a pathway to connect to our pure consciousness and to overcome our ailments at all levels; physical, mental and emotional. \n\n
 \u2022 Chit Yog Sadhana empowers us to overcome these problems through our own efforts, rather than seeking help from others or looking to mask our problems with pills or potions. \n\n
 \u2022 Chit Yog Sadhana helps us remove the root cause of our suffering, layer by layer, by following simple, practical routines in our day to day life so we can enjoy the benefits of our own awareness.\n\n
 \u2022 Chit Yog Sadhana is path of action\n</string>
@@ -65,11 +59,19 @@ This dis-connection starts when we make wrong choices through our actions, deeds
         \u2022 Seeking inner peace; \n\n
         \u2022 Wanting total wellness; \n\n
         \u2022 Wanting to have better relationships in life. \n\n
+        \u2022 Chit Yog Sadhana is for those who have tried various methods to overcome their issues, such as anxiety, stress, depression, panic attacks, paranoia, jealousy and hatred or physical problems from simple hay fever to severe
+health problems by:\n
+\u2022 Working in the gym/exercise;\n
+\u2022 Following various diet/nutrition plans;\n
+\u2022 Following various meditation techniques but failing to achieve the
+desired results.\n\n
     \n\nIt is important that each component of this programme must be followed in the sequence it is explained. There are no short cuts and we advise you not to skip any sections of this programme as missing a step will not help you achieve the desired result.</string>
 
 
     //Level one intro
-    <string name="one_intro">This stage of Chit Yog Sadhana comprises various daily routines to cleanse and strengthen your body, which builds the foundation for the next stage. Each action will strengthen your body and mind and prepare you to embark on the next stage of your journey, where you will burn the layers covering your Chit and make your way through the darkness of mental and emotional problems to the light at the end of the tunnel. </string>
+    <string name="one_intro">This stage of Chit Yog Sadhana comprises various daily routines to cleanse and strengthen your body, which builds the foundation for the next stage. Each action will strengthen your body and mind and prepare you to embark on the next stage of your journey, where you will burn the layers covering your Chit and make your way through the darkness of mental and emotional problems to the light at the end of the tunnel. \n\n
+    You will follow these daily regimes for 30 days.\n
+    </string>
     <string name="step1_1">1. Get up early</string>
     <string name="step1_1_detail">You should wake up between 5.00–5.30 am as this time is considered a time of pure consciousness (Brahma Muhurta). In Vedic philosophy, it is said that from 3.30am till sunrise it is easier to connect to your Chit as the coverings are less potent during this time and our Chit has the natural ability to move upwards towards its source.
 \n\nThe qualities of the environment at this time are pure, calm, clear and vibrant so our mind is calm, clear and stable and has the ability to connect easily with the body.
@@ -116,7 +118,7 @@ groundedness and stablises the immune system. Until or unless you are physically
 \u2022 Our ways to eat\n
 \u2022 Our thoughts at time of eating
 \n\nThese factors are responsible for either creating more covering on our Chit and taking us further away from our Chit or helping us remove these coverings to connect us with our Chit and give us inner peace and wellness that lasts.
-To achieve this:\n\n
+        For the next 30 days, avoid eating the following activities:\n\n
 \u2022 Don’t eat your meal while watching TV\n
 \u2022 Don’t eat while talking\n
 \u2022 Don’t eat when emotionally upset\n
@@ -229,8 +231,8 @@ Continue this practice for 15 days.</string>
 \u2022 Through this process of Chit Yog Sadhana you will be able to burn the layers faster and forever.\n\n
 \u2022 Complete the questionnaire below and you will get x2 guided techniques.\n\n
 \u2022 Follow them and the door will open!\n\n
-        \nRate the emotional states below in the order that best represents how you feel most of the time (where 1 is the most accurate and 4 is the least accurate):\n\n
-
+      \nSelect one of the emotional states below that best represents how you feel most of the time: (Client
+can only select one variable) \n\n
     </string>
 
     <string name="step_5_1">
@@ -240,7 +242,7 @@ Continue this practice for 15 days.</string>
      \u2022 Rejection, lack of respect, taken for granted, feeling used, being abused, childhood abuse
     </string>
     <string name="step_5_3">
-    \u2022 Sensitivity, holding emotions, inability to express yourself, suppressed emotions
+    \u2022 Sensitivity, holding emotions, inability to express yourself, suppressed emotions and depression
     </string>
     <string name="step_5_4">
      \u2022 Stress, anger, frustration, jealousy and hatred?

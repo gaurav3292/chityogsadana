@@ -33,7 +33,7 @@ public class DataEntry {
         emoList.add(new QuestionBean("I am affectionate"));
         emoList.add(new QuestionBean("I lack the ability to get along with people"));
         emoList.add(new QuestionBean("My self-esteem and self-confidence is lacking"));
-        emoList.add(new QuestionBean("I have feeling of security"));
+        emoList.add(new QuestionBean("I have feeling of insecurity"));
         emoList.add(new QuestionBean("I lack the ability to adjust easily in every situation"));
         emoList.add(new QuestionBean("My memory is not good"));
         emoList.add(new QuestionBean("I experience self-doubt"));
