@@ -162,10 +162,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
                     if(check)
                     {
-
                         checkTestSubmittion();
-
-
 
                     }else {
                         cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)","Ok", false);

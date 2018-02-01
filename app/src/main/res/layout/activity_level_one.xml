@@ -389,10 +389,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:visibility="gone"
             android:orientation="vertical">
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="However those are optional:"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/app_text_size_xmedium" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -414,7 +422,8 @@
                     android:layout_height="match_parent"
                     android:text="@string/green_grass"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/app_text_size_medium" />
+                    android:textSize="@dimen/app_text_size_medium"
+                    android:id="@+id/textView2" />
 
                 <TextView
                     android:layout_width="match_parent"

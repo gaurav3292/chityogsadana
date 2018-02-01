@@ -327,6 +327,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
 //                }
                 level6.setOnClickListener(this);
                 level5.setOnClickListener(this);
+                level1.setOnClickListener(this);
                 break;
 
         }
