@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
-import com.cityogsadana.activity.LevelActivity;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.utils.Global;
@@ -34,6 +33,7 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
     TextView step2;
 
     private String value;
+    private boolean isVisible = false;
     private UserBean userBean;
 
     @AfterViews()
@@ -43,12 +43,18 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
 
         backButton.setOnClickListener(this);
 
-        if (userBean.getLevel().getUserSubLevel().equalsIgnoreCase("1")) {
-            step1.setOnClickListener(this);
-        } else {
-            step2.setOnClickListener(this);
-        }
 
+        if (isVisible) {
+            step1.setOnClickListener(this);
+            step2.setOnClickListener(this);
+
+        } else {
+            if (userBean.getLevel().getUserSubLevel().equalsIgnoreCase("1")) {
+                step1.setOnClickListener(this);
+            } else {
+                step2.setOnClickListener(this);
+            }
+        }
 
         setValueData(value);
 
@@ -85,6 +91,10 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         value = (String) getIntent().getSerializableExtra("value");
+
+        if (getIntent().hasExtra("isVisible")) {
+            isVisible = (boolean) getIntent().getSerializableExtra("isVisible");
+        }
         userBean = UserPref.getUser(this);
     }
 

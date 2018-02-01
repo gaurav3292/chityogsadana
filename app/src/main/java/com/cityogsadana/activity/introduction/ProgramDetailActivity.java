@@ -56,7 +56,7 @@ public class ProgramDetailActivity extends AppCompatActivity implements DataHand
     @AfterViews
     public void setData() {
         Global.setFont(viewGroup, Global.regular);
-        title.setText("Program");
+        title.setText("Programme");
 
         backButton.setOnClickListener(this);
         doneButton.setOnClickListener(this);

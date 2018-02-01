@@ -67,6 +67,7 @@ public class FourProgramActivity extends AppCompatActivity implements View.OnCli
             case R.id.prog_1:
                 Intent intent5 = new Intent(this, LevelFiveProgramActivity_.class);
                 intent5.putExtra("value", "51");
+                intent5.putExtra("isVisible", true);
                 startActivity(intent5);
 
                 break;
@@ -74,6 +75,7 @@ public class FourProgramActivity extends AppCompatActivity implements View.OnCli
             case R.id.prog_2:
                 Intent intent = new Intent(this, LevelFiveProgramActivity_.class);
                 intent.putExtra("value", "52");
+                intent.putExtra("isVisible", true);
                 startActivity(intent);
                 break;
 
@@ -81,12 +83,14 @@ public class FourProgramActivity extends AppCompatActivity implements View.OnCli
              case R.id.prog_3:
                  Intent intent1 = new Intent(this, LevelFiveProgramActivity_.class);
                  intent1.putExtra("value", "53");
+                 intent1.putExtra("isVisible", true);
                  startActivity(intent1);
                 break;
 
             case R.id.prog_4:
                 Intent intent2 = new Intent(this, LevelFiveProgramActivity_.class);
                 intent2.putExtra("value","54");
+                intent2.putExtra("isVisible", true);
                 startActivity(intent2);
                 break;
 

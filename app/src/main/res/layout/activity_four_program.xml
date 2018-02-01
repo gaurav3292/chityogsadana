@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/app_text_size_xlarge"
-                android:text="Meditation Programs"
+                android:text="Meditation Programmes"
                 android:gravity="center"
 
                 />
@@ -75,7 +75,7 @@
             android:gravity="center"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="Program 1"
+            android:text="Programme 1"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_medium" />
@@ -104,7 +104,7 @@
             android:gravity="center"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="Program 2"
+            android:text="Programme 2"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_medium" />
@@ -133,7 +133,7 @@
             android:gravity="center"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="Program 3"
+            android:text="Programme 3"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_medium" />
@@ -146,7 +146,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
-            android:text="Stress, anger, frustration, jealousy and hatred"
+            android:text="4. Stress, anger, frustration, jealousy and hatred"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_medium" />
 
@@ -162,7 +162,7 @@
             android:gravity="center"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="Program 4"
+            android:text="Programme 4"
             android:textAllCaps="false"
             android:textColor="@color/text_color"
             android:textSize="@dimen/app_text_size_medium" />
