@@ -29,6 +29,7 @@ public class UserPref {
     private static final String COMPLETED_DAYS = "completed_days";
     private static final String IS_RESULT = "is_result";
     private static final String SUB_LEVEL = "sub_level";
+    private static final String IS_ExTRA_RESULT = "is_extra_result";
 
 
     public static void saveUser(Context context, UserBean user) {
@@ -49,13 +50,15 @@ public class UserPref {
             LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
             String level = null, isResult = "No",subLevel = null;
-            int completedDays = 0, totalDays = 0;
+            int completedDays = 0, totalDays = 0,extraResult = -1;
             if (levelBean != null) {
                 totalDays = user.getLevel().getTotalNumberOfDays();
                 level = user.getLevel().getUserLevel();
                 completedDays = user.getLevel().getCompletedNumberOfDays();
                 isResult = user.getLevel().getIsResult();
                 subLevel = user.getLevel().getUserSubLevel();
+                extraResult = user.getLevel().getIsExtraResult();
+
             }
 
 
@@ -103,6 +106,7 @@ public class UserPref {
                 editor.putInt(COMPLETED_DAYS, completedDays);
                 editor.putString(IS_RESULT, isResult);
                 editor.putString(SUB_LEVEL, subLevel);
+                editor.putInt(IS_ExTRA_RESULT, extraResult);
 
 
 
@@ -136,6 +140,7 @@ public class UserPref {
             levelBean.setTotalNumberOfDays(mPref.getInt(TOTAL_DAYS,0));
             levelBean.setCompletedNumberOfDays(mPref.getInt(COMPLETED_DAYS, 0));
             levelBean.setUserSubLevel(mPref.getString(SUB_LEVEL, null));
+            levelBean.setIsExtraResult(mPref.getInt(IS_ExTRA_RESULT, -1));
             user.setLevel(levelBean);
 
 

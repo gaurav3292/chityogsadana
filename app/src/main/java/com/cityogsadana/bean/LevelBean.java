@@ -17,7 +17,7 @@ public class LevelBean implements Serializable{
     private int skippedNumberOfDays;
     private String startDate;
     private String isResult;
-    private int isExtraResult;
+    private int isExtraResult = -1;
     private int numberOfTrue;
     private int totalNumberOfQuestions;
     private int attendedNumberOfDays;
@@ -101,5 +101,13 @@ public class LevelBean implements Serializable{
 
     public void setAttendedNumberOfDays(int attendedNumberOfDays) {
         this.attendedNumberOfDays = attendedNumberOfDays;
+    }
+
+    public int getIsExtraResult() {
+        return isExtraResult;
+    }
+
+    public void setIsExtraResult(int isExtraResult) {
+        this.isExtraResult = isExtraResult;
     }
 }

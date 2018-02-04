@@ -185,11 +185,20 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
             if (userBean1.getLevel().getUserLevel().equalsIgnoreCase(userBean.getLevel().getUserLevel())) {
                 userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
                 UserPref.saveUser(this, userBean);
+                if(userBean1.getLevel().getUserSubLevel().equalsIgnoreCase("1") && userBean1.getLevel().getIsExtraResult()==1){
 
-                try {
-                    cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    try {
+                        cDialog.successShowExtra(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }else {
+
+                    try {
+                        cDialog.successShowHome(this, "Congratulations!", jsonObject.getString("msg"), "Ok", false);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             } else {
                 userBean = gson.fromJson(jsonObject.toString(), UserBean.class);

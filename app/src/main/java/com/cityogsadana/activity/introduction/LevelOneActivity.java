@@ -87,6 +87,10 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             testText.setText("Start Test");
         }
 
+        if(userBean.getLevel().getIsExtraResult()==1){
+            extraDetailLayout.setVisibility(View.VISIBLE);
+        }
+
         backButton.setOnClickListener(this);
         alarm1.setOnClickListener(this);
         alarm2.setOnClickListener(this);

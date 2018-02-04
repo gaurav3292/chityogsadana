@@ -1,5 +1,6 @@
 package com.cityogsadana.activity.introduction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
+import com.cityogsadana.activity.LevelActivity_;
 import com.cityogsadana.utils.Global;
 
 import org.androidannotations.annotations.AfterViews;
@@ -47,5 +49,15 @@ public class ExtraOneActivity extends AppCompatActivity implements View.OnClickL
                 onBackPressed();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(this, LevelActivity_.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+
     }
 }
