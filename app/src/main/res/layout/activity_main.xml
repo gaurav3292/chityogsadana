@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="15dp"
-                    android:text="Owner"
+                    android:text="Author"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
 
