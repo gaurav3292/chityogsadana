@@ -146,6 +146,9 @@ Hold in your mouth and move around for 3 minutes then spit and rinse with warm w
 
     //Level three intro
     <string name="three_intro">
+        Congratulations on reaching Stage 3. Now you will receive some more advice to help you
+remove further coverings and slowly connect to your Chit. However, you should keep following
+the regimes you received during Stages 1 &amp; 2.\n\n
         The phrase, “We are what we eat” is not just about what you eat but also includes how you eat as this also impacts on Chit, particularly things like:\n\n
 \u2022 Technology\n
 \u2022 Surroundings\n
@@ -222,7 +225,12 @@ Continue this practice for 15 days.</string>
 \nThose who can do this on a daily basis can rest assured that though they might suffer from some physical problem in their life, they will never ever suffer from any mental ailments.\n
 \nWhen ready, you can move onto the next stage</string>
 
-    <string name="intro_two">There is a saying, “We are what we eat”. Our thoughts and actions are influenced by the food we eat so we need to minimise the intake of foods which can cause more covering to our Chit. When we are dis-connected from our Chit we begin to make wrong choices we have to take wrong decisions which leads to do such activity which can build another layer on our Chit.
+    <string name="intro_two">
+        Congratulations on reaching Stage 2. By following all the steps in Stage 1 you must have more
+energy and feeling more calm, clear and alert. This second stage will further unlock your
+hidden, inner potential taking you on a journey where you will remove further coverings from
+your Chit. However, you should keep following the regimes you received during Stage 1.\n\n
+        There is a saying, “We are what we eat”. Our thoughts and actions are influenced by the food we eat so we need to minimise the intake of foods which can cause more covering to our Chit. When we are dis-connected from our Chit we begin to make wrong choices we have to take wrong decisions which leads to do such activity which can build another layer on our Chit.
 \n\nFor the next 30 days, avoid eating the following foods:
 \n\nFrozen food:
         \n\t\tFrozen food is considered more dull, heavy and difficult to digest. This food has natural tendency to make one’s mind duller heavy and cloudy which makes it difficult for one to work to re-connect to their Chit and connect with it hence it is advisable to avoid all frozen food

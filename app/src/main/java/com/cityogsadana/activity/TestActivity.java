@@ -203,6 +203,7 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
                 }
             } else {
                 userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+                userBean.getLevel().setIsExtraResult(-1);
                 UserPref.saveUser(this, userBean);
 
                 try {
