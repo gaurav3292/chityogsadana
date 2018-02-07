@@ -27,6 +27,7 @@ public class ExtraOneActivity extends AppCompatActivity implements View.OnClickL
     @ViewById(R.id.back_button)
     ImageButton backButton;
 
+    private String extra;
 
     @AfterViews
     public void setData() {
@@ -40,6 +41,10 @@ public class ExtraOneActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getIntent().hasExtra("extra")) {
+            extra = getIntent().getExtras().getString("extra");
+        }
     }
 
     @Override
@@ -53,11 +58,15 @@ public class ExtraOneActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
+        if (extra == null) {
+            Intent intent = new Intent(this, LevelActivity_.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        } else {
+            super.onBackPressed();
+        }
 
-        Intent intent = new Intent(this, LevelActivity_.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
 
     }
 }

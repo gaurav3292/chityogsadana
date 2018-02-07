@@ -67,7 +67,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
     @ViewById(R.id.test)
     TextView testText;
     @ViewById(R.id.extra_detail_layout)
-    LinearLayout extraDetailLayout;
+    TextView extraDetailLayout;
 
     private UserBean userBean;
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
@@ -100,6 +100,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
         alarm7.setOnClickListener(this);
         alarm8.setOnClickListener(this);
         testText.setOnClickListener(this);
+        extraDetailLayout.setOnClickListener(this);
 
 
     }
@@ -174,6 +175,12 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                     }
 
                 }
+                break;
+
+            case R.id.extra_detail_layout:
+                Intent intent = new Intent(this, ExtraOneActivity_.class);
+                intent.putExtra("extra","extra");
+                startActivity(intent);
                 break;
 
 
