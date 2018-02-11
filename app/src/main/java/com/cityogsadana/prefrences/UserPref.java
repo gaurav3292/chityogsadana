@@ -30,6 +30,8 @@ public class UserPref {
     private static final String IS_RESULT = "is_result";
     private static final String SUB_LEVEL = "sub_level";
     private static final String IS_ExTRA_RESULT = "is_extra_result";
+    private static final String IS_PAYMENT_REQUIRED = "is_payment_required";
+    private static final String IS_PAYMENT_MADE = "is_payment_made";
 
 
     public static void saveUser(Context context, UserBean user) {
@@ -51,6 +53,8 @@ public class UserPref {
             String selfTest = user.getSelf_result();
             String level = null, isResult = "No",subLevel = null;
             int completedDays = 0, totalDays = 0,extraResult = -1;
+            boolean isPaymentRequired = user.getLevel().isPaymentRequired();
+            boolean isPaymentMade = user.getLevel().isPaymentMade();
             if (levelBean != null) {
                 totalDays = user.getLevel().getTotalNumberOfDays();
                 level = user.getLevel().getUserLevel();
@@ -107,6 +111,8 @@ public class UserPref {
                 editor.putString(IS_RESULT, isResult);
                 editor.putString(SUB_LEVEL, subLevel);
                 editor.putInt(IS_ExTRA_RESULT, extraResult);
+                editor.putBoolean(IS_PAYMENT_REQUIRED, isPaymentRequired);
+                editor.putBoolean(IS_PAYMENT_MADE, isPaymentMade);
 
 
 
@@ -141,6 +147,8 @@ public class UserPref {
             levelBean.setCompletedNumberOfDays(mPref.getInt(COMPLETED_DAYS, 0));
             levelBean.setUserSubLevel(mPref.getString(SUB_LEVEL, null));
             levelBean.setIsExtraResult(mPref.getInt(IS_ExTRA_RESULT, -1));
+            levelBean.setPaymentRequired(mPref.getBoolean(IS_PAYMENT_REQUIRED, false));
+            levelBean.setPaymentMade(mPref.getBoolean(IS_PAYMENT_MADE, false));
             user.setLevel(levelBean);
 
 

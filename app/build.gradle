@@ -6,7 +6,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.cityogsadana"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 9
         versionName "1.0"
@@ -56,6 +56,8 @@ dependencies {
     // JSON utility library.
     compile 'com.google.code.gson:gson:2.7'
     compile 'dev.dworks.libs:volleyplus:+'
+
+    compile 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 
     testCompile 'junit:junit:4.12'
 }

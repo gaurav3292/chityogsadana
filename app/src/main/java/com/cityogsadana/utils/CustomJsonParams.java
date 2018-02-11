@@ -3,6 +3,8 @@ package com.cityogsadana.utils;
 import android.util.Log;
 
 
+import com.cityogsadana.bean.UserBean;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -244,6 +246,21 @@ public class CustomJsonParams {
             params.put("userId",user_id );
             params.put("levelNumber", userLevel);
             params.put("date", currentDateStr);
+            Log.d("params...", params.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+        return params;
+    }
+
+    public JSONObject updatePaymentParams(UserBean userBean, JSONObject paypalObj) {
+        params = new JSONObject();
+        try {
+            params.put("userId",userBean.getUser_id() );
+            params.put("levelNumber", userBean.getLevel().getUserLevel());
+            params.put("payment", paypalObj);
             Log.d("params...", params.toString());
 
         } catch (JSONException e) {

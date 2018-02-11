@@ -18,6 +18,7 @@ import com.cityogsadana.activity.SelfTestActivity_;
 import com.cityogsadana.activity.TestActivity;
 import com.cityogsadana.activity.introduction.ExtraOneActivity_;
 import com.cityogsadana.interfaces.ActivitySet;
+import com.cityogsadana.interfaces.PaymentHandler;
 import com.cityogsadana.utils.Global;
 
 /**
@@ -539,6 +540,64 @@ public class ConnectionMessageDialog extends DialogFragment {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     activity.startActivity(intent);*/
                     activity.finish();
+                }
+            });
+            // Showing Alert Message
+            dialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void showPaymentDIalog(final Activity activity, final PaymentHandler paymentHandler, String title, String message, final String level) {
+        try {
+            dialog = new Dialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_alert);
+            dialog.getWindow().getAttributes().width = ViewGroup.LayoutParams.FILL_PARENT;
+            viewGroup = (ViewGroup) dialog.findViewById(R.id.dialog_alert);
+            Global.setFont(viewGroup, Global.regular);
+
+            okButton = (LinearLayout) dialog.findViewById(R.id.ok_button);
+            cancelButton = (LinearLayout) dialog.findViewById(R.id.cancel_button);
+            cancelLayout = (LinearLayout) dialog.findViewById(R.id.cancel);
+            headingTxt = (TextView) dialog.findViewById(R.id.heading);
+            messageTxt = (TextView) dialog.findViewById(R.id.message);
+            buttonTxt = (TextView) dialog.findViewById(R.id.button_text);
+            TextView cancelTxt = (TextView) dialog.findViewById(R.id.cancel_text);
+            dialog.setCancelable(false);
+
+            cancelLayout.setVisibility(View.VISIBLE);
+
+            headingTxt.setText(title);
+            messageTxt.setText(message);
+            buttonTxt.setText("Yes");
+            cancelTxt.setText("No");
+
+
+            okButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                    paymentHandler.makePayment(level);
+                }
+            });
+
+            cancelLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    paymentHandler.cancelPayment();
+                }
+            });
+
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                    dialog.dismiss();
+                    paymentHandler.cancelPayment();
                 }
             });
             // Showing Alert Message

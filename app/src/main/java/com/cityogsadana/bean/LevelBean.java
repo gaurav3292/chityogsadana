@@ -21,6 +21,8 @@ public class LevelBean implements Serializable{
     private int numberOfTrue;
     private int totalNumberOfQuestions;
     private int attendedNumberOfDays;
+    private boolean isPaymentRequired;
+    private boolean isPaymentMade;
 
 
     public String getUserSubLevel() {
@@ -109,5 +111,21 @@ public class LevelBean implements Serializable{
 
     public void setIsExtraResult(int isExtraResult) {
         this.isExtraResult = isExtraResult;
+    }
+
+    public boolean isPaymentRequired() {
+        return isPaymentRequired;
+    }
+
+    public void setPaymentRequired(boolean paymentRequired) {
+        isPaymentRequired = paymentRequired;
+    }
+
+    public boolean isPaymentMade() {
+        return isPaymentMade;
+    }
+
+    public void setPaymentMade(boolean paymentMade) {
+        isPaymentMade = paymentMade;
     }
 }
