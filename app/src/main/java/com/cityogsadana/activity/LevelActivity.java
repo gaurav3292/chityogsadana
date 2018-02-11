@@ -535,6 +535,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void cancelPayment() {
 
+        cDialog.successShowMain(this,"Thank You","For your support and effort. Please continue following the advice you have received as these daily practices will help you connect to your Chit.","Ok",false);
 
     }
 
