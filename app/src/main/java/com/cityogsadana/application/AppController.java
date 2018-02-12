@@ -14,6 +14,7 @@ import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
 import com.cityogsadana.utils.Fonts;
 import com.cityogsadana.utils.Global;
+import com.google.firebase.FirebaseApp;
 
 
 public class AppController extends Application {
@@ -32,6 +33,10 @@ public class AppController extends Application {
 
         Global.initializeFont(this);
         Global.overrideFont(getApplicationContext(), "MONOSPACE", Fonts.REGULAR);
+
+            FirebaseApp.initializeApp(this);
+
+
 
 
         //Calculate height

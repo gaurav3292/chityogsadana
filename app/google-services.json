@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "974236845955",
+    "firebase_url": "https://chityog-195015.firebaseio.com",
+    "project_id": "chityog-195015",
+    "storage_bucket": "chityog-195015.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974236845955:android:ab0b699a7325e21e",
+        "android_client_info": {
+          "package_name": "com.cityogsadana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974236845955-86ou182qebs5lvupqs90p64qpllhrlqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5LXU3cJozi_u8IaU1gyxljM64OMOVGNE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

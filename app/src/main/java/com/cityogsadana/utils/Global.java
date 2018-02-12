@@ -47,7 +47,7 @@ public class Global {
 
     public static Typeface regular,italic,bold;
     public static AlertDialog dialog;
-
+    public static String token;
 
 
     public static void setFont(ViewGroup group, Typeface font) {

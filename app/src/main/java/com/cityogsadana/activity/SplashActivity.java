@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import com.cityogsadana.R;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.services.MyFirebaseInstanceIDService;
 import com.cityogsadana.utils.Global;
+import com.google.firebase.FirebaseApp;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -30,6 +32,11 @@ public class SplashActivity extends Activity {
     {
         Global.setFont(viewGroup, Global.regular);
         Global.setCustomFont(Global.italic, findViewById(R.id.welcome_txt));
+
+        if(Global.token==null){
+            FirebaseApp.initializeApp(this);
+            new MyFirebaseInstanceIDService().onTokenRefresh();
+        }
 
         userBean = UserPref.getUser(this);
         if(userBean.getUser_id()==null){
