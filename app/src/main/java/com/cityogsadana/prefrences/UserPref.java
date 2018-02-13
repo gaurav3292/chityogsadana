@@ -53,9 +53,11 @@ public class UserPref {
             String selfTest = user.getSelf_result();
             String level = null, isResult = "No",subLevel = null;
             int completedDays = 0, totalDays = 0,extraResult = -1;
-            boolean isPaymentRequired = user.getLevel().isPaymentRequired();
-            boolean isPaymentMade = user.getLevel().isPaymentMade();
+            boolean isPaymentRequired = false;
+            boolean isPaymentMade = false;
             if (levelBean != null) {
+                isPaymentMade = user.getLevel().isPaymentMade();
+                isPaymentRequired = user.getLevel().isPaymentRequired();
                 totalDays = user.getLevel().getTotalNumberOfDays();
                 level = user.getLevel().getUserLevel();
                 completedDays = user.getLevel().getCompletedNumberOfDays();
