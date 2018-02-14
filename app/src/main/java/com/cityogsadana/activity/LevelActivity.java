@@ -378,7 +378,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent3);
                 break;
             case R.id.level_four:
-                if (userBean.getLevel().isPaymentRequired() == true && userBean.getLevel().isPaymentMade() == true) {
+                if (userBean.getLevel().isPaymentRequired() == userBean.getLevel().isPaymentMade()) {
                     Intent intent4 = new Intent(LevelActivity.this, LevelFourActivity_.class);
                     intent4.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent4);
