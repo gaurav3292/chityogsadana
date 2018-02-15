@@ -25,6 +25,7 @@ import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.handler.ApiHandler;
 import com.cityogsadana.interfaces.DataHandlerCallback;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.services.MyFirebaseInstanceIDService;
 import com.cityogsadana.utils.AccountChecker;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.ConnectivityReceiver;
@@ -32,6 +33,7 @@ import com.cityogsadana.utils.CustomCrouton;
 import com.cityogsadana.utils.CustomJsonParams;
 import com.cityogsadana.utils.ErrorHelper;
 import com.cityogsadana.utils.Global;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
@@ -89,6 +91,12 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
 
     @AfterViews
     public void setData() {
+
+        if(Global.token==null){
+            FirebaseApp.initializeApp(this);
+            new MyFirebaseInstanceIDService().onTokenRefresh();
+        }
+
         Global.setFont(viewGroup, Global.regular);
         Global.setupUI(viewGroup, this);
         Global.setCustomFont(Global.italic, termsTxt, privacyTxt, findViewById(R.id.text_signin));

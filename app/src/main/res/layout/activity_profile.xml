@@ -230,10 +230,21 @@
                 android:textSize="@dimen/app_text_size_xsmall" />
 
             <TextView
+                android:id="@+id/support_layout"
+                style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="Support"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_xsmall" />
 
 
             <TextView

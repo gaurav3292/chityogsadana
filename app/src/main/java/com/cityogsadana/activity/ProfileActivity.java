@@ -1,6 +1,7 @@
 package com.cityogsadana.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -59,6 +60,8 @@ public class ProfileActivity extends AppCompatActivity implements DataHandlerCal
     RelativeLayout errorLayout;
     @ViewById(R.id.user_profile)
     CircularImageView userImage;
+    @ViewById(R.id.support_layout)
+    TextView support;
 
     private UserBean userBean;
     private ImageLoader imageLoader;
@@ -76,6 +79,7 @@ public class ProfileActivity extends AppCompatActivity implements DataHandlerCal
         editLogOut.setOnClickListener(this);
         ppLayout.setOnClickListener(this);
         termsLayout.setOnClickListener(this);
+        support.setOnClickListener(this);
 
 
         getUserData();
@@ -140,6 +144,13 @@ public class ProfileActivity extends AppCompatActivity implements DataHandlerCal
                 intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent3);
                 overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom);
+                break;
+
+            case R.id.support_layout:
+                String url = "https://suryaayurveda.com.au/index.php?route=information/contact";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
                 break;
 
         }

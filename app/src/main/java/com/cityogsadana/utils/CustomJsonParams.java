@@ -16,7 +16,8 @@ public class CustomJsonParams {
     public JSONObject getLogIn(String email, String password) {
         params = new JSONObject();
         try {
-//            params.put("device_type", "android");
+            params.put("deviceType", "android");
+            params.put("deviceToken", Global.token);
             params.put("email", email);
             params.put("password", password);
 
@@ -79,7 +80,8 @@ public class CustomJsonParams {
             }
 
             params.put("country", country);
-            params.put("deviceType", email);
+            params.put("deviceType", "android");
+            params.put("deviceToken", Global.token);
 
             Log.d("params...", params.toString());
 

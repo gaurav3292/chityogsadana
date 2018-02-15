@@ -38,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-            sendNotification(remoteMessage.getNotification().getBody(), "default", null);
+            sendNotification(remoteMessage.getNotification().getBody());
 
         }
 
@@ -48,8 +48,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             //   sendNotification("New Order Request");
             try {
                 JSONObject jsonObject = new JSONObject(remoteMessage.getData());
-                final String notiType = jsonObject.getString("notification_type");
-                sendNotification(jsonObject.getString("msg"), notiType, jsonObject);
+                sendNotification(jsonObject.getString("msg"));
 
                 Handler h = new Handler(Looper.getMainLooper());
                 h.post(new Runnable() {
@@ -68,7 +67,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             // Check if message contains a notification payload.
             if (remoteMessage.getNotification() != null) {
                 Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-                sendNotification(remoteMessage.getNotification().getBody(), "default", null);
+             //   sendNotification(remoteMessage.getNotification().getBody(), "default", null);
 
             }
 
@@ -78,7 +77,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
 
-    private void sendNotification(String messageBody, String notiType, JSONObject jsonObject) {
+    private void sendNotification(String messageBody) {
 
         Intent intent = new Intent(this, LevelActivity_.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
