@@ -49,7 +49,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         if (user.getUser_id() != null) {
             if(!user.getLevel().getUserLevel().equalsIgnoreCase("6"))
-            if (checkMorining && checkEvening) {
+            if (checkEvening) {
                 if(notificationBean.isEveNoti()==false){
                     sendNotification("Keep yourself motivated. Have a good night sleep.");
                     notificationBean.setEveNoti(true);
@@ -75,7 +75,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
 
 
-        Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
     }
 
 

@@ -109,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
         closeButton.setOnClickListener(this);
         checkBox.setOnCheckedChangeListener(this);
 
-        countrySpinnerAdapter = new CountrySpinnerAdapter(this, Global.getCountries());
+        countrySpinnerAdapter = new CountrySpinnerAdapter(this, Global.getCountries(this));
         countrySpinner.setAdapter(countrySpinnerAdapter);
 
         genderAdapter = new CountrySpinnerAdapter(this, getGenders());

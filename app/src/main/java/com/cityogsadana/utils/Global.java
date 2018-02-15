@@ -33,6 +33,7 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -345,13 +346,13 @@ public class Global {
     }
 
 
-    public static List<String> getCountries(){
-        List<String> stringList = new ArrayList<>();
-        stringList.add("India");
-        stringList.add("Australia");
-        stringList.add("U.S.A");
-        stringList.add("Russia");
+    public static List<String> getCountries(Context context){
 
+        String [] countries= context.getResources().getStringArray(R.array.country);
+        int soze = countries.length;
+
+
+        List<String> stringList = Arrays.asList(countries);
         return stringList;
     }
 
