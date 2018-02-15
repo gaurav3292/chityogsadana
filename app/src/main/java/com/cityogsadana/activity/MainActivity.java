@@ -1,5 +1,8 @@
 package com.cityogsadana.activity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,12 +10,13 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.cityogsadana.R;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.prefrences.UserPref;
-import com.cityogsadana.services.NotificationService;
+import com.cityogsadana.services.AlarmReceiver;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.Global;
 
@@ -47,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private UserBean userBean;
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
+    private PendingIntent pendingIntent;
+    private AlarmManager manager;
+
     @AfterViews
     public void setData() {
 
@@ -62,9 +69,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         profileTab.setOnClickListener(this);
         owner.setOnClickListener(this);
 
-        startService(new Intent(getBaseContext(), NotificationService.class));
 
 
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+
+        PendingIntent.getBroadcast(this, 0, alarmIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT).cancel();
+
+        pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+        setAlarm();
+
+
+
+
+    }
+
+    private void setAlarm() {
+
+        manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        int interval = 10000;
+
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 100, pendingIntent);
+        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
     }
 
     @Override

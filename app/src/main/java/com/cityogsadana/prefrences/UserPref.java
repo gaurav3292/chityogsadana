@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.cityogsadana.bean.LevelBean;
+import com.cityogsadana.bean.NotificationBean;
 import com.cityogsadana.bean.UserBean;
 
 
@@ -14,6 +15,7 @@ import com.cityogsadana.bean.UserBean;
 public class UserPref {
 
     private static final String USER_INFO = "user_Info";
+    private static final String NOTI_INFO = "noti_info";
     private static final String USER_ID = "user_id";
     private static final String NAME = "name";
     private static final String EMAIL = "user_email";
@@ -32,6 +34,8 @@ public class UserPref {
     private static final String IS_ExTRA_RESULT = "is_extra_result";
     private static final String IS_PAYMENT_REQUIRED = "is_payment_required";
     private static final String IS_PAYMENT_MADE = "is_payment_made";
+    private static final String IS_MORNING_NOTI = "is_morning_noti";
+    private static final String IS_EVE_NOTI = "is_eve_noti";
 
 
     public static void saveUser(Context context, UserBean user) {
@@ -51,8 +55,8 @@ public class UserPref {
             String country = user.getCountry();
             LevelBean levelBean = user.getLevel();
             String selfTest = user.getSelf_result();
-            String level = null, isResult = "No",subLevel = null;
-            int completedDays = 0, totalDays = 0,extraResult = -1;
+            String level = null, isResult = "No", subLevel = null;
+            int completedDays = 0, totalDays = 0, extraResult = -1;
             boolean isPaymentRequired = false;
             boolean isPaymentMade = false;
             if (levelBean != null) {
@@ -108,14 +112,13 @@ public class UserPref {
             }
 
 
-                editor.putInt(TOTAL_DAYS, totalDays);
-                editor.putInt(COMPLETED_DAYS, completedDays);
-                editor.putString(IS_RESULT, isResult);
-                editor.putString(SUB_LEVEL, subLevel);
-                editor.putInt(IS_ExTRA_RESULT, extraResult);
-                editor.putBoolean(IS_PAYMENT_REQUIRED, isPaymentRequired);
-                editor.putBoolean(IS_PAYMENT_MADE, isPaymentMade);
-
+            editor.putInt(TOTAL_DAYS, totalDays);
+            editor.putInt(COMPLETED_DAYS, completedDays);
+            editor.putString(IS_RESULT, isResult);
+            editor.putString(SUB_LEVEL, subLevel);
+            editor.putInt(IS_ExTRA_RESULT, extraResult);
+            editor.putBoolean(IS_PAYMENT_REQUIRED, isPaymentRequired);
+            editor.putBoolean(IS_PAYMENT_MADE, isPaymentMade);
 
 
             editor.commit();
@@ -143,9 +146,9 @@ public class UserPref {
             user.setAddress(mPref.getString(ADDRESS, null));
 
             levelBean.setUserLevel(mPref.getString(LEVEL, null));
-            levelBean.setIsResult(mPref.getString(IS_RESULT,null));
+            levelBean.setIsResult(mPref.getString(IS_RESULT, null));
             user.setSelf_result(mPref.getString(SELF_RESULT, null));
-            levelBean.setTotalNumberOfDays(mPref.getInt(TOTAL_DAYS,0));
+            levelBean.setTotalNumberOfDays(mPref.getInt(TOTAL_DAYS, 0));
             levelBean.setCompletedNumberOfDays(mPref.getInt(COMPLETED_DAYS, 0));
             levelBean.setUserSubLevel(mPref.getString(SUB_LEVEL, null));
             levelBean.setIsExtraResult(mPref.getInt(IS_ExTRA_RESULT, -1));
@@ -176,6 +179,54 @@ public class UserPref {
             e.printStackTrace();
 
         }
+    }
+
+
+    public static void updateNotification(Context context, NotificationBean notificationBean) {
+
+        try {
+
+            SharedPreferences mPrefs = context.getSharedPreferences(NOTI_INFO, 0);
+            SharedPreferences.Editor editor = mPrefs.edit();
+
+            if (notificationBean != null) {
+                boolean isMorningNoti = notificationBean.isMorningNoti();
+                boolean isEveNoti = notificationBean.isEveNoti();
+
+
+                editor.putBoolean(IS_MORNING_NOTI, isMorningNoti);
+                editor.putBoolean(IS_EVE_NOTI, isEveNoti);
+
+                editor.commit();
+
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static NotificationBean getNotificationBean(Context context) {
+
+        try {
+
+            NotificationBean notificationBean = new NotificationBean();
+            SharedPreferences mPref = context.getSharedPreferences(NOTI_INFO, 0);
+
+            notificationBean.setMorningNoti(mPref.getBoolean(IS_MORNING_NOTI, false));
+            notificationBean.setEveNoti(mPref.getBoolean(IS_EVE_NOTI, false));
+
+            return notificationBean;
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
 

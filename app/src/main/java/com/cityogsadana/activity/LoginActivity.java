@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
 import com.cityogsadana.application.AppController;
+import com.cityogsadana.bean.NotificationBean;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.handler.ApiHandler;
@@ -151,6 +152,7 @@ public class LoginActivity extends AppCompatActivity implements DataHandlerCallb
                 Gson gson = new Gson();
                 UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
                 UserPref.saveUser(this, user);
+                UserPref.updateNotification(this,new NotificationBean());
                 cDialog.successShowMain(this, "Welcome","Logged in successfully", "Proceed", false);
             } catch (JSONException e) {
                 e.printStackTrace();

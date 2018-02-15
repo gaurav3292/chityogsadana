@@ -197,6 +197,68 @@ public class AccountChecker {
         }
         return valid;
     }
+
+    public static boolean checkMorning(String sTartTime) {
+        boolean valid = false;
+        try {
+
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("06:30:00");
+
+            String string2 = sTartTime;
+            Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);
+
+            if (endDate.after(beforeDate)) {
+                System.out.println("log_tag" + "Time is greater");
+                valid = false;
+            } else {
+
+                Date endDate1 = new SimpleDateFormat("HH:mm:ss").parse("07:30:00");
+                if (endDate1.after(beforeDate)) {
+                    valid = true;
+                } else {
+                    valid = false;
+                }
+
+
+                System.out.println("log_tag" + "Time is smaller");
+
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return valid;
+    }
+
+    public static boolean checkEvening(String sTartTime) {
+        boolean valid = false;
+        try {
+
+            Date endDate = new SimpleDateFormat("HH:mm:ss").parse("22:00:00");
+
+            String string2 = sTartTime;
+            Date beforeDate = new SimpleDateFormat("HH:mm:ss").parse(string2);
+
+            if (endDate.after(beforeDate)) {
+                System.out.println("log_tag" + "Time is greater");
+                valid = false;
+            } else {
+
+                Date endDate1 = new SimpleDateFormat("HH:mm:ss").parse("23:00:00");
+                if (endDate1.after(beforeDate)) {
+                    valid = true;
+                } else {
+                    valid = false;
+                }
+
+                System.out.println("log_tag" + "Time is smaller");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return valid;
+    }
+
+
     public static boolean checkTimeMorning(String sTartTime) {
         boolean valid = false;
         try {

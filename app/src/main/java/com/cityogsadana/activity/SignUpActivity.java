@@ -20,6 +20,7 @@ import com.android.volley.error.VolleyError;
 import com.cityogsadana.R;
 import com.cityogsadana.adapter.CountrySpinnerAdapter;
 import com.cityogsadana.application.AppController;
+import com.cityogsadana.bean.NotificationBean;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.handler.ApiHandler;
@@ -259,6 +260,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                 Gson gson = new Gson();
                 UserBean user = gson.fromJson(jsonObject.getJSONObject("user").toString(), UserBean.class);
                 UserPref.saveUser(this, user);
+                UserPref.updateNotification(this,new NotificationBean());
                 //finish();
                 String fullName[] = user.getName().split(" ");
                 cDialog.successShowMain(this, "Welcome", "Thanks "+fullName[0]+" for registering with us ", "Let's Begin", false);

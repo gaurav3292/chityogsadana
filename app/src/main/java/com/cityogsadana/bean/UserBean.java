@@ -28,6 +28,7 @@ public class UserBean implements Serializable {
     private LevelBean level;
 
 
+
     public String getSelf_result() {
         return self_result;
     }
@@ -115,4 +116,5 @@ public class UserBean implements Serializable {
     public void setLevel(LevelBean level) {
         this.level = level;
     }
+
 }
