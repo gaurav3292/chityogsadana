@@ -12,6 +12,7 @@ import com.cityogsadana.R;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
 import com.cityogsadana.prefrences.UserPref;
+import com.cityogsadana.services.NotificationService;
 import com.cityogsadana.utils.Config;
 import com.cityogsadana.utils.Global;
 
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         needsTxt.setOnClickListener(this);
         profileTab.setOnClickListener(this);
         owner.setOnClickListener(this);
+
+        startService(new Intent(getBaseContext(), NotificationService.class));
 
 
     }

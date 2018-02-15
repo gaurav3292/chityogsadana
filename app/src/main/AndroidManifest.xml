@@ -55,6 +55,8 @@
             </intent-filter>
         </service>
 
+        <service android:name=".services.NotificationService" />
+
         <activity
             android:name=".activity.SplashActivity_"
             android:screenOrientation="portrait"
