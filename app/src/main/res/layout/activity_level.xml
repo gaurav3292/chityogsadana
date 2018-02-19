@@ -27,7 +27,6 @@
                 app:cardBackgroundColor="@color/app_white"
                 android:background="@color/app_white"
                 app:cardElevation="4dp"
-
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7dp"

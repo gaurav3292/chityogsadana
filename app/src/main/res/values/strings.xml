@@ -398,8 +398,6 @@ You should do this first stage for at least 15 days.\n\n
     </string>
 
 
-
-
     <string-array name="country">
         <item value="United States"> United States </item>
         <item value="Afghanistan"> Afghanistan </item>
@@ -648,7 +646,5 @@ You should do this first stage for at least 15 days.\n\n
         <item value="Zimbabwe"> Zimbabwe </item>
 
 
-
-        
     </string-array>
 </resources>

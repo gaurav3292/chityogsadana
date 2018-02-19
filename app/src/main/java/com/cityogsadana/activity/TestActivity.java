@@ -170,7 +170,6 @@ public class TestActivity extends AppCompatActivity implements DataHandlerCallba
 
         totalNumberOfTrue = totalTrue;
 
-
         return error;
     }
 

@@ -10,6 +10,8 @@ public class NotificationBean implements Serializable {
 
     private boolean isMorningNoti = false;
     private boolean isEveNoti = false;
+    private String message;
+    private String date;
 
     public boolean isMorningNoti() {
         return isMorningNoti;
@@ -26,4 +28,22 @@ public class NotificationBean implements Serializable {
     public void setEveNoti(boolean eveNoti) {
         isEveNoti = eveNoti;
     }
+
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 }
