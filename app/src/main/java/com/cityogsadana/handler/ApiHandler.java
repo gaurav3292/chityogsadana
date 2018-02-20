@@ -82,6 +82,53 @@ public class ApiHandler {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
     }
 
+    public void apiReadNoti(final Context context, String url, JSONObject params) {
+
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                Config.URL + url, params,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(final JSONObject jsonObject) {
+                        Log.d("response", jsonObject.toString());
+
+                        try {
+                            final String status = jsonObject.getString(Config.STATUS);
+                            if (status.equalsIgnoreCase(Config.SUCCESS)) {
+
+                                map.put(Config.POST_JSON_RESPONSE, jsonObject);
+                            //    mDataHandler.onSuccess(map);
+
+                            } else if (status.equalsIgnoreCase(Config.ERROR)) {
+
+                                map.put(Config.ERROR, jsonObject.getString("msg"));
+                             //   mDataHandler.onFailure(map);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("error", "Error: " + error.toString());
+             //   map.put(Config.VOLLEY_ERROR, error);
+                mDataHandler.onFailure(map);
+
+            }
+        });
+
+        // Adding request to request queue
+        jsonObjReq.setShouldCache(false);
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
+        jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(200 * 1000, 0,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    }
+
     public void apiResponseCheck(final Context context, String url, JSONObject params) {
 
 

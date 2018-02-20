@@ -91,7 +91,8 @@ public class Config {
     public static final String SUBMIT_PROGRAM = "/submitProgramme";
     public static final String CHECK_SUBMITTION = "/checkSubmittion";
     public static final String UPDATE_PAYMENT = "/updatePayment";
-    public static final String NOTI_LIST = "";
+    public static final String NOTI_LIST = "/getNotifications";
+    public static final String READ_NOTI = "/readNotifications";
 
 
 }

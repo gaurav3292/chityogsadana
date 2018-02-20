@@ -32,9 +32,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @EActivity(R.layout.activity_notification)
-public class NotificationActivity extends AppCompatActivity implements DataHandlerCallback,View.OnClickListener{
+public class NotificationActivity extends AppCompatActivity implements View.OnClickListener{
 
     @ViewById(R.id.activity_notification)
     ViewGroup viewGroup;
@@ -49,6 +50,7 @@ public class NotificationActivity extends AppCompatActivity implements DataHandl
     private UserBean userBean;
     private NotificationAdapter notificationAdapter;
     private ConnectionMessageDialog cDialog =  new ConnectionMessageDialog();
+    private List<NotificationBean> notifications;
 
     @AfterViews
     public void setData()
@@ -57,19 +59,14 @@ public class NotificationActivity extends AppCompatActivity implements DataHandl
         title.setText("Notifications");
 
         backButton.setOnClickListener(this);
-        
-        setNotiList(userBean.getUser_id());
+
+        setListAdapter(notifications);
+
     }
 
 
-    private void setNotiList(String user_id) {
-        Global.showProgress(this);
-        CustomJsonParams customJsonParams = new CustomJsonParams();
-        JSONObject params = customJsonParams.getUserData(user_id);
-        new ApiHandler(NotificationActivity.this).apiResponse(NotificationActivity.this, Config.NOTI_LIST, params);
-    }
 
-    private void setListAdapter(ArrayList<NotificationBean> notiList) {
+    private void setListAdapter(List<NotificationBean> notiList) {
         notificationAdapter = new NotificationAdapter(this,notiList);
         list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         list.setNestedScrollingEnabled(false);
@@ -81,6 +78,7 @@ public class NotificationActivity extends AppCompatActivity implements DataHandl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         userBean = UserPref.getUser(this);
+        notifications = (List<NotificationBean>) getIntent().getSerializableExtra("data");
     }
 
     @Override
@@ -94,26 +92,4 @@ public class NotificationActivity extends AppCompatActivity implements DataHandl
         }
     }
 
-    @Override
-    public void onSuccess(HashMap<String, Object> map) {
-        Global.dialog.dismiss();
-        JSONObject jsonObject = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
-        if (jsonObject != null) {
-            Gson gson = new Gson();
-
-
-        }
-    }
-
-    @Override
-    public void onFailure(HashMap<String, Object> map) {
-        Global.dialog.dismiss();
-        if (map.containsKey(Config.ERROR)) {
-            cDialog.successShow(this, "Error!", (String) map.get(Config.ERROR), "Ok", false);
-        } else {
-            VolleyError error = (VolleyError) map.get(Config.VOLLEY_ERROR);
-            cDialog.successShow(this, "Error!", ErrorHelper.getErrorResponse(error), "Ok", false);
-
-        }
-    }
 }

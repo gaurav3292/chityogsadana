@@ -13,6 +13,12 @@ public class NotificationBean implements Serializable {
     private String message;
     private String date;
 
+    private String notificationId;
+
+    private String notificationMsg;
+
+    private String notificationDate;
+
     public boolean isMorningNoti() {
         return isMorningNoti;
     }
@@ -46,4 +52,27 @@ public class NotificationBean implements Serializable {
         this.date = date;
     }
 
+    public String getNotificationId() {
+        return notificationId;
+    }
+
+    public void setNotificationId(String notificationId) {
+        this.notificationId = notificationId;
+    }
+
+    public String getNotificationMsg() {
+        return notificationMsg;
+    }
+
+    public void setNotificationMsg(String notificationMsg) {
+        this.notificationMsg = notificationMsg;
+    }
+
+    public String getNotificationDate() {
+        return notificationDate;
+    }
+
+    public void setNotificationDate(String notificationDate) {
+        this.notificationDate = notificationDate;
+    }
 }

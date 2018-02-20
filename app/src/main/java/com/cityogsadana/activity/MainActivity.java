@@ -10,22 +10,34 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cityogsadana.R;
+import com.cityogsadana.bean.CommonList;
+import com.cityogsadana.bean.NotificationBean;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.dialogs.ConnectionMessageDialog;
+import com.cityogsadana.handler.ApiHandler;
+import com.cityogsadana.interfaces.DataHandlerCallback;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.services.AlarmReceiver;
 import com.cityogsadana.utils.Config;
+import com.cityogsadana.utils.CustomJsonParams;
 import com.cityogsadana.utils.Global;
+import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.HashMap;
 
 @EActivity(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,DataHandlerCallback {
 
     @ViewById(R.id.activity_main)
     ViewGroup viewGroup;
@@ -47,12 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView profileTab;
     @ViewById(R.id.home_img)
     ImageView homeImg;
+    @ViewById(R.id.text_notification)
+    TextView countText;
+    @ViewById(R.id.layout_noti)
+    RelativeLayout notiLayout;
 
     private UserBean userBean;
     private ConnectionMessageDialog cDialog = new ConnectionMessageDialog();
 
     private PendingIntent pendingIntent;
     private AlarmManager manager;
+    private CommonList commonList;
 
     @AfterViews
     public void setData() {
@@ -68,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         needsTxt.setOnClickListener(this);
         profileTab.setOnClickListener(this);
         owner.setOnClickListener(this);
+        notiLayout.setOnClickListener(this);
 
 
 
@@ -90,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int interval = 10000;
 
         manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 100, pendingIntent);
-        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -101,6 +119,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        if (userBean.getUser_id() != null && userBean.getSelf_result() == null) {
 //            cDialog.showSelfTest(this, "Self Test", "Start your self assessment test", "Start", false);
 //        }
+
+        checkNotificationCount();
+    }
+
+    private void checkNotificationCount() {
+
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.getUserData(userBean.getUser_id());
+        new ApiHandler(MainActivity.this).apiResponse(MainActivity.this, Config.NOTI_LIST, params);
+
     }
 
     @Override
@@ -194,6 +222,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cDialog.successShow(this, "Owner", "Chit Yog Sadhana is developed by Dr. S. Ajit, an ayurvedic consultant based in Australasia for 23 years, with 38 years clinical experience.","Ok", false);
                 break;
 
+            case R.id.layout_noti:
+                if(commonList!=null){
+                    if(commonList.getNotifications().size()>0){
+                        Intent intent6 = new Intent(this,NotificationActivity_.class);
+                        intent6.putExtra("data", (Serializable) commonList.getNotifications());
+                        startActivity(intent6);
+
+                        readNotification();
+                    }
+                }
+                break;
+
         }
+    }
+
+    private void readNotification() {
+        CustomJsonParams customJsonParams = new CustomJsonParams();
+        JSONObject params = customJsonParams.getUserData(userBean.getUser_id());
+        new ApiHandler(MainActivity.this).apiReadNoti(MainActivity.this, Config.READ_NOTI, params);
+    }
+
+    @Override
+    public void onSuccess(HashMap<String, Object> map) {
+
+        Gson gson = new Gson();
+        JSONObject obj = (JSONObject) map.get(Config.POST_JSON_RESPONSE);
+        if(obj!=null){
+             commonList = gson.fromJson(obj.toString(),CommonList.class);
+
+            int count = Integer.parseInt(commonList.getNotification_count());
+            if(count>0){
+                countText.setVisibility(View.VISIBLE);
+                countText.setText(commonList.getNotification_count());
+            }else{
+                countText.setVisibility(View.GONE);
+            }
+
+        }
+
+    }
+
+    @Override
+    public void onFailure(HashMap<String, Object> map) {
+
     }
 }

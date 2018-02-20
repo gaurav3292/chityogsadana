@@ -12,14 +12,15 @@ import com.cityogsadana.bean.NotificationBean;
 import com.cityogsadana.utils.Global;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolderList> {
 
     private Context context;
-    private ArrayList<NotificationBean> notificationList;
+    private List<NotificationBean> notificationList;
 
-    public NotificationAdapter(Context context, ArrayList<NotificationBean> notificationList) {
+    public NotificationAdapter(Context context, List<NotificationBean> notificationList) {
         this.context = context;
         this.notificationList = notificationList;
     }
@@ -62,8 +63,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         public void bind(NotificationBean bean) {
             Global.setFont(viewGroup, Global.regular);
 
-            messageTxt.setText(bean.getMessage());
-            dateTxt.setText(bean.getDate());
+            messageTxt.setText(bean.getNotificationMsg());
+            dateTxt.setText(bean.getNotificationDate());
         }
     }
 }
