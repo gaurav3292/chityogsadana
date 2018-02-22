@@ -47,35 +47,35 @@ public class AlarmReceiver extends BroadcastReceiver {
         boolean checkMorining = AccountChecker.checkMorning(currentTimeStr);
         boolean checkEvening = AccountChecker.checkEvening(currentTimeStr);
 
-        if (user.getUser_id() != null) {
-            if(!user.getLevel().getUserLevel().equalsIgnoreCase("6"))
-            if (checkEvening) {
-                if(notificationBean.isEveNoti()==false){
-                    sendNotification("Keep yourself motivated. Have a good night sleep.");
-                    notificationBean.setEveNoti(true);
-                    notificationBean.setMorningNoti(false);
-                    UserPref.updateNotification(context,notificationBean);
-                    notificationBean = UserPref.getNotificationBean(context);
-                }
-
-
-            } else {
-                if (checkMorining) {
-                    if(notificationBean.isMorningNoti()==false){
-                        sendNotification("Good morning." + user.getName() + " !.Have a great Day ahead. Keep following the routine.");
-                        notificationBean.setEveNoti(false);
-                        notificationBean.setMorningNoti(true);
-                        UserPref.updateNotification(context,notificationBean);
+        if (user.getUser_id() != null && user.getLevel() != null) {
+            if (!user.getLevel().getUserLevel().equalsIgnoreCase("6"))
+                if (checkEvening) {
+                    if (notificationBean.isEveNoti() == false) {
+                        sendNotification("Keep yourself motivated. Have a good night sleep.");
+                        notificationBean.setEveNoti(true);
+                        notificationBean.setMorningNoti(false);
+                        UserPref.updateNotification(context, notificationBean);
                         notificationBean = UserPref.getNotificationBean(context);
                     }
 
 
+                } else {
+                    if (checkMorining) {
+                        if (notificationBean.isMorningNoti() == false) {
+                            sendNotification("Good morning." + user.getName() + " !.Have a great Day ahead. Keep following the routine.");
+                            notificationBean.setEveNoti(false);
+                            notificationBean.setMorningNoti(true);
+                            UserPref.updateNotification(context, notificationBean);
+                            notificationBean = UserPref.getNotificationBean(context);
+                        }
+
+
+                    }
                 }
-            }
         }
 
 
-       // Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
     }
 
 
