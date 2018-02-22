@@ -47,7 +47,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         boolean checkMorining = AccountChecker.checkMorning(currentTimeStr);
         boolean checkEvening = AccountChecker.checkEvening(currentTimeStr);
 
-        if (user.getUser_id() != null && user.getLevel() != null) {
+        if (user.getUser_id() != null && user.getLevel().getUserLevel() != null) {
             if (!user.getLevel().getUserLevel().equalsIgnoreCase("6"))
                 if (checkEvening) {
                     if (notificationBean.isEveNoti() == false) {
