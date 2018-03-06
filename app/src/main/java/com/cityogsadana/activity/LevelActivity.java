@@ -523,9 +523,9 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     public void makePayment(String level) {
         String cost;
         if (level.equalsIgnoreCase("4")) {
-            cost = "5";
+            cost = "3";
         } else {
-            cost = "25";
+            cost = "35";
         }
         PaypalHelper.getInstance();
         PaypalHelper.startPayPalService(this, this, cost);

@@ -84,7 +84,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
         if (userBean.getLevel().getTotalNumberOfDays() == 0) {
             testText.setText("Start Routine");
         } else {
-            testText.setText("Start Test");
+            testText.setText("Record Progress");
         }
 
         if(userBean.getLevel().getIsExtraResult()==1){

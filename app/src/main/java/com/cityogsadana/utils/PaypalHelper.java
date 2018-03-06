@@ -77,7 +77,7 @@ public class PaypalHelper {
     }
 
     public static PayPalPayment getThingToBuy(String paymentIntent,String amount) {
-        return new PayPalPayment(new BigDecimal(amount), "NZD", "Amount:",
+        return new PayPalPayment(new BigDecimal(amount), "USD", "Amount:",
                 paymentIntent);
     }
 

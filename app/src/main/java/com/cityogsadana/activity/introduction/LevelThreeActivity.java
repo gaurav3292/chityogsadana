@@ -61,7 +61,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
         if (userBean.getLevel().getTotalNumberOfDays() == 0) {
             testText.setText("Start Routine");
         } else {
-            testText.setText("Start Test");
+            testText.setText("Record Progress");
         }
 
         backButton.setOnClickListener(this);

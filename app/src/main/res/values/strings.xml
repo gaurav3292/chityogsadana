@@ -396,7 +396,9 @@ You should do this first stage for at least 15 days.\n\n
 \n\u2022  an ancient elixir, used by yogis for centuries to enhance their meditation practice.
 \n\nDo you want to proceed to the final stage: Yes/No?
     </string>
+    <string name="level_five_bottom">You can come back once you have completed Level 5 successfully and for viewing other meditation program you can select the other meditation program by clicking on Level 5</string>
 
+    <string name="intro_bottom">Every night at 09:30 PM you need to fill the progress for this you need to click on right hand side on to button and progress sheet will appear, Fill it as you done</string>
 
     <string-array name="country">
         <item value="United States"> United States </item>

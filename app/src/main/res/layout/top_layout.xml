@@ -37,7 +37,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Start Test"
+            android:text="Record Progress"
             style="@style/SelectableItemBackground"
             android:gravity="center"
             android:textSize="20dp"

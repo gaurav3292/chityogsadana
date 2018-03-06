@@ -84,7 +84,7 @@ public class LevelSixActivity extends AppCompatActivity implements View.OnClickL
 
                 }else{
                     PaypalHelper.getInstance();
-                    PaypalHelper.startPayPalService(this, this, "25");
+                    PaypalHelper.startPayPalService(this, this, "35");
                 }
 
                 break;

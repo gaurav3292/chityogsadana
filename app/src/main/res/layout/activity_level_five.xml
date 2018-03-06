@@ -224,6 +224,15 @@
             </LinearLayout>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/app_text_size_medium"
+                android:text="@string/level_five_bottom"/>
+
+            <TextView
                 android:id="@+id/submit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"

@@ -79,7 +79,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
                     testText.setText("Start Routine");
                     testText.setVisibility(View.VISIBLE);
                 } else {
-                    testText.setText("Start Test");
+                    testText.setText("Record Progress");
                     testText.setVisibility(View.VISIBLE);
                 }
             } else {
@@ -97,7 +97,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
                     testText.setVisibility(View.VISIBLE);
                     testText.setText("Start Routine");
                 } else {
-                    testText.setText("Start Test");
+                    testText.setText("Record Progress");
                     testText.setVisibility(View.VISIBLE);
                 }
             } else {

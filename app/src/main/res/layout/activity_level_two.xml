@@ -66,6 +66,15 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/app_text_size_medium" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/intro_bottom"
+                android:textColor="@color/text_color"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="@dimen/app_text_size_medium" />
+
         </LinearLayout>
 
 
