@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class PolicyActivity extends AppCompatActivity implements View.OnClickLis
     TextView title;
     @ViewById(R.id.back_button)
     ImageButton backButton;
+    @ViewById(R.id.web)
+    WebView webView;
 
     private String type;
     @AfterViews
@@ -34,14 +37,22 @@ public class PolicyActivity extends AppCompatActivity implements View.OnClickLis
         if(type.equalsIgnoreCase(Config.T_C))
         {
             title.setText("Terms & Conditions");
+            setWebview(Config.TERMS_URL);
         }else {
             title.setText("Privacy Policy");
+            setWebview(Config.POLICY_URL);
 
         }
         backButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_cancel));
         backButton.setOnClickListener(this);
 
     }
+
+    private void setWebview(String url) {
+
+        webView.loadUrl(url);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -72,6 +72,9 @@ public class Config {
     public static final String T_C = "T_C";
     public static final String P_P = "P_P";
 
+    public static final String TERMS_URL = "http://54.244.1.194:8080/chityogws/resources/tnc.html";
+    public static final String POLICY_URL = "http://54.244.1.194:8080/chityogws/resources/pp.html";
+
 
     //Api
     public static final String URL = "http://54.244.1.194:8080/chityogws";

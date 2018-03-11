@@ -331,7 +331,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 days2.setText("Completed");
                 days3.setText("Completed");
                 days4.setText("Completed");
-                days5.setText("Completed");
+                days5.setText("Completed  (View All Meditation Programme)");
                 days6.setText("Unlocked");
 //                if (level.getCompletedNumberOfDays() > 0) {
 //                    result6.setVisibility(View.VISIBLE);
