@@ -191,6 +191,15 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                 } else {
+                    icon1.setImageResource(R.drawable.ic_check);
+                    icon2.setImageResource(R.drawable.ic_check);
+                    icon3.setImageResource(R.drawable.ic_check);
+                    icon4.setImageResource(R.drawable.ic_unlocked);
+                    days1.setText("Completed");
+                    days2.setText("Completed");
+                    days3.setText("Completed");
+
+
                     days4.setText("Make payment to unlock");
                 }
                 level4.setOnClickListener(this);

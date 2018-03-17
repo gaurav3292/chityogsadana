@@ -3,8 +3,10 @@ package com.cityogsadana.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.provider.AlarmClock;
 import android.support.design.widget.TabLayout;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -354,6 +356,28 @@ public class Global {
 
         List<String> stringList = Arrays.asList(countries);
         return stringList;
+    }
+
+    public static void setAlarm(Activity activity) {
+        ArrayList<Integer> alarmDays = new ArrayList<Integer>();
+        alarmDays.add(android.icu.util.Calendar.SATURDAY);
+        alarmDays.add(android.icu.util.Calendar.SUNDAY);
+        alarmDays.add(android.icu.util.Calendar.MONDAY);
+        alarmDays.add(android.icu.util.Calendar.TUESDAY);
+        alarmDays.add(android.icu.util.Calendar.WEDNESDAY);
+        alarmDays.add(android.icu.util.Calendar.THURSDAY);
+        alarmDays.add(android.icu.util.Calendar.FRIDAY);
+
+
+        Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+        i.putExtra(AlarmClock.EXTRA_MESSAGE, "Time to submit your progress");
+        i.putExtra(AlarmClock.EXTRA_DAYS, alarmDays);
+        i.putExtra(AlarmClock.EXTRA_HOUR, 21);
+        i.putExtra(AlarmClock.EXTRA_MINUTES, 45);
+        i.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
+        activity.startActivity(i);
+
+
     }
 
 }

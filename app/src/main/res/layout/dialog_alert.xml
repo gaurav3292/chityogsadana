@@ -63,7 +63,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:maxLines="4"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/text_color"

@@ -208,6 +208,7 @@ public class SubLevelFourActivity extends AppCompatActivity implements View.OnCl
             UserPref.saveUser(this, userBean);
             cDialog.successBack(this, "Congratulations!", "Your test will be active from tomorrow", "Ok", false);
 
+            Global.setAlarm(this);
             startNotification();
         }
 

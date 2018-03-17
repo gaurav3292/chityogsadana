@@ -139,7 +139,7 @@ public class LevelThreeActivity extends AppCompatActivity implements DataHandler
             userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
             UserPref.saveUser(this, userBean);
             cDialog.successBack(this, "Congratulations!", "Your test will be active from tomorrow", "Ok", false);
-
+            Global.setAlarm(this);
             startNotification();
         }
 

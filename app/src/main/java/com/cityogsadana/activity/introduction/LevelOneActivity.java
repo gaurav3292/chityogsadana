@@ -87,7 +87,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             testText.setText("Record Progress");
         }
 
-        if(userBean.getLevel().getIsExtraResult()==1){
+        if (userBean.getLevel().getIsExtraResult() == 1) {
             extraDetailLayout.setVisibility(View.VISIBLE);
         }
 
@@ -165,12 +165,11 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
                     String currentTimeStr = df.format(currentTime);
                     boolean check = AccountChecker.checkTimeMorning(currentTimeStr);
 
-                    if(check)
-                    {
+                    if (check) {
                         checkTestSubmittion();
 
-                    }else {
-                        cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)","Ok", false);
+                    } else {
+                        cDialog.successShow(this, "Alert!", "Your test will be active at 04:30:00. (04:30 am)", "Ok", false);
 
                     }
 
@@ -179,7 +178,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
             case R.id.extra_detail_layout:
                 Intent intent = new Intent(this, ExtraOneActivity_.class);
-                intent.putExtra("extra","extra");
+                intent.putExtra("extra", "extra");
                 startActivity(intent);
                 break;
 
@@ -193,7 +192,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
         String currentDateStr = df.format(currentDate);
         Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
-        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        JSONObject params = customJsonParams.checkSubmittion(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel());
         new ApiHandler(LevelOneActivity.this).apiResponseCheck(LevelOneActivity.this, Config.CHECK_SUBMITTION, params);
     }
 
@@ -211,7 +210,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
         String currentDateStr = df.format(currentDate);
         Global.showProgress(this);
         CustomJsonParams customJsonParams = new CustomJsonParams();
-        JSONObject params = customJsonParams.startTest(userBean.getUser_id(),currentDateStr,userBean.getLevel().getUserLevel());
+        JSONObject params = customJsonParams.startTest(userBean.getUser_id(), currentDateStr, userBean.getLevel().getUserLevel());
         new ApiHandler(LevelOneActivity.this).apiResponse(LevelOneActivity.this, Config.START_TEST, params);
     }
 
@@ -222,20 +221,20 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
 
         if (jsonObject != null) {
             Gson gson = new Gson();
-            userBean = gson.fromJson(jsonObject.toString(),UserBean.class);
-            UserPref.saveUser(this,userBean);
-            cDialog.successBack(this, "Congratulations!","Your test will be active from tomorrow", "Ok", false);
+            userBean = gson.fromJson(jsonObject.toString(), UserBean.class);
+            UserPref.saveUser(this, userBean);
+            cDialog.successBack(this, "Congratulations!", "Your test will be active from tomorrow", "Ok", false);
 
-            startNotification();
+            Global.setAlarm(this);
         }
 
         JSONObject checkObj = (JSONObject) map.get(Config.CHECK_RESPONSE);
-        if(checkObj!=null){
+        if (checkObj != null) {
             Intent intent = new Intent(this, TestActivity_.class);
-            intent.putExtra("data",dataEntry.getLevelOneList());
-            intent.putExtra("ques",Config.LevelOne);
-            intent.putExtra("title","Level one");
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("data", dataEntry.getLevelOneList());
+            intent.putExtra("ques", Config.LevelOne);
+            intent.putExtra("title", "Level one");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
 
