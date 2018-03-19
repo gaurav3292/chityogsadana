@@ -6,147 +6,146 @@
     android:layout_height="match_parent"
     android:background="@color/activity_bg"
     tools:context="com.cityogsadana.activity.introduction.ExtraOneActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_layout"
-        android:layout_below="@+id/include2">
-
-
-
-    <LinearLayout
-        android:id="@+id/extra_detail_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="However these are optional:"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/app_text_size_xmedium" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/extra_1"
-            android:layout_marginBottom="15dp"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/app_text_size_medium" />
+        android:layout_below="@+id/include2"
+        android:paddingBottom="10dp">
 
 
         <LinearLayout
+            android:id="@+id/extra_detail_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/green_grass"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/app_text_size_medium"
-                android:id="@+id/textView2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="3dp"
-                android:text="@string/green_grass_detail"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_medium" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/pore_rose"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/app_text_size_medium" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="3dp"
-                android:text="@string/pore_rose_detail"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/app_text_size_medium" />
-        </LinearLayout>
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/extra_2"
-            android:layout_marginBottom="15dp"
+            android:paddingBottom="10dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/app_text_size_medium" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/sun"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/app_text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="3dp"
-                android:text="@string/sun_detail"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:text="However these are optional:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/app_text_size_xmedium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:text="@string/extra_1"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/app_text_size_medium" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/green_grass"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/green_grass_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/pore_rose"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/pore_rose_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/gandoosh"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/app_text_size_medium" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="3dp"
-                android:text="@string/gandoosh_deatil"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/extra_2"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/app_text_size_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/sun"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/sun_detail"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/gandoosh"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/app_text_size_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/gandoosh_deatil"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/app_text_size_medium" />
+            </LinearLayout>
+
+
         </LinearLayout>
-
-
-
-
-    </LinearLayout>
     </ScrollView>
 
 
@@ -160,8 +159,7 @@
         layout="@layout/bottom_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        </include>
+        android:layout_alignParentBottom="true"></include>
 
 
 </RelativeLayout>

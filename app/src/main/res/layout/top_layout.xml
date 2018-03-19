@@ -40,7 +40,7 @@
             android:text="Record Progress"
             style="@style/SelectableItemBackground"
             android:gravity="center"
-            android:textSize="10sp"
+            android:textSize="12sp"
             android:layout_centerInParent="true"
             android:id="@+id/test"
             android:textColor="@color/text_color"
