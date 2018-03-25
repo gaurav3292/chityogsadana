@@ -87,7 +87,7 @@ public class LevelOneActivity extends AppCompatActivity implements DataHandlerCa
             testText.setText("Record Progress");
         }
 
-        if (userBean.getLevel().getIsExtraResult() == 1) {
+        if (userBean.getLevel().getIsExtraResult() >= 1) {
             extraDetailLayout.setVisibility(View.VISIBLE);
         }
 
