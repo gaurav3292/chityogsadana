@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.view.ViewGroup;
 
 import com.cityogsadana.R;
+import com.cityogsadana.activity.introduction.LevelFiveActivity;
+import com.cityogsadana.activity.introduction.LevelFiveActivity_;
 import com.cityogsadana.bean.UserBean;
 import com.cityogsadana.prefrences.UserPref;
 import com.cityogsadana.services.MyFirebaseInstanceIDService;
@@ -54,7 +56,7 @@ public class SplashActivity extends Activity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SplashActivity.this, MainActivity_.class);
+                    Intent intent = new Intent(SplashActivity.this, LevelFiveActivity_.class);
                     startActivity(intent);
                     finish();
                 }

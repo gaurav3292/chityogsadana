@@ -86,16 +86,13 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/app_gray"></View>
 
-                <EditText
+                <CheckBox
                     android:id="@+id/prg_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:digits="1234"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium" />
+                    android:layout_gravity="center"
+                    android:buttonTint="@color/icon_color"
+                    android:gravity="center" />
 
             </LinearLayout>
 
@@ -127,16 +124,13 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/app_gray"></View>
 
-                <EditText
+                <CheckBox
                     android:id="@+id/prg_2"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:padding="5dp"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:digits="1234"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="@color/icon_color"
+                    android:gravity="center" />
 
             </LinearLayout>
 
@@ -168,16 +162,13 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/app_gray"></View>
 
-                <EditText
+                <CheckBox
                     android:id="@+id/prg_3"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:digits="1234"
-                    android:padding="5dp"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="@color/icon_color"
+                    android:gravity="center" />
 
             </LinearLayout>
 
@@ -210,16 +201,13 @@
                     android:layout_marginRight="5dp"
                     android:background="@color/app_gray"></View>
 
-                <EditText
+                <CheckBox
                     android:id="@+id/prg_4"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:padding="5dp"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:digits="1234"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/app_text_size_medium" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="@color/icon_color"
+                    android:gravity="center" />
 
             </LinearLayout>
 

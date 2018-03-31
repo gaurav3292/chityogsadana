@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -36,7 +38,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 @EActivity(R.layout.activity_level_five)
-public class LevelFiveActivity extends AppCompatActivity implements DataHandlerCallback, View.OnClickListener {
+
+public class LevelFiveActivity extends AppCompatActivity implements DataHandlerCallback, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     @ViewById(R.id.activity_level_five)
     ViewGroup viewGroup;
@@ -45,13 +48,13 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
     @ViewById(R.id.back_button)
     ImageButton backButton;
     @ViewById(R.id.prg_1)
-    EditText prg1;
+    CheckBox prg1;
     @ViewById(R.id.prg_2)
-    EditText prg2;
+    CheckBox prg2;
     @ViewById(R.id.prg_3)
-    EditText prg3;
+    CheckBox prg3;
     @ViewById(R.id.prg_4)
-    EditText prg4;
+    CheckBox prg4;
     @ViewById(R.id.error_check_layout)
     RelativeLayout errorLayout;
     @ViewById(R.id.submit_button)
@@ -70,6 +73,11 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
         backButton.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
+        prg1.setOnCheckedChangeListener(this);
+        prg2.setOnCheckedChangeListener(this);
+        prg3.setOnCheckedChangeListener(this);
+        prg4.setOnCheckedChangeListener(this);
+
     }
 
     @Override
@@ -87,22 +95,9 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
                 break;
 
             case R.id.submit_button:
-                String p1 = prg1.getText().toString();
-                String p2 = prg2.getText().toString();
-                String p3 = prg3.getText().toString();
-                String p4 = prg4.getText().toString();
-                boolean check = validate(p1, p2, p3, p4);
+                boolean check = validate();
 
                 if (!check) {
-                    if (p1.equalsIgnoreCase("1")) {
-                        finalValue = "1";
-                    } else if (p2.equalsIgnoreCase("1")) {
-                        finalValue = "2";
-                    } else if (p3.equalsIgnoreCase("1")) {
-                        finalValue = "3";
-                    } else if (p4.equalsIgnoreCase("1")) {
-                        finalValue = "4";
-                    }
 
                     Date currentDate = Calendar.getInstance().getTime();
                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -110,7 +105,7 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
 
                     Global.showProgress(this);
                     CustomJsonParams customJsonParams = new CustomJsonParams();
-                    JSONObject params = customJsonParams.submitRating(userBean.getUser_id(), userBean.getLevel().getUserLevel(), finalValue,currentDateStr);
+                    JSONObject params = customJsonParams.submitRating(userBean.getUser_id(), userBean.getLevel().getUserLevel(), finalValue, currentDateStr);
                     new ApiHandler(LevelFiveActivity.this).apiResponse(LevelFiveActivity.this, Config.SUBMIT_RATING, params);
                 }
 
@@ -119,38 +114,11 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
         }
     }
 
-    private boolean validate(String p1, String p2, String p3, String p4) {
+    private boolean validate() {
         boolean error = false;
-        if (p1.isEmpty() && p2.isEmpty() && p3.isEmpty() && p4.isEmpty()) {
+        if (finalValue == null) {
             error = true;
-            new CustomCrouton(this, "Enter all the priority values.", errorLayout).setInAnimation();
-        } else if (p1.isEmpty() || p2.isEmpty() || p3.isEmpty() || p4.isEmpty()) {
-            error = true;
-            if (p1.isEmpty()) {
-                new CustomCrouton(this, "Enter priority value for point 1.", errorLayout).setInAnimation();
-            } else if (p2.isEmpty()) {
-                new CustomCrouton(this, "Enter priority value for point 2.", errorLayout).setInAnimation();
-            } else if (p3.isEmpty()) {
-                new CustomCrouton(this, "Enter priority value for point 3.", errorLayout).setInAnimation();
-            } else if (p4.isEmpty()) {
-                new CustomCrouton(this, "Enter priority value for point 4.", errorLayout).setInAnimation();
-            }
-
-        } else {
-            if (p1.equalsIgnoreCase(p2) && p1.equalsIgnoreCase(p3) && p1.equalsIgnoreCase(p4)) {
-                error = true;
-                new CustomCrouton(this, "Priority value can not be repeated.", errorLayout).setInAnimation();
-            } else if (p2.equalsIgnoreCase(p1) && p2.equalsIgnoreCase(p3) && p2.equalsIgnoreCase(p4)) {
-                error = true;
-                new CustomCrouton(this, "Priority value can not be repeated.", errorLayout).setInAnimation();
-            } else if (p3.equalsIgnoreCase(p1) && p3.equalsIgnoreCase(p2) && p3.equalsIgnoreCase(p4)) {
-                error = true;
-                new CustomCrouton(this, "Priority value can not be repeated.", errorLayout).setInAnimation();
-            } else if (p4.equalsIgnoreCase(p1) && p3.equalsIgnoreCase(p2) && p4.equalsIgnoreCase(p3)) {
-                error = true;
-                new CustomCrouton(this, "Priority value can not be repeated.", errorLayout).setInAnimation();
-            }
-
+            new CustomCrouton(this, "Please select one of the emotional state", errorLayout).setInAnimation();
         }
         return error;
 
@@ -184,5 +152,60 @@ public class LevelFiveActivity extends AppCompatActivity implements DataHandlerC
             cDialog.successShow(this, "Error!", ErrorHelper.getErrorResponse(error), "Ok", false);
 
         }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        switch (buttonView.getId()) {
+            case R.id.prg_1:
+                if (isChecked) {
+                    finalValue = "1";
+
+                    prg2.setChecked(false);
+                    prg3.setChecked(false);
+                    prg4.setChecked(false);
+                }
+
+
+                break;
+
+            case R.id.prg_2:
+                if (isChecked) {
+                    finalValue = "2";
+
+
+                    prg1.setChecked(false);
+                    prg4.setChecked(false);
+                    prg3.setChecked(false);
+                }
+
+                break;
+
+            case R.id.prg_3:
+                if (isChecked) {
+                    finalValue = "3";
+
+
+                    prg1.setChecked(false);
+                    prg2.setChecked(false);
+                    prg4.setChecked(false);
+                }
+
+                break;
+
+            case R.id.prg_4:
+                if (isChecked) {
+                    finalValue = "4";
+
+
+                    prg1.setChecked(false);
+                    prg2.setChecked(false);
+                    prg3.setChecked(false);
+                }
+
+                break;
+        }
+
     }
 }
