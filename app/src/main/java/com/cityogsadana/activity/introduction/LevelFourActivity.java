@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
@@ -29,9 +31,13 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
     @ViewById(R.id.back_button)
     ImageButton backButton;
     @ViewById(R.id.step_1)
-    TextView step_one;
+    LinearLayout step_one;
     @ViewById(R.id.step_2)
-    TextView step_two;
+    LinearLayout step_two;
+    @ViewById(R.id.icon_1)
+    ImageView icon1;
+    @ViewById(R.id.icon_2)
+    ImageView icon2;
     private UserBean userBean;
 
 
@@ -45,9 +51,14 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
 
         if (userBean.getLevel().getUserLevel().equalsIgnoreCase("41")){
             step_one.setOnClickListener(this);
+            icon1.setImageResource(R.drawable.ic_unlocked);
+            icon2.setImageResource(R.drawable.ic_locked);
         }else{
 
             step_two.setOnClickListener(this);
+            icon1.setImageResource(R.drawable.ic_unlocked);
+            icon2.setImageResource(R.drawable.ic_check);
+
         }
 
     }
