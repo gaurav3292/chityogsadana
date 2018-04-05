@@ -141,7 +141,6 @@ public class LevelTwoActivity extends AppCompatActivity implements DataHandlerCa
             UserPref.saveUser(this,userBean);
             cDialog.successBack(this, "Congratulations!","Your test will be active from tomorrow", "Ok", false);
 
-            Global.setAlarm(this);
             startNotification();
         }
 

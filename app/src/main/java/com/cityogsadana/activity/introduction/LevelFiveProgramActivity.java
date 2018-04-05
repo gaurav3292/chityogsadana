@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cityogsadana.R;
@@ -31,6 +33,14 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
     TextView step1;
     @ViewById(R.id.step_2)
     TextView step2;
+    @ViewById(R.id.layout1)
+    LinearLayout layout1;
+    @ViewById(R.id.layout2)
+    LinearLayout layout2;
+    @ViewById(R.id.icon_1)
+    ImageView icon1;
+    @ViewById(R.id.icon_2)
+    ImageView icon2;
 
     private String value;
     private boolean isVisible = false;
@@ -45,14 +55,18 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
 
 
         if (isVisible) {
-            step1.setOnClickListener(this);
-            step2.setOnClickListener(this);
+            layout1.setOnClickListener(this);
+            layout2.setOnClickListener(this);
 
         } else {
             if (userBean.getLevel().getUserSubLevel().equalsIgnoreCase("1")) {
-                step1.setOnClickListener(this);
+                layout1.setOnClickListener(this);
+                icon1.setImageResource(R.drawable.ic_unlocked);
+                icon2.setImageResource(R.drawable.ic_locked);
             } else {
-                step2.setOnClickListener(this);
+                layout2.setOnClickListener(this);
+                icon1.setImageResource(R.drawable.ic_check);
+                icon2.setImageResource(R.drawable.ic_unlocked);
             }
         }
 
@@ -106,7 +120,7 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
                 onBackPressed();
                 break;
 
-            case R.id.step_1:
+            case R.id.layout1:
                 Intent intent5 = new Intent(this, ProgramDetailActivity_.class);
                 intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent5.putExtra("value", value);
@@ -114,7 +128,7 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
                 startActivity(intent5);
                 break;
 
-            case R.id.step_2:
+            case R.id.layout2:
                 Intent intent = new Intent(this, ProgramDetailActivity_.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("value", value);
