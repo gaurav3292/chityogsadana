@@ -56,8 +56,8 @@ public class LevelFourActivity extends AppCompatActivity implements View.OnClick
         }else{
 
             step_two.setOnClickListener(this);
-            icon1.setImageResource(R.drawable.ic_unlocked);
-            icon2.setImageResource(R.drawable.ic_check);
+            icon1.setImageResource(R.drawable.ic_check);
+            icon2.setImageResource(R.drawable.ic_unlocked);
 
         }
 

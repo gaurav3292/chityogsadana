@@ -58,6 +58,9 @@ public class LevelFiveProgramActivity extends AppCompatActivity implements View.
             layout1.setOnClickListener(this);
             layout2.setOnClickListener(this);
 
+            icon1.setImageResource(R.drawable.ic_unlocked);
+            icon2.setImageResource(R.drawable.ic_unlocked);
+
         } else {
             if (userBean.getLevel().getUserSubLevel().equalsIgnoreCase("1")) {
                 layout1.setOnClickListener(this);
