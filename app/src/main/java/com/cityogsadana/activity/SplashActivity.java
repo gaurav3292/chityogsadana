@@ -56,7 +56,7 @@ public class SplashActivity extends Activity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SplashActivity.this, LevelFiveActivity_.class);
+                    Intent intent = new Intent(SplashActivity.this, LevelActivity_.class);
                     startActivity(intent);
                     finish();
                 }
