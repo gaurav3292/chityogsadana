@@ -98,8 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setAlarm();
 
 
-
-
     }
 
     private void setAlarm() {
