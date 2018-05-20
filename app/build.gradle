@@ -1,7 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
-
 android {
+    signingConfigs {
+        config {
+            keyAlias 'chityog'
+            keyPassword 'gkmrkm'
+            storeFile file('C:/Users/Bhagwanti/AndroidKeyStore/chityog.jks')
+            storePassword 'gkmrkm'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -18,16 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
-
     apt {
         arguments {
             androidManifestFile variant.outputs[0]?.processResources?.manifestFile
             resourcePackageName 'com.cityogsadana'
         }
     }
-
     dependencies {
         compile fileTree(dir: 'libs', include: ['*.jar'])
         androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -68,6 +71,8 @@ android {
 
         testCompile 'junit:junit:4.12'
     }
-
     apply plugin: 'com.google.gms.google-services'
+}
+
+dependencies {
 }

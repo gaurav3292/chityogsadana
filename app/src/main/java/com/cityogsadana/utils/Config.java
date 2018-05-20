@@ -4,7 +4,6 @@ package com.cityogsadana.utils;
 public class Config {
 
 
-
     public static int DEVICE_WIDTH = 0;
     public static int DEVICE_HEIGHT = 0;
 
@@ -19,12 +18,12 @@ public class Config {
 
 
     // menu
-    public static  final  String CHIT_YOG = "What is CHIT YOG?";
-    public static  final  String CHIT = " What is CHIT";
-    public static  final  String AIM = " Our Aim";
-    public static  final  String WORKS = "How does it works?";
-    public static  final  String NEED = "Who needs it?";
-    public static  final  String TEST = "TEST";
+    public static final String CHIT_YOG = "What is CHIT YOG?";
+    public static final String CHIT = " What is CHIT";
+    public static final String AIM = " Our Aim";
+    public static final String WORKS = "How does it works?";
+    public static final String NEED = "Who needs it?";
+    public static final String TEST = "TEST";
 
 
     //Constant Keys
@@ -45,7 +44,6 @@ public class Config {
     public static final int LevelThree = 11;
     public static final int LevelFour_one = 13;
     public static final int LevelFour_two = 1;
-
 
 
     //RESPONSE
@@ -72,23 +70,28 @@ public class Config {
     public static final String T_C = "T_C";
     public static final String P_P = "P_P";
 
-    public static final String TERMS_URL = "http://54.244.1.194:8080/chityogws/resources/tnc.html";
-    public static final String POLICY_URL = "http://54.244.1.194:8080/chityogws/resources/pp.html";
+//    public static final String TERMS_URL = "http://54.244.1.194:8080/chityogws/resources/tnc.html";
+//    public static final String POLICY_URL = "http://54.244.1.194:8080/chityogws/resources/pp.html";
+
+    public static final String TERMS_URL = "http://18.191.61.79:8080/chityogws/resources/tnc.html";
+    public static final String POLICY_URL = "http://18.191.61.79:8080/chityogws/resources/pp.html";
 
 
     //Api
-    public static final String URL = "http://54.244.1.194:8080/chityogws";
+//    public static final String URL = "http://54.244.1.194:8080/chityogws";
+    public static final String URL = "http://18.191.61.79:8080/chityogws";
+
     // public static final String URL = "http://b9b272dc.ngrok.io/chityogws";
-    public static final String LOGIN_IN ="/login";
-    public static final String SIGN_UP ="/signup";
-    public static final String CHANGE_PASS ="/changePassword";
-    public static final String FORGOT_PASS ="/forgotPassword";
-    public static final String SELF_TEST ="/selfTestResult";
-    public static final String GET_USER ="/getUserDetail";
-    public static final String EDIT_PROFILE ="/editProfile";
-    public static final String VERIFY_EMAIL ="/verifyEmail";
-    public static final String START_TEST ="/startTest";
-    public static final String SUBMIT_TEST ="/submitTest";
+    public static final String LOGIN_IN = "/login";
+    public static final String SIGN_UP = "/signup";
+    public static final String CHANGE_PASS = "/changePassword";
+    public static final String FORGOT_PASS = "/forgotPassword";
+    public static final String SELF_TEST = "/selfTestResult";
+    public static final String GET_USER = "/getUserDetail";
+    public static final String EDIT_PROFILE = "/editProfile";
+    public static final String VERIFY_EMAIL = "/verifyEmail";
+    public static final String START_TEST = "/startTest";
+    public static final String SUBMIT_TEST = "/submitTest";
     public static final String LEVEL_RESULT = "/levelResult";
     public static final String SUBMIT_RATING = "/submitRating";
     public static final String SUBMIT_PROGRAM = "/submitProgramme";
