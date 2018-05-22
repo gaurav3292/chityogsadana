@@ -23,14 +23,14 @@ public class PaypalHelper {
 
     public static final String TAG = "paymentResponse";
 
-    private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_NO_NETWORK;
+    private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_PRODUCTION;
 
 
     // note that these credentials will differ between live & sandbox environments.
     // PAYPAL LIVE CLIENT ID
     // private static final String CONFIG_CLIENT_ID = "AaIhdTxZxeizNzogJ0lQ-Bhs5EQRAF7Yw1AFacEAeGW_CdEzDyRUHO6O6-6G-SZHtcQn6VY_ZPGfhWUv";
     // private static final String CONFIG_CLIENT_ID = "AWM9MALNFWtEYEKEW45okiQwC7iIp577cv-9FHV5H9x_ykh5-5jptCtUWAPppTjG4eztPeF3KEtCHepN";
-    private static final String CONFIG_CLIENT_ID = "Abkcv5aKLCg6bbIAdROyqwiJJQL9rJcu-dUvPEwehEGePywxfBazInqhBaUQ7T9OjGRBrkxf_Fy-CbT2";   // live
+    private static final String CONFIG_CLIENT_ID = "AaXqm7QWn0c7Dr71NRRt20KWRPFmTlKzXqLEbnidvIdBNTyvMGkAyRwO0-hskHdsd88Xz7u2dOFq1Yvw";   // live
 
     public static final int REQUEST_CODE_PAYMENT = 1;
     private static final int REQUEST_CODE_FUTURE_PAYMENT = 2;
@@ -41,8 +41,8 @@ public class PaypalHelper {
             .clientId(CONFIG_CLIENT_ID)
             // The following are only used in PayPalFuturePaymentActivity.
             .merchantName("Example Merchant")
-            .merchantPrivacyPolicyUri(Uri.parse("https://www.example.com/privacy"))
-            .merchantUserAgreementUri(Uri.parse("https://www.example.com/legal"));
+            .merchantPrivacyPolicyUri(Uri.parse("http://www.chityogsadhana.com/privacy-policy/"))
+            .merchantUserAgreementUri(Uri.parse("http://www.chityogsadhana.com/privacy-policy/"));
 
     public PaypalHelper() {
 
