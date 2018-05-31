@@ -78,8 +78,10 @@ public class Config {
 
 
     //Api
-//    public static final String URL = "http://54.244.1.194:8080/chityogws";
-    public static final String URL = "http://18.191.61.79:8080/chityogws";
+     public static final String URL = "http://54.244.1.194:8080/chityogws";
+  //  public static final String URL = "http://18.191.61.79:8080/chityogws";
+
+   // public static final String URL = "http://localhost:8080/chityogws";
 
     // public static final String URL = "http://b9b272dc.ngrok.io/chityogws";
     public static final String LOGIN_IN = "/login";
