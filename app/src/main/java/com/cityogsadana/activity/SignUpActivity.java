@@ -212,7 +212,7 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                 new CustomCrouton(this, "PLease enter a valid email address", errorLayout).setInAnimation();
             } else if (!checkPassword) {
                 error = true;
-                new CustomCrouton(this, "Password should contains eight characters including one uppercase letter, one lowercase letter, and one number or special character", errorLayout).setInAnimation();
+                new CustomCrouton(this, "Password should contain eight characters including one uppercase letter, one lowercase letter, and one number or special character", errorLayout).setInAnimation();
             } else if (!checkCcomfirmPassword) {
                 error = true;
                 new CustomCrouton(this, "Passwords do not match", errorLayout).setInAnimation();

@@ -147,7 +147,7 @@ public class ProfileActivity extends AppCompatActivity implements DataHandlerCal
                 break;
 
             case R.id.support_layout:
-                String url = "https://suryaayurveda.com.au/index.php?route=information/contact";
+                String url = "http://www.chityogsadhana.com/contact-us/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
