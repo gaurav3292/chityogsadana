@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/chit"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -44,9 +44,9 @@
                     android:text="What is CHIT?"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/chit_yog"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -72,10 +72,10 @@
                     android:textSize="@dimen/app_text_size_large" />
 
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/aim"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -99,10 +99,10 @@
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/needs"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -126,9 +126,9 @@
                     android:text="Who needs it?"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/works"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -152,10 +152,10 @@
                     android:text="How does it works?"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/test"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -181,10 +181,10 @@
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/owner"
                 style="@style/SelectableItemBackground"
                 android:layout_width="match_parent"
@@ -209,7 +209,7 @@
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/app_text_size_large" />
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>

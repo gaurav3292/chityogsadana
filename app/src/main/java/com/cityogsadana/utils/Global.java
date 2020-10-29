@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.provider.AlarmClock;
-import android.support.design.widget.TabLayout;
+import com.google.android.material.tabs.TabLayout;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.view.MotionEvent;
@@ -372,8 +372,8 @@ public class Global {
         Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
         i.putExtra(AlarmClock.EXTRA_MESSAGE, "Time to submit your progress");
         i.putExtra(AlarmClock.EXTRA_DAYS, alarmDays);
-        i.putExtra(AlarmClock.EXTRA_HOUR, 21);
-        i.putExtra(AlarmClock.EXTRA_MINUTES, 45);
+        i.putExtra(AlarmClock.EXTRA_HOUR, 20);
+        i.putExtra(AlarmClock.EXTRA_MINUTES, 00);
         i.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
         activity.startActivity(i);
 

@@ -3,7 +3,7 @@ package com.cityogsadana.dialogs;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;

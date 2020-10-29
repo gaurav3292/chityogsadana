@@ -4,9 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Keep;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.NestedScrollView;
+
+import androidx.annotation.Keep;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;

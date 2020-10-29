@@ -3,8 +3,8 @@ package com.cityogsadana.dialogs;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetDialogFragment;
-import android.support.v4.app.Fragment;
+
+import androidx.fragment.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -16,6 +16,7 @@ import com.cityogsadana.interfaces.UploadPhotoRemoveHandler;
 import com.cityogsadana.utils.Global;
 import com.cityogsadana.utils.OpenCamera;
 import com.cityogsadana.utils.OpenGallery;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
 public class DialogUploadPhoto extends BottomSheetDialogFragment implements View.OnClickListener {

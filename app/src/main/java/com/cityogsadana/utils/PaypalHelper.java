@@ -29,7 +29,7 @@ public class PaypalHelper {
     // note that these credentials will differ between live & sandbox environments.
     // PAYPAL LIVE CLIENT ID
     // private static final String CONFIG_CLIENT_ID = "AaIhdTxZxeizNzogJ0lQ-Bhs5EQRAF7Yw1AFacEAeGW_CdEzDyRUHO6O6-6G-SZHtcQn6VY_ZPGfhWUv";
-    // private static final String CONFIG_CLIENT_ID = "AWM9MALNFWtEYEKEW45okiQwC7iIp577cv-9FHV5H9x_ykh5-5jptCtUWAPppTjG4eztPeF3KEtCHepN";
+   //  private static final String CONFIG_CLIENT_ID = "Abkcv5aKLCg6bbIAdROyqwiJJQL9rJcu-dUvPEwehEGePywxfBazInqhBaUQ7T9OjGRBrkxf_Fy-CbT2";
     private static final String CONFIG_CLIENT_ID = "AaXqm7QWn0c7Dr71NRRt20KWRPFmTlKzXqLEbnidvIdBNTyvMGkAyRwO0-hskHdsd88Xz7u2dOFq1Yvw";   // live
 
     public static final int REQUEST_CODE_PAYMENT = 1;
@@ -48,9 +48,9 @@ public class PaypalHelper {
 
     }
 
-    public static PaypalHelper getInstance(){
-        if(payPalHelper==null){
-            synchronized (PaypalHelper.class){
+    public static PaypalHelper getInstance() {
+        if (payPalHelper == null) {
+            synchronized (PaypalHelper.class) {
                 payPalHelper = new PaypalHelper();
             }
         }
@@ -58,9 +58,9 @@ public class PaypalHelper {
         return payPalHelper;
     }
 
-    public static void startPayPalService(Context context, Activity activity,String amount){
+    public static void startPayPalService(Context context, Activity activity, String amount) {
 
-        PayPalPayment thingToBuy = getThingToBuy(PayPalPayment.PAYMENT_INTENT_SALE,amount);
+        PayPalPayment thingToBuy = getThingToBuy(PayPalPayment.PAYMENT_INTENT_SALE, amount);
 
         /*
          * See getStuffToBuy(..) for examples of some available payment options.
@@ -76,12 +76,12 @@ public class PaypalHelper {
         activity.startActivityForResult(intent, REQUEST_CODE_PAYMENT);
     }
 
-    public static PayPalPayment getThingToBuy(String paymentIntent,String amount) {
+    public static PayPalPayment getThingToBuy(String paymentIntent, String amount) {
         return new PayPalPayment(new BigDecimal(amount), "USD", "Amount:",
                 paymentIntent);
     }
 
-    public static void stopPayPalService(Context context,Activity activity){
+    public static void stopPayPalService(Context context, Activity activity) {
         activity.stopService(new Intent(context, PayPalService.class));
     }
 }
